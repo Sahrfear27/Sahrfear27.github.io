@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .info{
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function displayMessage(){
+            document.getElementById('report').innerHTML ="Submitted";
+        }
+    </script>
+    <h3>Enter  your Information</h3>
+    <div class="info">
+    <form  >
+        <div class="names">
+            <label for="fname">First Name</label><br>
+            <input type="text" name="fname" required>
+            <br>
+            <label for="sname">Last Name</label><br>
+            <input type="text" name="lname"required >
+            <br>
+        </div>
+        <div class="details">
+            <label for="gender">Gender</label> <br>
+            <label for="">Male</label>
+            <input type="radio" name="gender" value="male">
+            <label for="">Female</label>
+            <input type="radio" name="gender" value="female">
+            <br>
+        <!-- Select Your Skills -->
+        <label for="skills">Skills</label>
+        <select name="skills" id="">
+            <option value="skills">Javascript</option>
+            <option value="skills">Python</option>
+            <option value="skills">C++</option>
+            <option value="skills">HTML</option>
+        </select>
+        <br>
+        </div>
+    </div>
+       <label for="experience">Explain your Experience</label>
+       <br>
+       <textarea name="experience" id="" cols="30" rows="10"></textarea>
+       <br>
+       <!-- Submit and Reset -->
+      <button onclick="displayMessage()" >Submit</button>
+       <input type="reset" >
+       <br>
+       <p id="report"></p>
+
+    </form>
+</body>
+</html>
