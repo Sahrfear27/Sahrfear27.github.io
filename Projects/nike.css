@@ -1,0 +1,83 @@
+.firstChild{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 30px;
+}
+.secondChild{
+    display: flex;
+    gap: 20px;
+}
+.secondChild > div > a{
+    text-decoration: none;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    padding: 10px;
+
+}
+.subDetails{
+    display: flex;
+    gap: 10px;
+    width:fit-content;
+}
+
+/* .subDetails > div{
+    /* text-decoration: underline; */
+/* } */ 
+
+.subDetails > div:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+}
+.lastSubDetal{
+    display: flex;
+    justify-content:space-around;
+    gap: 15px;
+}
+
+.details{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Feature Container */
+.feature-container{
+    position: relative;
+
+}
+.new-feature{
+    color: rgb(150, 135, 135);
+    padding: 5px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.future-dropDown-content{
+    display: none;
+    position: absolute;
+    z-index:1px;
+}
+.future-dropDown-content ul li{
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+}
+.feature-options > div > a:hover{
+background-color: cadetblue;
+}
+
+.feature-container:hover .future-dropDown-content{
+    display: block;
+}
+
+.feature-options{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 15px;
+}
