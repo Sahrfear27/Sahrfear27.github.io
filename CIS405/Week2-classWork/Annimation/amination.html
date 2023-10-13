@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          .firstRed{
+            position: relative;
+            animation: secondMove 5s infinite;
+            animation-timing-function: linear;
+        }
+        
+        .redCar{
+            transform: rotate(180deg);
+            position: relative;
+            animation: thirdMove 5s infinite;
+            animation-timing-function: linear;
+        }
+
+
+        .orangeCar{
+            position: relative;
+            animation: mymove 5s infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes mymove
+        {
+            from{ right: -100%;}
+            to{right: 0}
+        }
+        @keyframes secondMove{
+            from{ left: 0px;}
+            to{left: 100%;}
+        }
+        @keyframes thirdMove{
+            from{right: -100%;}
+            to{right: 0;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="firstRed">
+        <img src="images/redCar.png" width="100px">
+    </div>
+    <div class="redCar">
+        <img src="images/redCar.png" width="100px">
+    </div>
+   <div class="orangeCar">
+    <img src="images/option1.jpg" width="100px">
+   </div>
+</body>
+</html>

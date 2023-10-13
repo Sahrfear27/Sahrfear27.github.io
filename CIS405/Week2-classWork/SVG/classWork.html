@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shapes1{
+            display: flex;
+            justify-content: space-between;
+        }
+        .shapes2{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .lines{
+            /* border: 1px solid; */
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        /* .circle-blue-bolder{
+            border: 1px solid;
+            
+        } */
+        .rect{
+            /* border: 1px solid; */
+            position: relative;
+            top: 10px;
+            right: 10px;
+        }
+        .square{
+            position: relative;
+            left:45px ;
+            top: 10px;
+            color: rgb(213, 228, 229);
+          
+           
+        }
+        .leftCorner{
+       border: 1px solid;
+        }
+
+        .car{
+            position: relative;
+            animation: redCar 5s infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes secondMove{
+            from{ left: 0px;}
+            to{left: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div style="border: 1px solid;">
+        <div class="shapes1" >
+            <!-- Circle with blue border -->
+            <div style="display: flex; flex-direction: column;align-items: center;">
+                <div>Blue-Bolder-Circle</div>
+                <svg width="200" height="200" class="circle-blue-bolder">
+                    <circle cx="100" cy="50" r="45" stroke="blue" fill="white"/>
+                </svg>
+            </div>
+            <!-- Nested Circle -->
+            <div>
+                <div style="display: flex; flex-direction: column;">
+                    <div>Nested Circle</div>
+                    <svg width="200" height="200">
+                        <circle  cx="50" cy="50" r ="40" stroke="black" stroke-width="3" fill="cyan"/>
+                        <circle cx="50" cy="50" r="30" stroke="black" stroke-width="2" fill="cornflowerblue"/>
+                        <circle cx="50" cy="50" r="20" stroke="black" stroke-width="1" fill="dimgray"/>
+                        <circle cx="50" cy="50" r="5" stroke="black" stroke-width="1" fill="black"/>
+                    </svg>
+                </div>
+            </div>
+            <!-- Rectangle -->
+            <div>
+                <div style="display: flex;flex-direction: column;align-items: center;">
+                    <div>Rectangle</div>
+                    <svg width="200" height="200" class="rect">
+                        <rect width="200" height="100" stroke="black" fill="cadetblue" stroke-width="6px" style="opacity: 0.9; stroke-opacity:1"/>
+                    </svg>
+                </div>
+            </div>
+            <!-- Square -->
+            <div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>Square</div>
+                    <svg width="200" height="200" class="square">
+                    <rect width="100" height="100" stroke="gray" fill="white" stroke-width="2" style="fill: aqua; stroke-opacity:0.9;"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="shapes2">
+            <!-- Square with rounded corners -->
+                <div  style="display: flex; flex-direction:column; align-items: center;">
+                    <div>Rectangle with Rounded Corners</div>
+                    <svg width="300" height="200">
+                    <rect width="100" height="100" x="90" y="50" rx="20" ry="20" stroke="green" fill="brown"/>
+                    </svg>
+                </div>
+            <!-- Rectangle with the center of the circle at the corners -->
+                <div style="display: flex; flex-direction:column; align-items: center;">
+                    <div>Center of Circle at corners</div>
+                    <svg width="200" height="150" class="leftCorner">
+                        <!-- Rectangle -->
+                        <!-- <rect width="200" height="100" x="40" y="40" stroke="green" fill="white"/> -->
+                        <circle cx="" cy="" r="30" stroke="black" stroke-width="2" fill="red"/>
+                        <circle cx="200" cy="" r="30" stroke="black" stroke-width="2" fill="red"/>
+                        <circle cx="200" cy="150" r="30" stroke="black" stroke-width="2" fill="red"/>
+                        <circle cx="0" cy="150" r="30" stroke="black" stroke-width="2" fill="red"/>
+                    </svg>
+                </div>
+                <!-- Simple Car -->
+                <div>
+                    <div>Simple Car</div>
+                    <svg width="200" height="180" class="car">
+                    <rect width="150" height="50" stroke="red" fill="red" x="20" y="50"/>
+                    <circle cx="34" cy="95" r="15" stroke="black" fill="white"/>
+                    <circle cx="150" cy="95" r="15" stroke="black" fill="white"/>
+                    <circle cx="150" cy="95" r="3" stroke="black" />
+                    <circle cx="33" cy="95" r="3" stroke="black" fill=""/>
+                    <!-- Add Stiring -->
+                    <rect width="60" height="40" x="30" y="20" stroke="red" fill="red"/>
+                    </svg>
+                </div>
+                <div>
+                    <div>Eye</div>
+                    <svg width="250" height="100" style="border: 1px solid;">
+                        <ellipse cx="125" cy="50" rx="60" ry="18" stroke="black" fill="rgb(213, 228, 229)"/>
+                        <circle cx="123" cy="50" r="18" stroke="black" fill="cadetblue"/>
+                        <circle cx="123" cy="50" r="5" stroke="black" fill=""/>
+                    </svg>
+                </div>
+        </div>
+        <div class="lines">
+            <!-- Lines -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div>X</div>
+                <svg width="200" height="150" >
+                    <line x1="40" y1="10" x2="120" y2="90" stroke="black"/>
+                    <line x1="120" y1="10" x2="40" y2="90" stroke="black"/>
+                </svg>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div>Triangle</div>
+                <svg width="200" height="150">
+                    <line stroke="black" stroke-width="2" x1="160" y1="100" x2="0" y2="0" />
+                    <line stroke="black" stroke-width="4" x1="0" y1="105" x2="0" y2="0"/>
+                    <line stroke="black" stroke-width="2" y1="100" x1="160" x2="0" y2="105"/>
+                </svg>
+            </div>
+        </div>
+</div>
+<!-- <svg width="200" height="180" class="car">
+    <rect width="150" height="50" stroke="red" fill="red" x="20" y="50"/>
+    <circle cx="34" cy="95" r="15" stroke="black" fill="white"/>
+    <circle cx="150" cy="95" r="15" stroke="black" fill="white"/>
+    <circle cx="150" cy="95" r="3" stroke="black" />
+    <circle cx="33" cy="95" r="3" stroke="black" fill=""/> -->
+    <!-- Add Stiring -->
+    <!-- <rect width="60" height="40" x="30" y="20" stroke="red" fill="red"/>
+    </svg> -->
+</body>
+</html>
