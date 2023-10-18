@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <!-- Creating a form and sending it using the post method -->
+    <h2 style="text-align: center;">Create an Account</h2>
+    <div class="form">Complete your profile by filling in this account form</div>
+
+    <!-- This script tag will display what will appear after the botton is being clicked -->
+    <script>
+        function accountMessage(){
+            document.getElementById('info').style.display ='none';
+            document.getElementById('lastInfo').style.display ='none';
+            document.getElementById('message').innerHTML ="Your Account Was Successifully Created"
+        }
+    </script>
+    <form action="signIn.html" method="post" target="_self" autocomplete="on">
+        <div class="user-Information" id="info">
+            <div class="user-name">
+                <label for="firstName">First Name</label> <br>
+                <input type="text" name="first-name" placeholder="First" required> <br>
+                <label for="lastName">Last Name</label><br>
+                <input type="text" name="last-name" placeholder="Last" required> <br>
+                <label for="email">Email</label><br>
+                <input type="text" name="email" placeholder="example@gmail.com"><br>
+            </div>
+            <div class="password">
+                <label for="DOB">Birthdate</label><br>
+                <input type="text" name="dob" placeholder="MM/DD/YY"><br>
+                <label for="passward">Create a new passward</label><br>
+                <input type="password"><br>
+                <label for="userName">Username</label><br>
+                <input type="text" name="user-name" id="">
+
+            </div>
+        </div>
+        <div class="prompt" id="lastInfo">
+            <div class="first-child">
+                <label>Do you want to receive updates emails?</label><br>
+                <input type="radio" name="yes" id=""><span>Yes</span>
+                <input type="radio" name="No" id=""><span>No</span>
+            </div>
+            <div>
+                <input type="reset" class="reset">
+                <!-- <button>Submit</button> -->
+                <!-- <button onclick="accountMessage()">Submit</button> -->
+                <button class="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    <div id="message"></div>
+</body>
+</html>

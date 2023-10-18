@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function appendText(num){
+        let myText = document.querySelector('textarea');
+        myText.value = myText.value + num;
+        }
+        
+        function execute(){
+            
+            let textValue = document.querySelector('textarea').value;
+            let rightHandSide;
+            let leftHandSide;
+            let operation;
+
+            for(let i = 0; i < textValue.length; i++){
+                if(i == 0){
+                    leftHandSide = parseInt(textValue[0])
+                }
+                else if((textValue[i] == "+") || (textValue[i] == "-"))
+                {
+                    operation = textValue[i];
+                }
+                else{
+                    rightHandSide = textValue[i];
+                }
+            }
+            let result = (operation == "+")? rightHandSide : leftHandSide - rightHandSide;
+            document.querySelector('textarea').value = result;
+
+            //     for(let element of textValue)
+            //     {
+            //         if(element == "+" || element == "-")
+            //         {
+            //             operation = element;
+            //         }
+            //         else if(element.){
+            //             calc.value = calc.value - num;
+            //         }
+            //         else{
+            //             let newNum = parseInt(num);
+            //              newValue += newNum;
+            //         }
+            //     }
+
+
+            // document.querySelector('textarea').value = newValue;
+            //     alert(calc);
+        }
+    </script>
+</head>
+<body>
+    <textarea></textarea>
+    <div>
+        <button onclick="appendText(1)">1</button>
+        <button onclick="appendText(2)">2</button>
+        <button onclick="appendText(3)">3</button>
+        <button onclick="appendText('+')">+</button>
+        <button onclick="appendText('-')">-</button>
+        
+        <button onclick ='execute()'>Go</button>
+    </div>
+</body>
+</html>

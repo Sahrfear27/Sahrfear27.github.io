@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="background-color: purple;">Document</title>
+</head>
+<body>
+    <!--Choose your favorite car  -->
+    
+    <label for="fcars">Choose your favorite cars</label>
+    <select name="cars" id="fcars" onchange="favoriteCars()">
+        <option value="tesla">Tesla</option>
+        <option value="BMW">BMW</option>
+        <option value="Chevy Cruz">Chevy Cruz</option>
+        <option value="Toyota" >Toyota</option>
+    </select>
+    <p>Call the <span style="color: red;">onchange</span> to select the user choices</p>
+    <p id="selected"></p>
+    <!-- Using the input with some javascript event -->
+    <hr>
+    <p>Choose between the colors and  i will display background color based on what you select</p>
+    <label for="choices">Select one</label>
+    <select name="choice" id="choices">
+        <option value="Pupple">Pupple</option>
+        <option value="Orange">Orange</option>
+        <option value="Blue">Blue</option>
+    </select>
+    <div id="text">The background color will change base on the choice selected</div>
+    <button onclick="myColors()">Submit</button>
+
+    <!-- Change Display Conditionally -->
+    <hr>
+    <p>Change Display Conditionally </p>
+    <label for="para">Display</label><br>
+    <p id="showText"></p>
+    <button onclick="changeDisplay()" id="change">Submit</button>
+    <script src="event.js">
+     
+    </script>
+</body>
+</html>

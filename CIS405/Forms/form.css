@@ -1,0 +1,46 @@
+.form{
+    text-align: center;
+    font-size:20px;
+    letter-spacing: 2px;
+    
+}
+form{
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+}
+.user-Information{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+.first-child{
+    display: flex;
+    gap: 5px;
+}
+.prompt{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+#message{
+    text-align: center;
+    font-size: x-large;
+}
+.submit, .reset{
+    width: 70px;
+    background-color: bisque;
+    border-radius: 10px;
+    transition: width 2s;
+}
+.submit:hover{
+    background-color: cadetblue;
+    width: 85px;
+}
+.reset:hover:hover{
+    background-color:darkslateblue;
+    width: 85px;
+}
