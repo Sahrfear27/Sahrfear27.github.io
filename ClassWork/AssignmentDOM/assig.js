@@ -57,7 +57,7 @@ function createdElements(){
 
     // Change the image whn the div class is selected
     let img = document.createElement('img');
-    img.setAttribute('src', '../Images/wolf.png'); // Set the image URL
+    img.setAttribute('src', 'Images/wolf.png'); // Set the image URL
     img.setAttribute('width', '200'); // Set the width to 200 pixels
     img.setAttribute('height', '150'); // Set the height to 150 pixels
     document.body.append(img);
