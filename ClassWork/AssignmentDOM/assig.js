@@ -9,7 +9,16 @@ function addElement(){
     textAreaValues.value = textAreaValues.value + " " + inputText.value;
 
 }  
-
+function swap(){
+    console.log('swap');
+    let x = document.getElementById('fText');
+    let y = document.getElementById('sText');
+    console.log(x);
+    console.log(y);
+    let swapWord = x.value;
+    x.value = y.value;
+    y.value = swapWord;
+}
 
 function createdElements(){
     //  Change Text of Div,P,textInput,link
@@ -239,15 +248,13 @@ function createdElements(){
     input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('name', 'secondText <br>');
-    input.setAttribute('id', 'fText');
+    input.setAttribute('id', 'sText');
     document.body.append(input);
 
     let button = document.createElement('button');
     button.setAttribute('onclick', 'swap()');
     button.innerHTML = "Swap";
     document.body.append(button);
-
-
 
 
 }
