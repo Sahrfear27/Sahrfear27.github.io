@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function choices(){
+        // Create an element to display the text
+        let p = document.createElement('p');
+        p.setAttribute('id','myP');
+        document.body.append(p);
+
+        let carSelect = document.getElementById('cars').value;
+        document.getElementById('myP').innerHTML = "You selected " + carSelect;
+
+
+        // Change the content of the input element to upper case
+        let userName = document.getElementById('name');
+        userName.value = userName.value.toUpperCase();
+
+        }
+        
+    </script>
+    <p>onchange events</p>
+    <select name="" id="cars" onchange="choices()">
+        <option value="BMW">BMW</option>
+        <option value="tesla">TESLA</option>
+        <option value="chevy">Cheve</option>
+        <option value="Toyota" selected>Toyota</option>
+    </select>
+    <br>
+    <!-- Assign Onchange to Input element -->
+    <label for="name">Enter Your Name</label>
+    <input type="text" name="name" id="name" onchange="choices()">
+</body>
+</html>
