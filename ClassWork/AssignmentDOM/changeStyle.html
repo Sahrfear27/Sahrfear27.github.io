@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function changeColor(){
+            let selectElement = document.querySelector('select');
+            // let selectElement = document.querySelectorAll('select option:checked');
+            
+            let selectedValue = selectElement.value;
+            // console.log(selectedValue);
+            // document.body.append(selectedValue)
+            if(selectedValue === "dark"){
+                let pColor = document.querySelector('p');
+                pColor.style.backgroundColor = "black";
+                pColor.style.color = "white";
+                // console.log(selectedValue);
+            }
+           else{
+               let p2Color = document.querySelector('p');
+               p2Color.style.backgroundColor ="yellow";
+               p2Color.style.color = "red";
+           }
+        }
+    </script>
+    <select name="colors" id="" multiple>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+    </select>
+    <p>Bananas are yellow in color</p>
+    <br>
+    <button onclick="changeColor()">Submit</button>
+</body>
+</html>

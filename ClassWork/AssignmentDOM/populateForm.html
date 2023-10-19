@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        window.onload = function populateForm(){
+            let label = document.createElement('label');
+            label.innerHTML = "Country";
+            document.body.append(label);
+
+            let select = document.createElement('select');
+            select.innerHTML =
+             "<option value='Javascript'>Javascript</option>" +
+            "<option value='java'>java</option>" +
+            "<option value='python' selected>Python</option>"+
+            "<option value='typeScript'>typeScript</option>" 
+            document.body.append(select);
+            document.body.append(document.createElement('br'))
+
+            let genderList  = ["Male", "Female"];
+            for(let gender of genderList){
+                let label = document.createElement('label');
+                label.innerHTML = gender;
+                document.body.append(label);
+
+                let input = document.createElement('input');
+                input.setAttribute('type','radio');
+                document.body.append(input)
+
+                if(genderList.indexOf(gender) === 1)
+                {
+                   input.setAttribute('checked','true');
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

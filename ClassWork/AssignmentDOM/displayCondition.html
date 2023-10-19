@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function someT(){
+            let fruit = document.querySelector('p');
+            fruit.style.display = (fruit.style.display =='none')?'': 'none';
+            // if (fruit.style.display = "none"){
+            //     fruit.style.display = '';
+            // }
+            // else {
+            //     fruit.style.display = 'none';
+            // }
+        }
+        function toggleFunction(){
+            let textsArea = document.getElementById('texts');
+            // If the text is vissible, hide it
+            if(textsArea.style.visibility == 'visible'){
+                textsArea.style.visibility = 'hidden';
+            }
+            // If the text is not vissible, show it
+            else{
+                textsArea.style.visibility = "visible";
+            }
+        }
+    </script>
+    <div>Display</div>
+    <p style="display: none;">Bananas are yellow in Color</p>
+    <button onclick="someT()">Submit</button>
+
+    <div>Visiblity</div>
+    <input type="text" name="" id="texts" style="visibility:visible;">
+    <button onclick="toggleFunction()">Submit</button>
+</body>
+</html>
