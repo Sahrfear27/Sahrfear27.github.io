@@ -256,5 +256,4 @@ function createdElements(){
     button.innerHTML = "Swap";
     document.body.append(button);
 
-
 }
