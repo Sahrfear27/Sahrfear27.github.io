@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function createElements(){
+        let lab = document.createElement('label');
+        lab.innerHTML = "Skills";
+        document.body.append(lab);
+
+        let input = document.createElement('input');
+        input.setAttribute('type' , 'text');
+        input.setAttribute('id' , 'textId');
+        document.body.append('input');
+
+        let select = document.createElement('select');
+        select.setAttribute('name', 'skills');
+        select.innerHTML =   "<option value='javascript'>Javascript</option>" +
+        "<option value='python'>Python</option>" +
+        "<option value='C++'>C++</option>"+
+        "<option value='Typescript'>Typescript<option>"
+        console.log(select)
+        document.body.append(select);
+        }
+    </script>
+    <!-- <button onclick="createElements()">Click</button> -->
+</body>
+</html>

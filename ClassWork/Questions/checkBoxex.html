@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function checkBoxex(){
+            let someItems = ["mango", "orange","banana", "grapes"];
+
+            for(let ele of someItems)
+            {
+                // Create a label
+                let label = document.createElement('label');
+
+                // Create a botton
+                let input = document.createElement('input');
+                input.setAttribute('type', 'checkbox')
+                label.innerHTML = ele;
+                input.value = ele;
+                document.body.append(label);
+                document.body.append(input)
+
+
+            }
+        }
+    </script>
+   
+</body>
+</html>
