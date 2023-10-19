@@ -139,8 +139,33 @@ function createdElements(){
     table.appendChild(tr); //add row to the table
     document.body.append(table);
 
+    // let tab = document.createElement('table');
+    // tab.setAttribute('id', 'myTable');
+    // tab.innerHTML = `
+    // <tr><th class='table-header'>First</th><th class='table-header'>Second</th><th class='table-header'>Third</th></tr>
+    //  <tr><td>1</td><td>2</td><td>3</td></tr>`;
+    // document.body.append(tab);
 
+    // // Add CSS styling
+    // let styleElement = document.createElement('style');
+    // styleElement.innerHTML = `
+    //     #myTable {
+    //         border-collapse: collapse;  /* Optional: To collapse table borders */
+    //     }
 
+    //     .table-header {
+    //         border: 1px solid black;  /* Add a border to table headers */
+    //     }
+
+    //     #myTable td {
+    //         border: 1px solid black;  /* Add a border to table cells (optional) */
+    //     }
+    // `;
+
+    // document.head.appendChild(styleElement);
+
+    // Clear Text Field
+    
     // swap
     label = document.createElement('label');
     label.setAttribute('for', 'firstText');
