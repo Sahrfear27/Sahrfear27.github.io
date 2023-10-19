@@ -15,7 +15,7 @@ function createdElements(){
     p.style.textAlign = "center";
     document.body.append(p);
 
-    // Create labels and inputs
+    // Create labels and Text inputs
     let label  = document.createElement('label');
     label.innerHTML = "First Name";
     label.setAttribute('for','firstName'); //add the attribute
@@ -49,7 +49,7 @@ function createdElements(){
     // Link element and add an address
     let a = document.createElement('a');
     a.innerHTML = "<br>Click Here<br>";
-    a.setAttribute('href','https://www.google.com/');
+    a.setAttribute('href','https://www.nike.com');
     a.style.fontStyle ="italic";
     a.style.textDecoration = "none";
     document.body.append(a);

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        function clickMe(){
+            // Add text before to the first index
+            let para = document.querySelectorAll('p')[0];
+            para.innerHTML = "Edited " + para.innerHTML;
+           
+            let a = document.querySelector('a');
+            a.innerHTML = "Apple";
+            a.setAttribute('href', "http://www.apple.com");
+            a.style.textDecoration = "none";
+
+            // Chnage image
+            let image = document.querySelector('img');
+            image.setAttribute('src', 'Images/wolf.png');
+            image.setAttribute('style', 'width: 400px; height=300px');
+
+            // Change the value of a text area
+            let textField = document.querySelector('textarea');
+            textField.value = "Edit";
+            // textField.innerHTML = "Hello"
+
+            // Change label and input skills
+            let labelElement = document.querySelector('label');
+            labelElement.innerHTML = "Edit Skills";
+
+            let check = document.querySelector('input');
+            check.setAttribute('type', 'radio')
+
+        }
+        function created(){
+            // Append to the body
+            let div = document.createElement('div')
+            div.innerHTML = "This is some test in the div";
+            document.body.append(div);
+
+            // Append a input after the paragraph
+            let input = document.createElement('input');
+            input.value = "Created Input";
+            document.querySelector('p').after(input);
+          
+        }   
+    </script>
+    <button onclick="clickMe()">Click</button>
+    <button onclick="created()">Create Elements</button>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam exercitationem illo ducimus incidunt vero neque laborum, id nesciunt hic deleniti expedita blanditiis aspernatur quaerat eaque qui voluptatem cumque omnis aperiam.</p>
+    <a href="http://www.google.com" >Click Link</a><br>
+    <img src="Images/wolf.png" alt="" style="width: 50px;">
+    <br>
+    <textarea name="" id="" cols="30" rows="10">Some text</textarea>
+    <br>
+    <label for="skills">Skills</label>
+    <input type="checkbox">
+</body>
+</html>
