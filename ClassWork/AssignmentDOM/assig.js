@@ -1,3 +1,16 @@
+function clearField(){
+    let clear = document.getElementById('n');
+    clear.value = "";
+}
+function addElement(){
+    let inputText = document.getElementById('addValue');
+
+    let textAreaValues = document.getElementById('areaText');
+    textAreaValues.value = textAreaValues.value + " " + inputText.value;
+
+}  
+
+
 function createdElements(){
     //  Change Text of Div,P,textInput,link
     // Create a div
@@ -164,12 +177,52 @@ function createdElements(){
 
     // document.head.appendChild(styleElement);
 
+
     // Clear Text Field
-    
+    // Create Label
+        label = document.createElement('label');
+    label.setAttribute('for', 'n');
+    label.innerHTML = "<br>Enter your name:";
+    document.body.append(label);
+
+    // Create Input field
+        input = document.createElement('input');
+    input.setAttribute('type','text');
+    input.setAttribute('id','n');
+    input.setAttribute('placeholder','Your Name');
+    document.body.append(input);
+
+    // Create submit
+    let submit = document.createElement('input');
+    submit.value ="Clear" ;
+    submit.setAttribute('type', 'button');
+    let clear = submit.setAttribute('onclick', ' clearField()');
+    document.body.append(submit);
+
+    // Created input for adding to the text area
+    let addE  = document.createElement('input');
+    addE.setAttribute('type','text');
+    addE.setAttribute('id','addValue');
+    document.body.append(addE);
+
+
+    // Create text area and add text to the filed
+    let textArea = document.createElement('textarea');
+    textArea.setAttribute('name', 'someText');
+    textArea.setAttribute('id', 'areaText');
+    document.body.append(textArea);
+
+    let addElement = document.createElement('input');
+    addElement.value ="Add" ;
+    addElement.setAttribute('type', 'submit');
+    let submits = addElement.setAttribute('onclick', ' addElement()');
+    document.body.append(addElement);
+
+
     // swap
     label = document.createElement('label');
     label.setAttribute('for', 'firstText');
-    label.innerHTML = "First Text";
+    label.innerHTML = "<br><br>First Text";
     document.body.append(label);
 
     input = document.createElement('input');
@@ -193,5 +246,8 @@ function createdElements(){
     button.setAttribute('onclick', 'swap()');
     button.innerHTML = "Swap";
     document.body.append(button);
-}
 
+
+
+
+}
