@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            window.onload = function (){
+        let myDiv = document.createElement('div');
+        myDiv.innerHTML = "<label for='scriptures'>Scriptures</label>"+
+        "<select name='books' id='scriptures'>"
+        +"<option value='oldT'>Old Testament</option>"
+        +"<option value='newT'>New Testament</option>"
+        +"</select>"
+        +"<button onclick='show()'>Show</button>"
+        + "<div id ='checkBoxDiv'></div>"
+        + "<hr>"
+        + "<button onclick='showCheckBoxValues()'>Submit</button>"
+        document.body.append(myDiv)
+        }
+        function show(){
+            let selection = document.querySelector('select option:checked').value;
+            let checkBoxDiv = document.getElementById('checkBoxDiv');
+            checkBoxDiv.innerHTML = '';
+            // Check which option is selected and add their corresponding values
+            let html;
+            if(selection == 'oldT'){
+                html ="<input type='checkbox' name='firstBook' id='genesis' value='Genesis'>Genesis"+
+                "<input type='checkbox' name='firstBook' id='exodus' value='Exodus'>Exodus"+
+                "<input type='checkbox' name='firstBook' id='liviticus' value='liviticus'>Liviticus"+
+                "<input type='checkbox' name='firstBook' id='numbers' value='numbers'>Numbers"
+            }
+            else if(selection == 'newT'){
+                html = "<input type='checkbox' name='secondBook' id='matthew' value='matthew'>Matthew" +
+                "<input type='checkbox' name='secondBook' id='mark' value='mark'>Mark" +
+                "<input type='checkbox' name='secondBook' id='luke'  value='luke'>Luke" +
+                "<input type='checkbox' name='secondBook' id='john' value='john'>John"
+            }
+       
+            checkBoxDiv.innerHTML = html;
+        }
+        function showCheckBoxValues(){
+            let selection = document.querySelectorAll('input:checked');
+            let checkBoxDiv = document.getElementById('checkBoxDiv');
+            checkBoxDiv.innerHTML= '';
+            for(let ele of selection)
+            {
+                checkBoxDiv.innerHTML += ' ' + ele.value;
+            }
+        }
+    </script>
+</body>
+</html>
