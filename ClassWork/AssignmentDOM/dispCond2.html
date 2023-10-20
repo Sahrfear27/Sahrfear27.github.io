@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function showContent(){
+            let book = document.getElementById('twoBooks');
+            let selectedValues = book.value;
+            let oldT = document.getElementById('oldT');
+            let newT =  document.getElementById('newT');
+
+            if(selectedValues === 'oldTest'){
+                oldT.style.display = '';
+                newT.style.display = 'none';
+            }
+            else if(selectedValues === 'newTest'){
+                newT.style.display = '';
+                oldT.style.display = 'none';
+            }
+       
+        }
+
+        function getCheckedValues(){
+           let selectionChoices = document.querySelectorAll('input[type="checkbox"]:checked');
+           let disPlay  = document.getElementById('displaySelection');
+           let choiceList = [];
+           for(let choice of selectionChoices){
+                let label = document.querySelector('label[for ="' + choice.id +'"]');
+              
+                choiceList.push(label.textContent);
+           }
+           disPlay.innerHTML = choiceList.join(', ');
+         
+        }
+    </script>
+    
+    <div>
+        <label>Scriptues</label>
+        <select name="verses" id="twoBooks">
+            <option value="oldTest">Old Testament</option>
+            <option value="newTest">New Testament</option>
+        </select>
+        <button onclick="showContent()">Show</button>
+    </div>
+    <p id="oldT" style="display: none;">
+        <input type="checkbox" id="genesis">
+        <label for="genesis">Genesis</label>
+        <input type="checkbox" id="exodus">
+        <label for="exodus">Exodus</label>
+        <input type="checkbox" id="liviticus">
+        <label for="liviticus">Liviticus</label>
+        <input type="checkbox" id="numbers">
+        <label for="numbers">Numbers</label>
+    </p>
+    <p id="newT" style="display: none;">
+        <input type="checkbox" name="" id="matthew" value="">
+        <label for="matthew">Matthew</label>
+        <input type="checkbox" name="" id="mark" value="">
+        <label for="mark">Mark</label>
+        <input type="checkbox" name="" id="luke" value="">
+        <label for="luke">Luke</label>
+        <input type="checkbox" name="" id="john" value="">
+        <label for="john">John</label>
+    </p>
+    <hr>
+    <button onclick="getCheckedValues()">Submit</button>
+    <div id="displaySelection"></div>
+</body>
+</html>
