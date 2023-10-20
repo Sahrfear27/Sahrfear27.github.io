@@ -9,13 +9,13 @@
     <script>
         function someT(){
             let fruit = document.querySelector('p');
-            fruit.style.display = (fruit.style.display =='none')?'': 'none';
-            // if (fruit.style.display = "none"){
-            //     fruit.style.display = '';
-            // }
-            // else {
-            //     fruit.style.display = 'none';
-            // }
+            // fruit.style.display = (fruit.style.display =='none')?'': 'none';
+            if (fruit.style.display == "none"){
+                fruit.style.display = '';
+            }
+            else {
+                fruit.style.display = 'none';
+            }
         }
         function toggleFunction(){
             let textsArea = document.getElementById('texts');
