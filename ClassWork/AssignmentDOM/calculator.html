@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+        let leftHandSide = ''; // Initialize left-hand side as a string
+        let operation = '';
+        let rightHandSide = '';
+
+        function appendText(value) {
+            let myText = document.querySelector('textarea');
+            myText.value += value;
+        }
+
+        function execute() {
+            let textValue = document.querySelector('textarea').value;
+
+            // Split the textValue into two operands and an operator
+            let operands = textValue.split(/([+\-])/);
+
+            leftHandSide = parseFloat(operands[0]);
+            operation = operands[1];
+            rightHandSide = parseFloat(operands[2]);
+
+            if (operation === '+') {
+                document.querySelector('textarea').value = leftHandSide + rightHandSide;
+            } else if (operation === '-') {
+                document.querySelector('textarea').value = leftHandSide - rightHandSide;
+            }
+        }
+    </script>
+</head>
+<body>
+    <textarea></textarea>
+    <div>
+        <button onclick="appendText('1')">1</button>
+        <button onclick="appendText('2')">2</button>
+        <button onclick="appendText('3')">3</button>
+        <button onclick="appendText('+')">+</button>
+        <button onclick="appendText('-')">-</button>
+        <button onclick="execute()">Go</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruitList = ["apple", "mango", "orange", "banana"];
+
+
+        window.onload = function () {
+            let selectedValues = document.createElement('select');
+            selectedValues.setAttribute('id', 'myId');
+            document.body.append(selectedValues);
+
+            // Loop through the fruit list
+            for (let fruit of fruitList) {
+                let option = document.createElement('option');
+                option.value = fruit;
+                option.textContent = fruit;
+                selectedValues.appendChild(option);
+            }
+
+            let button = document.createElement('button');
+            button.textContent = "Button";
+            button.onclick = sortFruits;  // Attach the sortFruits function to the button click event
+            document.body.append(button);
+
+        }
+
+        function sortFruits() {
+            let sortFruits = fruitList.slice().sort();  // Create a sorted copy of the array
+            let mySelect = document.getElementById('myId');
+            mySelect.innerHTML = '';
+            for (let fruit of sortFruits) {
+                let option = document.createElement('option');
+                // option.value = fruit;
+                // option.textContent = fruit;
+                option.innerHTML = fruit;
+                mySelect.appendChild(option);
+            }
+        }
+
+        function startWithA() {
+            let filterFruits = fruitList.filter(function (value) {
+                return value.charAt(0) == 'a';
+            });
+            let mySelect = document.getElementById('myId');
+            mySelect.innerHTML = '';
+            for (let fruit of filterFruits) {
+                let option = document.createElement('option');
+                option.value = fruit;
+                option.textContent = fruit;
+                mySelect.appendChild(option);
+            }
+        }
+    </script>
+    <button onclick="startWithA()">Start With A</button>
+</body>
+</html>

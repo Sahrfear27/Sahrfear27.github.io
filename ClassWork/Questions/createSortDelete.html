@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // List that contain objects
+        let list = [
+            {id:2, fname:'John', lname:'Doe', img:'../../Images/nike.png'},
+            {id:1, fname:"Sahrfear", lname:"Macarthy", img:'../../Images/nike.png'}
+        ]
+        // let list = [1,2,3,4];
+        window.onload = function (){
+            let sort = document.createElement('button');
+            sort.innerHTML =  "Sort"+ "<br>";
+            sort.setAttribute('onclick', 'sort()');
+            document.body.append(sort);
+
+            let div = document.getElementById('container');
+            // Wrap the div in the container
+            div.setAttribute('style', '"display: flex; gap: 10; flex-wrap: wrap;"')
+
+            // Add the sort after the list
+            div.before(sort);
+
+            //Call the function that contain the list of items
+
+            createListItems(list)
+        }
+
+        function createListItems(list) {
+            let div = document.getElementById('container');
+            div.innerHTML = '';
+            for (let obj of list) {
+                div.innerHTML += '<div style="display:flex;gap:10px;">'
+                    + "<img src ='" + obj.img + "' style='height:100px;width:100px;object-fit: cover;'/>"
+                    + '<div>'
+                    + '<div>' + obj.fname + '</div>'
+                    + '<p>' + obj.lname + '</p>'
+                    + '<button onclick="deleteFxn(this);">Delete</button>'
+                    + '</div></div>'
+            }
+        }
+        // Remove the div if this function is called
+        function deleteFxn(any){
+        any.parentElement.parentElement.remove()
+        }   
+
+        // Create a function to sort the list
+        function sort(){
+            let newlistObj = list.sort(function(obj1, obj2){
+                if(obj1.id > obj2.id){
+                    return 1;
+                }
+                else{
+                    return -1;
+                }
+            });
+
+            createListItems(newlistObj);
+        }
+    </script>
+    <div id="container"></div>
+   
+</body>
+</html>
