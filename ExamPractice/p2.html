@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function display(){
+            let myP = document.querySelector('p')
+            if(myP.style.display == 'none'){
+                myP.style.display = ''
+            }
+            else{
+                myP.style.display = 'none'
+            }
+        }
+
+        function vissiblityToggle(){
+            let myT = document.querySelector('input[type = "text"]');
+            // myT.style.visibility = 'hidden';
+
+            myT.style.visibility = ( myT.style.visibility == 'hidden')? 'visible' : 'hidden';
+        }
+    </script>
+    <div>Display</div>
+    <p style="display: none;">Bananas are yellow</p>
+    <input type="button" onclick="display()" value="Submit">
+    <div>visibility</div>
+    <input type="text" >
+    <input type="button" onclick="vissiblityToggle()" value="Submit">
+</body>
+</html>

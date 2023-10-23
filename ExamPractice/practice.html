@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+            function  optionSelect(){
+           let selectedElement = document.querySelector('select');
+           let selectChoice = [];
+           for(let option of selectedElement.options)
+           {
+                if(option.selected){
+                    selectChoice.push(option.value);
+                }
+           }
+        //    document.querySelector('p').innerHTML = selectChoice;
+        console.log(selectChoice);
+        if(selectChoice.length > 0){
+            document.getElementById('myChoice').innerHTML = "You selected " + selectChoice.join(', ')
+        }
+        else {
+            document.getElementById('myChoice').innerHTML = "Nothing was selected"
+        }
+        
+        }
+    </script>
+
+    <select name="cars" id="myCars" onchange="optionSelect()" multiple>
+        <option value="tesla">Tesla</option>
+        <option value="toyota">Toyota</option>
+        <option value="chevy" >Chevy</option>
+        <option value="camry" >Camry</option>
+    </select>
+    <p id="myChoice"></p>
+</body>
+</html>

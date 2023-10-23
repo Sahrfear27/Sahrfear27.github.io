@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lhs = '';
+        let rhs = '';
+        let operation = '';
+        function appendText(values){
+            let addTextValues = document.querySelector('textarea');
+            addTextValues.value += values
+        }
+        function execute(){
+            let textValues = document.querySelector('textarea').value;
+            // Split the textvalues into operands and operator
+            let operands = textValues.split(/([+\-])/);
+            lhs = parseFloat(operands[0]);
+            operation = operands[1];
+            rhs = parseFloat(operands[2]);
+
+            if(operation == '+'){
+                document.querySelector('textarea').value = lhs + rhs;
+            }
+            else if(operation == '-'){
+                document.querySelector('textarea').value = lhs - rhs;
+            }
+        }
+    </script>
+    <textarea></textarea>
+    <div>
+        <button onclick="appendText('1')">1</button>
+        <button onclick="appendText('2')">2</button>
+        <button onclick="appendText('3')">3</button>
+        <button onclick="appendText('+')">+</button>
+        <button onclick="appendText('-')">-</button>
+        <button onclick="execute()">Go</button>
+    </div>
+</body>
+</html>

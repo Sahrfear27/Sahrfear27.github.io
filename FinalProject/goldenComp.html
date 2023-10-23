@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+      .navbar{
+        /* padding: 70px; */
+        -webkit-box-shadow: 1px 7px 50px -8px rgba(0,0,0,0.66);
+        -moz-box-shadow: 1px 7px 50px -8px rgba(0,0,0,0.66);
+        box-shadow: 1px 7px 50px -8px rgba(0,0,0,0.66);
+      }
+      @media (max-width: 320px) { 
+        .nav-bar{
+          display: flex;
+          flex-direction: column;
+          font-size: small;
+        }
+       }
+      .slide-pictures{
+        margin-top: 250px;
+        margin-bottom: 100px;
+      }
+    .three-cards{
+      -webkit-box-shadow: 1px 7px 50px -8px rgba(0,0,0,0.66);
+      -moz-box-shadow: 1px 7px 50px -8px rgba(0,0,0,0.66);
+      box-shadow: 1px 7px 50px -8px rgba(0,0,0,0.66);
+      
+    }
+    .firstHeader{
+      text-align: center;
+      padding: 10px;
+    }
+    .main-content{
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 10px;
+    }
+    @media (max-width: 320px) {
+      .main-content{
+        display: flex;
+        flex-direction: column;
+          font-size: small;
+      }
+    } 
+
+    .welcomeMessage{
+      /* border: 1px solid; */
+      padding: 30px;
+    } 
+    .sideMessage{
+      /* border: 1px solid; */
+      padding: 30px;
+    }
+    .firstCard{
+      margin-bottom: 70px;
+    }
+    .three-colon{
+      padding: 30px;
+    }
+    </style>
+</head>
+<body>
+  <!-- Nav Section -->
+  <nav class="navbar fixed-top bg-body-secondary">
+    <div class="container-fluid nav-bar">
+      <a class="navbar-brand" href="#">Golden Compassion</a>
+      <a class="navbar-brand" href="#">Home</a>
+
+      <a class="navbar-brand" href="#">About Us</a>
+      <a class="navbar-brand" href="#">Services</a>
+      <a class="navbar-brand" href="#">Employment</a>
+      <label for="">CALL: (669)7997164</label>
+    </div>
+  </nav>
+  
+  <!-- First Section -->
+  <div id="carouselExampleAutoplaying" class="carousel slide slide-pictures" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="Pictures/care.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="Pictures/holdHands.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="Pictures/walk.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="Pictures/smile.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container main-content">
+    <div class="container welcomeMessage">
+      <div id="welcome">
+        <h3>Welcome to Golden Compassion</h3>
+        <p>
+          At Golden Compassion, we believe that every individual deserves compassionate and dignified care. We are more than just a caregiver company;
+          we are a dedicated team of professionals who are passionate about enhancing the quality of life for those in need.
+        </p>
+      </div>
+    <div class="mission">
+      <h3>Our Mission</h3>
+      <p>
+        Our mission is simple yet profound: to provide exceptional care that empowers individuals to live life to the fullest, regardless of their age or circumstance.
+        We are committed to being a shining beacon of compassion in the world of caregiving, offering unwavering support, respect, and love to our clients and their families.
+      </p>
+      <p>
+        At Golden Compassion, we understand that every person's journey is unique, and we tailor our services to meet those individual needs. 
+        Our caregivers are not just skilled professionals; they are caring companions who foster a warm and trusting environment for those we serve.
+      </p>
+      <p>
+        Whether you or your loved one requires elderly care, disability care, childcare, or any other form of assistance, our team is here to provide a helping hand and a caring heart. 
+        We are honored to be a part of your life's journey and are committed to making it a golden one.
+      </p>
+      <p>
+        Explore our services, meet our team, and discover the difference that Golden Compassion can make in your life. Welcome to a world where compassion knows no bounds.
+      </p>
+    </div>
+    </div>
+    <!-- photo goes here -->
+    <div class="container sideMessage">
+      <img src="Pictures/smile2.png" style="width: 300px; height: 300px; border-radius: 50%;">
+     
+    </div>
+  </div>
+  <!-- Services  -->
+  <div class="container three-cards">
+    <p class="firstHeader">Services We Provide</p>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 three-colon">
+        <div class="col">
+          <div class="card h-100">
+            <img src="Pictures/smile.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="Pictures/smile.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="Pictures/smile.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
