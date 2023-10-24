@@ -12,7 +12,6 @@
             padding: 30px;
         }
         .sagar-selector{
-            border: 1px solid;
             display: flex;
             justify-content: space-between;
         }
@@ -32,16 +31,28 @@
             let p = document.createElement('p');
             p.innerHTML = typingMessage.value;
             // p.style='text-align:right'
-
-
-        
-        
             typingArea.append(p);
             typingMessage.value='';
 
+            // Check it
+            let sagarMessage = document.getElementById('sagarBtn').value;
+            let sahrfear = document.getElementById('sahrfearBtn').value;
+            let peopleChat  = [];
+            peopleChat.push(sagarMessage);
+            peopleChat.push(sahrfear);
+            for(let ele of peopleChat){
+                if(ele === 'Sagar'){
+                    p.style.color = 'blue'
+                }
+                else if(ele === 'Sahrfear'){
+                    p.style.color = 'red';
+                }
+            }
+            document.body.append(peopleChat);
 
-        
         }
+
+
         function sagar(){
             let sagar = document.getElementById('first-active');
             sagar.innerHTML = "Sagar is Typing......"

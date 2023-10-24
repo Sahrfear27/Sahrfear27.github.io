@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function submit(){
-            let div = document.querySelector('div');
-            let p = document.querySelector('p+p');
-            let newP = document.createElement('p');
-            newP.innerHTML="Hello World"
-            // p.before(newP);
-            div.append(newP);
+        window.onload = function (){
+            let sag  = document.getElementById('sagarBtn').value;
+            let sahr  = document.getElementById('sahrfearBtn').value;
+
+            
+
+            let peopleChat  = [];
+            peopleChat.push(sag);
+            peopleChat.push(sahr);
+            let res = peopleChat.join(', ');
+            document.body.append(res);
+            console.log(res);
 
         }
     </script>
 </head>
 <body>
 
-    <div>
-        <p>aaple</p>
-       
+    <p id="myP"></p>
+    <div class="sagar-selector">
+        <input type="button" onclick="sagar()" id="sagarBtn" value="Sagar">
+        <input type="button" onclick="sahrfear()" id="sahrfearBtn" value="Sahrfear",>
     </div>
-    <input type="button" value="submit" onclick="submit()">
-    
 </body>
 </html>
