@@ -34,6 +34,7 @@
             let products=localStorage.getItem('products');
             products = products?JSON.parse(products):[]
             for(let product of products){
+             
                 createRow(product)
             }
         }
