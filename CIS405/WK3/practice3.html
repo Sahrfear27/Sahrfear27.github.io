@@ -12,5 +12,76 @@
         // console.log(localStorage.getItem('signInDetails'));
         // console.log(localStorage.getItem('products'))
     </script>
+
+
+<form action="">
+    <div class="form_group">
+        <label class="sub_title" for="fName" >First Name</label>
+        <input placeholder="Enter your first name" class="form_style" type="text" id="fName" required>
+    </div>
+    <div class="form_group">
+        <label class="sub_title" for="lName">Last Name</label>
+        <input placeholder="Enter your last name" class="form_style" type="text" id="lName" required>
+    </div>
+    <div class="form_group">
+        <label class="sub_title" for="newPassword">New Password</label>
+        <input placeholder="Enter password" id="newPassword" class="form_style" type="password"  required>
+    </div>
+    <div class="form_group">
+        <label class="sub_title" for="confirmPassword"> Confirm Password</label>
+        <input placeholder="Confirm Passward" id="confirmPassword" class="form_style" type="password"required>
+    </div>
+    <div> 
+         <button class="signIn-btn"><a href="login.html" style="text-decoration: none; color: black;" onclick="signUpToChat()">SIGN UP</a></button>
+        <button class="signIn-btn"><a href="" style="text-decoration: none; color: black;" type="submit">SIGN UP</a></button>
+        <p>Have an Account?</p> <a class="link" href="">Login Here!!</a>
+    </div> 
+
+
+
+
+        <script> 
+        window.onload = function(){
+        // Read all the input values in the local variable
+
+        let firstName = document.getElementById('fName').value
+            console.log(firstName);
+        let lastName = document.getElementById('lName').value
+            console.log(lastName);
+        let newPass = document.getElementById('newPassword').value;
+            console.log(newPass);
+        let confirmPassword = document.getElementById('confirmPassword').value;
+            console.log("Hellow")
+        // Create a variable to strore the signin  details in the local variable
+        let signInDetails  = localStorage.getItem('signInDetails');
+        console.log(signInDetails);
+
+        signInDetails = signInDetails?JSON.parse(signInDetails):[];
+        let accessToLogInPage = {firstName:fName,lastName:lName,newPass:newPassword, confirmPassword:confirmPassword}
+        // Push the sign in detail to gain access to the page
+        signInDetails.push(accessToLogInPage);
+
+        // Store all the input in the local storage
+        localStorage.setItem('signInDetails',JSON.stringify(accessToLogInPage));
+       
+    }
+
+    function validatePassWordInput(){
+        const newPassword = document.getElementById('newPassword');
+        const confirmPassword = document.getElementById('confirmPassword');
+        
+       if(newPassword.value == confirmPassword.value)
+       {
+            // If the pass word matches, allow the user to sign up
+       }
+       else if(newPassword.value!== confirmPassword.value){
+            // Otherwise deny access
+       } 
+    }
+     function signUpToChat(){
+      
+    }
+    </script>
+</form>
 </body>
 </html>

@@ -7,81 +7,70 @@
     <title>Document</title>
 </head>
 <body>
-
-    <script> 
-        window.onload = function(){
-        // Read all the input values in the local variable
-
-        let firstName = document.getElementById('fName').value
-            console.log(firstName);
-        let lastName = document.getElementById('lName').value
-            console.log(lastName);
-        let newPass = document.getElementById('newPassword').value;
-            console.log(newPass);
-        let confirmPassword = document.getElementById('confirmPassword').value;
-            console.log("Hellow")
-        // Create a variable to strore the signin  details in the local variable
-        let signInDetails  = localStorage.getItem('signInDetails');
-
-        signInDetails = signInDetails?JSON.parse(signInDetails):[];
-        let accessToLogInPage = {firstName:fName,lastName:lName,newPass:newPassword, confirmPassword:confirmPassword}
-        // Push the sign in detail to gain access to the page
-        signInDetails.push(accessToLogInPage);
-
-        
-        //Store all the input in the local storage
-        localStorage.setItem('signInDetails',JSON.stringify(accessToLogInPage));
-        // let p = document.createElement('p');
-        // p.innerHTML = "Hello World";
-        // p.st
-      
-      
-    }
-
-    // function validatePassWordInput(){
-    //     const newPassword = document.getElementById('newPassword');
-    //     const confirmPassword = document.getElementById('confirmPassword');
-        
-    //    if(newPassword.value == confirmPassword.value)
-    //    {
-    //         // If the pass word matches, allow the user to sign up
-    //    }
-    //    else if(newPassword.value!== confirmPassword.value){
-    //         // Otherwise deny access
-    //    } 
-    // }
-    //  function signUpToChat(){
-     
-       
-    // }
-    </script>
     <div class="container">
         <div class="form_area">
             <p class="title">SIGN UP</p>
-            <form action="login.html">
+            <form>
                 <div class="form_group">
-                    <label class="sub_title" for="fName" >First Name</label>
-                    <input placeholder="Enter your first name" class="form_style" type="text" id="fName" required>
-                </div>
-                <div class="form_group">
-                    <label class="sub_title" for="lName">Last Name</label>
-                    <input placeholder="Enter your last name" class="form_style" type="text" id="lName" required>
+                  <label for="firstName" class="sub_title" >First name</label>
+                  <input type="text" name="first-name" id="firstName" placeholder="Enter your first name" class="form_style">
                 </div>
                 <div class="form_group">
-                    <label class="sub_title" for="newPassword">New Password</label>
-                    <input placeholder="Enter password" id="newPassword" class="form_style" type="password"  required>
+                  <label for="lastName" class="sub_title">Last name</label>
+          
+                  <input type="text" name="last-name" id="lastName" placeholder="Enter your last name" class="form_style" autocomplete="username">
+
                 </div>
                 <div class="form_group">
-                    <label class="sub_title" for="confirmPassword"> Confirm Password</label>
-                    <input placeholder="Confirm Passward" id="confirmPassword" class="form_style" type="password"required>
+                  <label for="new-password" class="sub_title">New Password</label>
+                  <input type="password" name="new-password" id="newPassword" autocomplete="new-password" placeholder="Enter new password" class="form_style">
                 </div>
-                <div>
-                    <button class="signIn-btn"><a href="login.html" style="text-decoration: none; color: black;" onclick="signUpToChat()">SIGN UP</a></button>
-                    <p>Have an Account?</p> <a class="link" href="login.html">Login Here!!</a>
+                <div class="form_group">
+                  <label for="lastName" class="sub_title">Confirm Password</label>
+                  <input type="password" name="confirm-password" id="confirmPassword" autocomplete="new-password" placeholder="Confirm password" class="form_style">
                 </div>
-            </form>
+                <div class="form_group">
+                    <button class="signIn-btn"><a href="" style="text-decoration: none; color: black;" type="submit" >SIGN UP</a></button>
+                </div>
+              </form>
         </div>
     </div>
+    <script>
+        const form = document.querySelector('form'); 
+        // Add an event listiner to the form and generate an event object
+        form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent HTML refresh
+        const formData = new FormData(form); // Converts to array of arrays
+    
+        const obj = Object.fromEntries(formData); // Array of arrays to object
+        
+        // Put the data in json format
+        const json = JSON.stringify(obj);
+        localStorage.setItem('form', json);
+        
+        //Send the location to the login file
+        window.location.href = "login.html"
 
+        });
+
+
+
+        function validatePassWordInput()
+        {
+            const newPassword = document.getElementById('newPassword');
+            const confirmPassword = document.getElementById('confirmPassword');
+            
+        if(newPassword.value == confirmPassword.value)
+        {
+                // If the pass word matches, allow the user to sign up
+        }
+        else if(newPassword.value!== confirmPassword.value){
+                // Otherwise deny access
+       } 
+        }
+     function signUpToChat(){
+      
+    }
+    </script>
 </body>
 </html>
