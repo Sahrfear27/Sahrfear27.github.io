@@ -5,86 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Chat App</title>
     <style>
-        .container{
+        .container {
             border: 1px solid;
             padding: 30px;
         }
-        .sagar-selector{
+        .sagar-selector {
             display: flex;
             justify-content: space-between;
         }
-        
+        #chat-box {
+            height:300px;
+            overflow-y: scroll; 
+            background-color: black;
+            border-radius: 10px;
+               
+        }
+        #mainText {
+            height:1000px;
+            overflow-y: scroll;
+           
+        }
+    
     </style>
 </head>
 <body>
-    <script>
-
-       function sendMessage(){
-            let typingArea = document.getElementById('chat-box');
-            let typingMessage = document.getElementById('type-message');
-            let sag = sagar;
-
-            console.log(sag);
-
-            let p = document.createElement('p');
-            p.innerHTML = typingMessage.value;
-            // p.style='text-align:right'
-            typingArea.append(p);
-            typingMessage.value='';
-
-            // Check it
-            let sagarMessage = document.getElementById('sagarBtn').value;
-            let sahrfear = document.getElementById('sahrfearBtn').value;
-            let peopleChat  = [];
-            peopleChat.push(sagarMessage);
-            peopleChat.push(sahrfear);
-            for(let ele of peopleChat){
-                if(ele === 'Sagar'){
-                    p.style.color = 'blue'
-                }
-                else if(ele === 'Sahrfear'){
-                    p.style.color = 'red';
-                }
-            }
-            document.body.append(peopleChat);
-
-        }
-
-
-        function sagar(){
-            let sagar = document.getElementById('first-active');
-            sagar.innerHTML = "Sagar is Typing......"
-            let x = "Hello";
-        }
-
-        function sahrfear(){
-            let sahrfear = document.getElementById('first-active');
-            sahrfear.innerHTML = "Sahrfear is Typing......"
-        }
-    </script>
     <div class="container">
         <div class="person">
             <div class="sagar-selector">
-                <input type="button" onclick="sagar()" id="sagarBtn" value="Sagar">
-                <input type="button" onclick="sahrfear()" id="sahrfearBtn" value="Sahrfear",>
-                <!-- <button onclick="sagar()" value="sagar-btn" id="sagarBtn">Sagar</button> -->
+                <button onclick="setActiveUser('Sagar')" id="sagarBtn">Sagar</button>
+                <button onclick="setActiveUser('Sahrfear')" id="sahrfearBtn">Sahrfear</button>
             </div>
         </div>
         <!-- Show who is typing -->
         <div class="person-typing">
-            <p id="first-active"></p> 
+            <p id="active-user"></p>
         </div>
-        <!-- The text area -->
-        <div id="chat-box" class="container">
-         
+        <!-- The chat area -->
+        <div id="chat-box" class="container" >
+            <div id="mainText"></div>
         </div>
         <br>
-       <div class="tying-area" >
-        <input type="text" name="" id="type-message" class="" placeholder="" style="width: 85%;">
-        <input type="button" name="" id="" value="Send" onclick="sendMessage()">
-       </div>
+        <div class="typing-area">
+            <input type="text" id="type-message" placeholder="Type your message" style="width: 85%;">
+            <button onclick="sendMessage()">Send</button>
+        </div>
     </div>
+    <script src="chartWindow.js"></script>
 </body>
 </html>

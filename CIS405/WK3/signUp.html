@@ -9,29 +9,50 @@
 <body>
 
     <script>
-        const newPassword = document.getElementById('new-password');
-        const confirmPassword = document.getElementById('new-password');
+     function changeValue(){
 
+        const newPassword = document.getElementById('new-password');
+        const confirmPassword = document.getElementById('confirm-password');
+        let x = document.getElementById('myD');
+
+        
+       if(newPassword.value == confirmPassword.value)
+       {
+        x.innerHTML = "Div Changed";
+        console.log(x);
+        x.style.display='block';
+
+   
+       }
+       else if(newPassword.value!== confirmPassword.value){
+        x.innerHTML = "Dis is the same";
+        console.log('x')
+
+
+
+       }
+
+    }
     </script>
     <div class="container">
         <div class="form_area">
             <p class="title">SIGN UP</p>
-            <form action="">
+            <form action="login.html">
                 <div class="form_group">
-                    <label class="sub_title" for="first-Name">First Name</label>
-                    <input placeholder="Enter your first name" class="form_style" type="text">
+                    <label class="sub_title" for="first-Name" >First Name</label>
+                    <input placeholder="Enter your first name" class="form_style" type="text" required>
                 </div>
                 <div class="form_group">
                     <label class="sub_title" for="last-Name">Last Name</label>
-                    <input placeholder="Enter your last name" class="form_style" type="text">
+                    <input placeholder="Enter your last name" class="form_style" type="text" required>
                 </div>
                 <div class="form_group">
                     <label class="sub_title" for="password">New Password</label>
-                    <input placeholder="Enter password" id="new-password" class="form_style" type="password">
+                    <input placeholder="Enter password" id="new-password" class="form_style" type="password" required>
                 </div>
                 <div class="form_group">
                     <label class="sub_title" for="password"> Confirm Password</label>
-                    <input placeholder="Confirm Passward" id="confirm-password" class="form_style" type="password">
+                    <input placeholder="Confirm Passward" id="confirm-password" class="form_style" type="password"required>
                 </div>
                 <div>
                     <button class="signIn-btn"><a href="login.html" style="text-decoration: none; color: black;">SIGN UP</a></button>
@@ -40,5 +61,9 @@
             </form>
         </div>
     </div>
+   <button onclick="changeValue()">Click</button>
+   <div id="myD" >Go
+
+   </div>
 </body>
 </html>
