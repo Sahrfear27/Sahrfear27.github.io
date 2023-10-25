@@ -24,8 +24,7 @@ function sendMessage()
         p.style.textAlign="left";
         p.style.padding="5px";
         p.style.width = "max-content"
-        // p.style.margin="10px";
-        // p.style.marginTop="20px";
+     
 
     } else if (activeUser === "Sahrfear") 
     {
@@ -34,10 +33,7 @@ function sendMessage()
         p.style.borderRadius="10px";
         p.style.textAlign="right";
         p.style.padding="5px";
-        // p.style.float = "right";
-        // p.style.width = "max-content"
-        // p.style.margin="10px";
-        // p.style.marginBottom="20px";
+      
        
     }
 
