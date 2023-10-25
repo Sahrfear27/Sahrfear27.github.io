@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="chatApp.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" action="login.html" method="GET">
+        <p class="title">SIGN UP</p>
+        <div class="form_group">
+          <label class="sub_title" for="fName">First Name</label>
+          <input
+            placeholder="Enter your first name"
+            type="text"
+            id="fName"
+            name="fName"
+          />
+          <div class="error"></div>
+        </div>
+        <div class="form_group">
+          <label class="sub_title" for="lName">Last Name</label>
+          <input
+            placeholder="Enter your last name"
+            type="text"
+            id="lName"
+            name="lName"
+          />
+          <div class="error"></div>
+        </div>
+        <div class="form_group">
+          <label class="sub_title" for="newPassword">New Password</label>
+          <input
+            placeholder="Enter password"
+            id="newPassword"
+            type="password"
+            name="newPassword"
+          />
+          <div class="error"></div>
+        </div>
+        <div class="form_group">
+          <label class="sub_title" for="confirmPassword">
+            Confirm Password</label
+          >
+          <input
+            placeholder="Confirm Passward"
+            id="confirmPassword"
+            type="password"
+            name="confirmPassword"
+          />
+          <div class="error"></div>
+        </div>
+        <div>
+          <button
+            type="submit"
+            style="
+              font-size: 20px;
+              padding: 5px;
+              border-radius: 10px;
+              box-shadow: 2px 2px;
+            "
+          >
+            Sign up
+          </button>
+          <p style="color: blueviolet">Have an Account?</p>
+          <a class="link" href="login.html">Login Here!!</a>
+        </div>
+      </form>
+    </div>
+    <script src="signUp.js"></script>
+  </body>
+</html>

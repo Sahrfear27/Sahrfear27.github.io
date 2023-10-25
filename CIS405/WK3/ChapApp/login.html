@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="chatApp.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="para"></p>
+    <div class="container">
+      <form id="form" action="chatWindow.html">
+        <p class="title">SIGN IN</p>
+
+        <div class="form_group">
+          <label class="sub_title" for="first-Name">First Name</label>
+          <input placeholder="Enter your first name" type="text" />
+        </div>
+        <div class="form_group">
+          <label class="sub_title" for="last-Name">Last Name</label>
+          <input placeholder="Enter your last name" type="text" />
+        </div>
+        <div class="form_group">
+          <label class="sub_title" for="password">Password</label>
+          <input
+            placeholder="Enter password"
+            id="new-password"
+            type="password"
+          />
+        </div>
+        <div>
+          <button
+            class="submit"
+            style="
+              font-size: 20px;
+              padding: 5px;
+              border-radius: 10px;
+              box-shadow: 2px 2px;
+              margin-top: 20px;
+              width: 80px;
+            "
+          >
+            LogIn
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>

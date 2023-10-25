@@ -43,7 +43,7 @@
         const formData = new FormData(form); // Converts to array of arrays
     
         const obj = Object.fromEntries(formData); // Array of arrays to object
-        
+        console.log(obj);
         // Put the data in json format
         const json = JSON.stringify(obj);
         localStorage.setItem('form', json);
