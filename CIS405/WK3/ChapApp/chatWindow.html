@@ -16,6 +16,8 @@
             border-radius: 10px;
             background-color:WHITE;
             box-shadow: 8px 5px 14px 7px #ACB5BD;;
+            background-image:;
+            background-size:contain;
         }
         #sagarBtn, #sahrfearBtn{
             color: white;
@@ -25,7 +27,15 @@
             background:rgb(198, 196, 196);
             border-radius: 10px;
             font-weight: 500;
-            box-shadow: 3px 3px 0px 0px rgb(118, 117, 117) ;
+            box-shadow: 1px 12px 9px rgba(0,0,0,0.6) ;
+            font-weight: bold;
+            letter-spacing: 3px;
+            border: none;
+        }
+        #send{
+            background:rgb(198, 196, 196);
+            border-radius: 10px;
+            border: none;
         }
          #sahrfearBtn:hover{
             opacity: .9;
@@ -40,7 +50,8 @@
         #chat-box {
             height:300px;
             overflow-y: scroll; 
-            background-color: #6C757D;
+            background:url(Images/chatBackground.jpg);
+            background-size:90%;
             border-radius: 8px;
             box-shadow: inset 0px 10px 24px 14px rgba(0,0,0,0.1);
             
@@ -52,10 +63,27 @@
             margin-top: 15px;
             /* width: max-content; */
         }
+        .InnerContainer{
+        
+            display: flex;
+            justify-content: space-between;
+        }
+        #profile{
+        box-shadow: 10px 10px 5px #ccc;
+        -moz-box-shadow: 10px 10px 5px #ccc;
+        -webkit-box-shadow: 10px 10px 5px #ccc;
+        -khtml-box-shadow: 10px 10px 5px #ccc;;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+       <!-- The nav area -->
+       <div class="InnerContainer">
+        <p><img src="Images/chatBackground.jpg" style="width: 70px;height: 70px;border-radius: 50%;" id="profile"></p>
+        <p><img src="Images/chatBackground.jpg" style="width: 70px;height: 70px;border-radius: 50%;" id="profile"></p>
+ 
+       </div>
         <div class="person">
             <div class="sagar-selector">
                 <button onclick="setActiveUser('Sagar')" id="sagarBtn">Sagar</button>
@@ -73,7 +101,7 @@
         <br>
         <div class="typing-area">
             <input type="text" id="type-message" placeholder="Type your message" style="width: 85%;">
-            <button onclick="sendMessage()">Send</button>
+            <button onclick="sendMessage()" id="send">Send</button>
         </div>
     </div>
     <script src="chartWindow.js"></script>
