@@ -16,7 +16,7 @@
             border-radius: 10px;
             background-color:WHITE;
             box-shadow: 8px 5px 14px 7px #ACB5BD;;
-            background-image:;
+            background-image:url(Images/mainAreaBackground.jpg);
             background-size:contain;
         }
         #sagarBtn, #sahrfearBtn{
@@ -31,6 +31,8 @@
             font-weight: bold;
             letter-spacing: 3px;
             border: none;
+            
+           
         }
         #send{
             background:rgb(198, 196, 196);
@@ -61,7 +63,7 @@
             height:1000px;
             overflow-y: scroll;
             margin-top: 15px;
-            /* width: max-content; */
+        
         }
         .InnerContainer{
         
@@ -74,6 +76,13 @@
         -webkit-box-shadow: 10px 10px 5px #ccc;
         -khtml-box-shadow: 10px 10px 5px #ccc;;
         }
+        .clearChat{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 10px;
+            
+        }
     </style>
 </head>
 <body>
@@ -82,8 +91,10 @@
        <div class="InnerContainer">
         <p><img src="Images/chatBackground.jpg" style="width: 70px;height: 70px;border-radius: 50%;" id="profile"></p>
         <p><img src="Images/chatBackground.jpg" style="width: 70px;height: 70px;border-radius: 50%;" id="profile"></p>
- 
        </div>
+       <!-- <div class="cot">
+        <input type="text" name="" id="">
+       </div> -->
         <div class="person">
             <div class="sagar-selector">
                 <button onclick="setActiveUser('Sagar')" id="sagarBtn">Sagar</button>
@@ -102,6 +113,9 @@
         <div class="typing-area">
             <input type="text" id="type-message" placeholder="Type your message" style="width: 85%;">
             <button onclick="sendMessage()" id="send">Send</button>
+        </div>
+        <div class="clearChat">
+            <button onclick="clearChat()">Clear</button>
         </div>
     </div>
     <script src="chartWindow.js"></script>
