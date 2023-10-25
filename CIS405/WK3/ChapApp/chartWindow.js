@@ -21,7 +21,7 @@ function sendMessage()
     let p = document.createElement('p');
     let br = document.createElement('br');
     if((typingMessage) && (activeUser === "Sagar"))
-    {
+    {   
         p.innerHTML = activeUser + ': ' + typingMessage;
         p.style.color="white";
         p.style.background="blue";
@@ -31,21 +31,21 @@ function sendMessage()
         p.style.width = "max-content";
         // p.style.display = "inline-block";
         p.style.float = "left";
+        
     }
     else if((typingMessage) && (activeUser === "Sahrfear"))
-    {
+    { 
         p.innerHTML = activeUser + ': ' + typingMessage ;
         p.style.color="white";
         p.style.background="#343A3F";
         p.style.borderRadius="10px";
         p.style.textAlign="right";
         p.style.padding="5px";
-        // p.style.display = "inline-block";
         p.style.float = "right";
+        
     }
     else{
         p.innerHTML = "";
-        p.style.color = "red"
     }
     typingArea.appendChild(p);
     // Append br to the typing area
