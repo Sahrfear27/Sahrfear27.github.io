@@ -7,8 +7,8 @@ const firstUserName = localStorage.getItem('first-User');
 const secondUserName = localStorage.getItem('second-user');
 
 // Set user names on the buttons
-document.getElementById('sagarBtn').textContent = firstUserName;
-document.getElementById('sahrfearBtn').textContent = secondUserName;
+document.getElementById('sagarBtn').innerHTML = firstUserName;
+document.getElementById('sahrfearBtn').innerHTML = secondUserName;
 
 function setActiveUser(user) {
     activeUser = user; // Set the active user to the selected user
