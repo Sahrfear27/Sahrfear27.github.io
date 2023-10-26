@@ -1,17 +1,28 @@
 
 
+
+
 const form = document.getElementById('form');
 const firstName = document.getElementById('loginFirstName');
 const secondName = document.getElementById('loginLastName');
 const password = document.getElementById('loginPassword');
+
+// Retrive the data from the local storage
 const storedFirstName = localStorage.getItem('first-name')
 const storedSecondName = localStorage.getItem('last-name');
 const storedPassword = localStorage.getItem('valid-password');
 
+
+// Check if form is valid
 form.addEventListener('submit', (e) =>{
     validateInputs();
+    const firstUser = firstName.value;
+    const secondUser = secondName.value;
     if(isFormValid() == true){
         form.submit();
+        localStorage.setItem('first-User',firstUser);
+        localStorage.setItem('second-user', secondUser);
+
     }else{
         e.preventDefault();  
     }

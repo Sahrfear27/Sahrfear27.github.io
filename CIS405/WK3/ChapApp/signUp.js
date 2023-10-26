@@ -28,6 +28,7 @@ function isFormValid() {
   const inputContainers = form.querySelectorAll('.form_group');
   let result =true;
   inputContainers.forEach((container)=>{
+    // If the container contains error return false otherwise return true
       if(container.classList.contains('error')){
           result=false;
       }
@@ -37,6 +38,8 @@ function isFormValid() {
 
 // setting behavior of error
 const setError = (element, message) => {
+
+  // Get the node of the parent element: that is the input element
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
   errorDisplay.innerText = message;
