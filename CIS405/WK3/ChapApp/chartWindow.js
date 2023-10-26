@@ -45,6 +45,7 @@ function sendMessage() {
     }
 }
 
+// Clear the chat
 function clearChat(){
   let clearChat = document.getElementById('mainText');
   clearChat.innerHTML = '';
