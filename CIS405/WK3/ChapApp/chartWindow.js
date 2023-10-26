@@ -18,16 +18,6 @@ function setActiveUser(user) {
     activeUserElement.style.fontWeight = "bold";
     activeUserElement.style.letterSpacing = "3px";
     activeUserElement.innerHTML = user + " is typing...";
-
-//     let x = document.getElementById('sagarBtn');
-//     let y = document.getElementById('sahrfearBtn');
-//     let typingMessage = document.getElementById('type-message').value;
-//     if(x){
-//         typingMessage = "";
-//     }
-//    if(y){
-//     typingMessage = ""
-//    }
 }
 
 
