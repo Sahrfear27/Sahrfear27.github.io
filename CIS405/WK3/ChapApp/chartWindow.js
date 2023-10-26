@@ -17,43 +17,57 @@ function setActiveUser(user) {
     activeUserElement.style.textShadow = "1px 12px 9px rgba(0,0,0,0.6)";
     activeUserElement.style.fontWeight = "bold";
     activeUserElement.style.letterSpacing = "3px";
-
     activeUserElement.innerHTML = user + " is typing...";
+
+//     let x = document.getElementById('sagarBtn');
+//     let y = document.getElementById('sahrfearBtn');
+//     let typingMessage = document.getElementById('type-message').value;
+//     if(x){
+//         typingMessage = "";
+//     }
+//    if(y){
+//     typingMessage = ""
+//    }
 }
 
 
 
 function sendMessage() {
     let typingArea = document.getElementById('mainText');
-    let typingMessage = document.getElementById('type-message').value;
+    let typingMessage = document.getElementById('type-message');
 
-    if (typingMessage) {
+    if (typingMessage.value) {
         let messageDiv = document.createElement('div');
         messageDiv.style.marginTop = '10px'; // Add some space between messages
 
         let p = document.createElement('p');
 
         if (activeUser === firstUserName) {
-            p.innerHTML = activeUser + ': ' + typingMessage;
+            p.innerHTML = activeUser + ': ' + typingMessage.value;
             p.style.color = "white";
             p.style.background = "blue";
             p.style.borderRadius = "10px";
             p.style.textAlign = "left";
             p.style.padding = "5px";
-        } else if (activeUser === secondUserName) {
-            p.innerHTML = activeUser + ': ' + typingMessage;
+
+        } 
+        else if (activeUser === secondUserName)
+        {
+            p.innerHTML = activeUser + ': ' + typingMessage.value;
             p.style.color = "white";
             p.style.background = "#343A3F";
             p.style.borderRadius = "10px";
             p.style.textAlign = "right";
             p.style.padding = "5px";
         }
-
         messageDiv.appendChild(p);
         typingArea.appendChild(messageDiv);
-     
     }
+   typingMessage.value = "";
 }
+
+
+
 // Clear the chat
 function clearChat(){
     let clearChat = document.getElementById('mainText');
