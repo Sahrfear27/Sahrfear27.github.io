@@ -38,16 +38,12 @@ function sendMessage() {
             p.style.borderRadius = "10px";
             p.style.textAlign = "right";
             p.style.padding = "5px";
-          
-       
         }
-
         messageDiv.appendChild(p);
         typingArea.appendChild(messageDiv);
         typingMessage.value = '';
     }
 }
-
 
 function clearChat(){
   let clearChat = document.getElementById('mainText');

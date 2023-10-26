@@ -81,7 +81,14 @@
             justify-content: center;
             text-align: center;
             margin-top: 10px;
-            
+        }
+        #clear{
+        box-shadow: 10px 10px 5px #ccc;
+        -moz-box-shadow: 10px 10px 5px #ccc;
+        -webkit-box-shadow: 10px 10px 5px #ccc;
+        -khtml-box-shadow: 10px 10px 5px #ccc;
+        border-radius: 10px;
+        border: none;
         }
     </style>
 </head>
@@ -115,7 +122,7 @@
             <button onclick="sendMessage()" id="send">Send</button>
         </div>
         <div class="clearChat">
-            <button onclick="clearChat()">Clear</button>
+            <button onclick="clearChat()" id="clear">Clear</button>
         </div>
     </div>
     <script src="chartWindow.js"></script>
