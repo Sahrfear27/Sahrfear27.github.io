@@ -94,6 +94,8 @@ console.log("expect 110.47", compoundInterest(100, 10, 1));
 
 function calcDownpayment(houseCost: number) {
     let downPayment = null;
+
+    // Using the switch statement
     if ((houseCost >= 0) && (houseCost < 50000)) {
         downPayment = (5 / 100) * houseCost;
     }
