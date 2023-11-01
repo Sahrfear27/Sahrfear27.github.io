@@ -152,7 +152,6 @@ function multDigits(userNumber:number){
 console.log(multDigits(1234));
 
 
-
 // Q5
 //  Write a function, convertFahrenheit, that takes an input parameter with a temperature in Fahrenheit
 // and returns the temperature in Celsius.
