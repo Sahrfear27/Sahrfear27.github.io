@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es2022", //sets JavaScript emitted code to 2022 version
+        "module": "ES2022", //sets module code emitted to es modules
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "strict": true,
+    },
+    "include": [
+        "*.ts",
+        "arrayAverage/src/*.ts",
+        "./test/*.ts"
+, "arrayAverage/src/app.ts", "test/functionTest.ts"    ],
+    "ts-node": {
+        "esm": true, // «———— enable ESM for ts-node
+    },
+}
