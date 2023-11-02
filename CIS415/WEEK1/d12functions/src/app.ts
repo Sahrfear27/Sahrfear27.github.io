@@ -172,9 +172,11 @@ function coordinateXY(x1: number, y1: number, x2: number, y2: number) {
  
     let xDistance = (x2 - x1) ** 2;
     let yDistance = (y2 - y1) ** 2;
+    debugger;
     let distance = Math.sqrt(xDistance + yDistance);
     return distance;
 }
 
 console.log("expect 7.07 : ", coordinateXY(0, 0, 5, 5));
+
 
