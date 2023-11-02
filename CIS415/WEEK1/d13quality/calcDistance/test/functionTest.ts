@@ -2,18 +2,19 @@
 import { assert } from "chai"
 import { coordinateXY } from "../src/app.js";
 
-
-it("The cordinate is ", function () {
-    const exact = coordinateXY(0, 0, 5, 5);
-    assert.strictEqual(+exact.toFixed(2) ,7.07);
-});
-it("The cordinate is ", function(){
-    const exact = coordinateXY(5, 7, 12, 10);
-    assert.strictEqual(+exact.toFixed(2), 7.62);
-})
-it("The cordinate is ", function(){
-    const exact = coordinateXY(5, 7, 10, 10);
-    assert.strictEqual(+exact.toFixed(2), 5.83);
+describe("test to calculate distance", function () {
+    it("The cordinate is ", function () {
+        const exact = coordinateXY(0, 0, 5, 5);
+        assert.strictEqual(+exact.toFixed(2) ,7.07);
+    });
+    it("The cordinate is ", function(){
+        const exact = coordinateXY(5, 7, 12, 10);
+        assert.strictEqual(+exact.toFixed(2), 7.62);
+    })
+    it("The cordinate is ", function(){
+        const exact = coordinateXY(5, 7, 10, 10);
+        assert.strictEqual(+exact.toFixed(2), 5.83);
+    })
 })
 
 
