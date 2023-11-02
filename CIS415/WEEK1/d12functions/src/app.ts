@@ -168,9 +168,8 @@
 // between these two points based on the formula, d = √( x 2 − x 1 ) 2 + ( y 2 − y 1 ) 2
 // console.log("expect 7.07 : ", calcDistance (0, 0, 5, 5));
 
-function coordinateXY(x2: number, x1: number, y2: number, y1: number) {
-    console.log("Hello");
-    debugger;
+function coordinateXY(x1: number, y1: number, x2: number, y2: number) {
+ 
     let xDistance = (x2 - x1) ** 2;
     let yDistance = (y2 - y1) ** 2;
     let distance = Math.sqrt(xDistance + yDistance);
