@@ -73,13 +73,17 @@ export function findLongestWord(arr: string[]): number{
  * @param {*} arr of words 
  * @returns {number} length of longest word
  */
-export function reverseArrayInPlace(arr: number[]): number[]{
+// export function reverseArrayInPlace(arr: number[]): number[]{
    
-}
+// }
 
 /* 6. Write a function that takes two integers as inputs and returns a 2-dimensional array containing sequential numbers across each row as follows:
 describe("generate array", function () {
-    const expected33 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    const expected33 = [ 
+        [1, 2, 3], 
+        [4, 5, 6], 
+        [7, 8, 9]
+    ];
     const expected23 = [ [1, 2, 3], [4, 5, 6]];
     const expected21 = [ [1], [2]];
      assert.deepEqual(generateArray(3,3), expected33); */
@@ -91,9 +95,22 @@ describe("generate array", function () {
  * @returns {Array} 2d array with entries i + j
  */
 export function generateArray(rows: number, cols: number): number[][]{
-//IMPLEMENT THIS 
+    // Create a new array
+    let newArray = [];
+    let counter = 1;
+    // Loop through the row
+    for (let i = 1; i <= rows; i++) {
+        // Create a new array for the row
+        let arrayRow = [];
+        for(let j = 1; j <= cols; j++){
+            arrayRow.push(counter++);
+        }
+        newArray.push(arrayRow);
+        
+    }
 
-return [[0]];
+return newArray;
+
 }
 
 

@@ -16,7 +16,6 @@ export function maxOfThree(aa, b, c) {
     else {
         return c;
     }
-    //return 0;  //IMPLEMENT THIS -- DO NOT USE MATH.MAX
 }
 /**
  *
@@ -24,8 +23,11 @@ export function maxOfThree(aa, b, c) {
  * @returns {number} sum of arr numbers
  */
 export function sum(arr) {
-    //IMPLEMENT THIS 
-    return 0;
+    let sum = 0;
+    for (let num of arr) {
+        sum += num;
+    }
+    return sum;
 }
 /**
  *
@@ -33,8 +35,11 @@ export function sum(arr) {
  * @returns {number} sum of arr numbers
  */
 export function multiply(arr) {
-    //IMPLEMENT THIS 
-    return 0;
+    let multiply = 1;
+    for (let num of arr) {
+        multiply *= num;
+    }
+    return multiply;
 }
 /* findLongestWord */
 /**
@@ -43,12 +48,30 @@ export function multiply(arr) {
  * @returns {number} length of longest word
  */
 export function findLongestWord(arr) {
-    //IMPLEMENT THIS 
-    return 0;
+    let longestWordLength = arr[0].length;
+    for (let word of arr) {
+        if (word.length > longestWordLength) {
+            let wordLength = word.length;
+            return wordLength;
+        }
+    }
+    return longestWordLength;
 }
+/* reverseArrayInPlace */
+/**
+ * takes an array of words and returns the length of the longest one
+ * @param {*} arr of words
+ * @returns {number} length of longest word
+ */
+// export function reverseArrayInPlace(arr: number[]): number[]{
+// }
 /* 6. Write a function that takes two integers as inputs and returns a 2-dimensional array containing sequential numbers across each row as follows:
 describe("generate array", function () {
-    const expected33 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    const expected33 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
     const expected23 = [ [1, 2, 3], [4, 5, 6]];
     const expected21 = [ [1], [2]];
      assert.deepEqual(generateArray(3,3), expected33); */
@@ -59,8 +82,19 @@ describe("generate array", function () {
  * @returns {Array} 2d array with entries i + j
  */
 export function generateArray(rows, cols) {
-    //IMPLEMENT THIS 
-    return [[0]];
+    // Create a new array
+    let newArray = [];
+    let counter = 1;
+    // Loop through the row
+    for (let i = 1; i <= rows; i++) {
+        // Create a new array for the row
+        let arrayRow = [];
+        for (let j = 1; j <= cols; j++) {
+            arrayRow.push(counter++);
+        }
+        newArray.push(arrayRow);
+    }
+    return newArray;
 }
 // Added my function
 export function calcDownpayment(houseCost) {
