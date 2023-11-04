@@ -1,6 +1,7 @@
+import * as exp from "constants";
 
 
-console.log("in app.ts", "sum of [1,2,3] is: ", sum([1,2,3]));
+console.log("in app.ts", "sum of [1,2,3] is: ", sum([1, 2, 3]));
 /**
  * 
  * @param {number} aa is a number
@@ -8,14 +9,14 @@ console.log("in app.ts", "sum of [1,2,3] is: ", sum([1,2,3]));
  * @param {number} c is a number
  * @returns {number} largest of a, b, c
  */
-export function maxOfThree(aa: number, b: number, c: number): number{ 
-    if((aa >= b) && (aa >= c)){
+export function maxOfThree(aa: number, b: number, c: number): number {
+    if ((aa >= b) && (aa >= c)) {
         return aa
     }
-    else if((b >= aa) && (b >= c)){
+    else if ((b >= aa) && (b >= c)) {
         return b;
     }
-    else{
+    else {
         return c
     }
 }
@@ -25,10 +26,9 @@ export function maxOfThree(aa: number, b: number, c: number): number{
  * @param {Array} arr of numbers
  * @returns {number} sum of arr numbers
  */
-export function sum(arr: number[]): number{
+export function sum(arr: number[]): number {
     let sum = 0;
-    for(let num of arr)
-    {
+    for (let num of arr) {
         sum += num
     }
     return sum;
@@ -40,9 +40,9 @@ export function sum(arr: number[]): number{
  * @param {Array} arr of numbers
  * @returns {number} sum of arr numbers
  */
-export function multiply(arr: number[]): number{
+export function multiply(arr: number[]): number {
     let multiply = 1;
-    for(let num of arr){
+    for (let num of arr) {
         multiply *= num;
     }
     return multiply;
@@ -54,11 +54,10 @@ export function multiply(arr: number[]): number{
  * @param {*} arr of words 
  * @returns {number} length of longest word
  */
-export function findLongestWord(arr: string[]): number{
+export function findLongestWord(arr: string[]): number {
     let longestWordLength = arr[0].length;
-    for(let word of arr)
-    {
-        if(word.length > longestWordLength){
+    for (let word of arr) {
+        if (word.length > longestWordLength) {
             let wordLength = word.length;
             return wordLength;
         }
@@ -73,9 +72,41 @@ export function findLongestWord(arr: string[]): number{
  * @param {*} arr of words 
  * @returns {number} length of longest word
  */
-// export function reverseArrayInPlace(arr: number[]): number[]{
-   
-// }
+export function reverseArray(arr: number[] | string[]): number[] | string[] {
+    let newArray = [];
+    for (let i = arr.length; i > 0; i++) {
+        newArray.push(i)
+
+    }
+    return newArray;
+}
+
+
+// console.log("The reverse is " + reverseArray(["A", "B", "C", "D"]));
+export function reverseArrayInPlace(arr: number[] | string[]): number[] | string[] {
+    //     const origArray = arr;
+    //    let newArray = origArray;
+
+    //     // loop from the last index
+    //    for (let i = arr.length; i > 0; i--) {
+    //     // add the last index to the new array
+    //     newArray.push(i);
+
+    //    }
+    const length = arr.length;
+    const middle = Math.floor(length / 2);
+
+    for (let i = 0; i < middle; i++) {
+        const temp = arr[i];
+        arr[i] = arr[length - 1 - i];
+        arr[length - 1 - i] = temp;
+    }
+
+    return arr;
+    
+}
+// console.log(reverseArrayInPlace([1, 2, 3, 4, 5]));
+
 
 /* 6. Write a function that takes two integers as inputs and returns a 2-dimensional array containing sequential numbers across each row as follows:
 describe("generate array", function () {
@@ -94,7 +125,7 @@ describe("generate array", function () {
  * @param {*} cols num cols
  * @returns {Array} 2d array with entries i + j
  */
-export function generateArray(rows: number, cols: number): number[][]{
+export function generateArray(rows: number, cols: number): number[][] {
     // Create a new array
     let newArray = [];
     let counter = 1;
@@ -102,14 +133,14 @@ export function generateArray(rows: number, cols: number): number[][]{
     for (let i = 1; i <= rows; i++) {
         // Create a new array for the row
         let arrayRow = [];
-        for(let j = 1; j <= cols; j++){
+        for (let j = 1; j <= cols; j++) {
             arrayRow.push(counter++);
         }
         newArray.push(arrayRow);
-        
+
     }
 
-return newArray;
+    return newArray;
 
 }
 
@@ -130,8 +161,31 @@ export function calcDownpayment(houseCost: number) {
     else if ((houseCost >= 100000) && (houseCost < 200000)) {
         downPayment = (7500) + ((15 / 100) * (houseCost - 100000));
     }
-    else if (houseCost >= 200000){
+    else if (houseCost >= 200000) {
         downPayment = (20000) + ((10 / 100) * (houseCost - 200000));
     }
     return downPayment;
 }
+
+
+export function scoreExams(studentAnswer:number[][], correctAns: number[]){
+    let studentScores = [];
+    for(let student of studentAnswer)
+    {
+        // Get the score for each student
+        let score = 0;
+        for (let i = 0; i < student.length; i++) {
+            if(student[i] === correctAns[i]){
+                score +=1;
+            }  
+        }
+        studentScores.push(score);
+    }
+    return studentScores;
+}
+
+const studentAnswers = [[1, 1, 2, 4], [2, 1, 2, 2], [3, 1, 3, 4]];
+const correctAnswers = [3, 1, 2, 4];
+console.log(scoreExams (studentAnswers,correctAnswers ));
+
+

@@ -10,7 +10,6 @@ export function computeSalesCommission(salesAmount: number, status: boolean) {
             saleCommission = (1 / 100) * salesAmount;
         }
         else if ((salesAmount > 500)) {
-            // saleCommission = ((2 / 100) * salesAmount) + ((1 / 100) * 500)
             saleCommission = (2 / 100) * (salesAmount - 500) + ((1 / 100) * 500)
         }
     }

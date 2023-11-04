@@ -168,15 +168,47 @@
 // between these two points based on the formula, d = √( x 2 − x 1 ) 2 + ( y 2 − y 1 ) 2
 // console.log("expect 7.07 : ", calcDistance (0, 0, 5, 5));
 
-function coordinateXY(x1: number, y1: number, x2: number, y2: number) {
- 
-    let xDistance = (x2 - x1) ** 2;
-    let yDistance = (y2 - y1) ** 2;
+// function coordinateXY(x1: number, y1: number, x2: number, y2: number) {
+
+//     let xDistance = (x2 - x1) ** 2;
+//     let yDistance = (y2 - y1) ** 2;
+//     debugger;
+//     let distance = Math.sqrt(xDistance + yDistance);
+//     return distance;
+// }
+
+// console.log("expect 7.07 : ", coordinateXY(0, 0, 5, 5));
+
+
+
+// Area of a traingle
+function computeArea(a: number, b: number, c: number) {
+    //   Call the function and pass in the parameters as arguements
+    let s = semiParameter(a, b, c);
+
+    // Calculate the area
     debugger;
-    let distance = Math.sqrt(xDistance + yDistance);
-    return distance;
+    const area = Math.sqrt((s * (s - a) * (s - b) * (s - c)));
+    return area;
+}
+function semiParameter(a: number, b: number, c: number) {
+    const semi = (a + b + c) / 2;
+    return semi;
 }
 
-console.log("expect 7.07 : ", coordinateXY(0, 0, 5, 5));
+console.log(`The area of the triangle with sides 3,4,5 is ${computeArea(3, 4, 5)} `);
 
 
+
+function compoundInterest(deposit: number, rate: number, years: number) {
+    const monthlyRate = rate / 12 / 100;
+    const numPayments = years * 12;
+    let balance = deposit;
+    for (let i = 1; i <= numPayments; i++) {
+    balance = balance + balance * monthlyRate;
+    // debugger;
+    }
+    return balance;
+    }
+    console.log("expect 110.47", compoundInterest(100, 10, 1));
+    console.log("expect 16470.09", compoundInterest(10000, 5, 10));

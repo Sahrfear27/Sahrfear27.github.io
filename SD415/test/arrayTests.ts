@@ -2,7 +2,8 @@
 import { assert } from "chai"
 
 //import {maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray} from "./arrays.js";
-import {maxOfThree, sum, multiply, findLongestWord, generateArray,calcDownpayment } from "../src/app.js";
+import {maxOfThree, sum, multiply, findLongestWord, generateArray,calcDownpayment, reverseArray,reverseArrayInPlace,scoreExams } 
+from "../src/app.js";
      
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
 arguments and returns the largest of them.  */
@@ -85,27 +86,28 @@ reverseArrayInPlace, does what the reverse method does: it modifies the array gi
 elements. This is a method that is very space efficient.  It does not create a new array or copy of the array.  
 It returns the original array. Neither may use the standard reverse method. 
 */
-// describe("reverseArray", function () {
-//     it("tests reverseArray odd number elements", function () {
-//         assert.deepEqual(reverseArray(["A", "B", "C"]), ["C", "B", "A"]);
-//     });
-//     it("tests reverse even number elements", function () {
-//         assert.deepEqual(reverseArrayInPlace(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
-//       });
-//     it("tests reverse in place even number elements", function () {
-//         assert.deepEqual(reverseArray(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
-//     });
-//     it("tests reverse odd number elements", function () {
-//         assert.deepEqual(reverseArray([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1]);
-//     });
-//     it("tests reverseinplace odd number elements", function () {
-//         assert.deepEqual(reverseArrayInPlace([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1]);
-//     });
-//     it("tests that the original array is returned", function () {
-//         const testArr = [1, 2, 3, 4, 5];
-//         assert.strictEqual(reverseArrayInPlace(testArr), testArr); //element order may be different, but it is the same reference
-//     });
-// });
+describe("reverseArray", function () {
+    it("tests reverseArray odd number elements", function () {
+        assert.deepEqual(reverseArray(["A", "B", "C"]), ["C", "B", "A"]);
+    });
+    it("tests reverse even number elements", function () {
+        assert.deepEqual(reverseArrayInPlace(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
+      });
+      
+    it("tests reverse in place even number elements", function () {
+        assert.deepEqual(reverseArray(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
+    });
+    it("tests reverse odd number elements", function () {
+        assert.deepEqual(reverseArray([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1]);
+    });
+    it("tests reverseinplace odd number elements", function () {
+        assert.deepEqual(reverseArrayInPlace([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1]);
+    });
+    it("tests that the original array is returned", function () {
+        const testArr = [1, 2, 3, 4, 5];
+        assert.strictEqual(reverseArrayInPlace(testArr), testArr); //element order may be different, but it is the same reference
+    });
+});
 
 // /*
 // 5.  Write a function, scoreExams, that takes an array of arrays of student answers and an array of the correct answers.  
@@ -117,19 +119,19 @@ It returns the original array. Neither may use the standard reverse method.
 // scoreExams(studentAnswers, correctAnswers)); --> [2, 2, 2]
 // */
 
-// describe("score exam", function () {
-//     const studentAnswers = [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];
-//     const correctAnswers = [3, 1, 2,4];
-//     it("exam with 3 students", function () {
-//         assert.deepEqual(scoreExams(studentAnswers, correctAnswers), [3,2,3]);
-//     });
-//     it("exam with 3 students: one student has all incorrect answers", function () {
-//         assert.deepEqual(scoreExams( [[1, 1, 2,4], [2, 1, 2,2], [1,2, 3,1]], correctAnswers), [3,2,0]);
-//     });
-//     it("exam with 3 students: one student has all correct answers", function () {
-//         assert.deepEqual(scoreExams( [[1, 1, 2,4], [2, 1, 2,2],[3, 1, 2,4]], correctAnswers), [3,2,4]);
-//     });
-// });
+describe("score exam", function () {
+    const studentAnswers = [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];
+    const correctAnswers = [3, 1, 2,4];
+    it("exam with 3 students", function () {
+        assert.deepEqual(scoreExams(studentAnswers, correctAnswers), [3,2,3]);
+    });
+    it("exam with 3 students: one student has all incorrect answers", function () {
+        assert.deepEqual(scoreExams( [[1, 1, 2,4], [2, 1, 2,2], [1,2, 3,1]], correctAnswers), [3,2,0]);
+    });
+    it("exam with 3 students: one student has all correct answers", function () {
+        assert.deepEqual(scoreExams( [[1, 1, 2,4], [2, 1, 2,2],[3, 1, 2,4]], correctAnswers), [3,2,4]);
+    });
+});
 
 /* 6. Write a function that takes two integers as inputs and returns a 2-dimensional array containing sequential numbers across each row as follows: */
 describe("generate array", function () {

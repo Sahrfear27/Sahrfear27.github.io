@@ -63,8 +63,32 @@ export function findLongestWord(arr) {
  * @param {*} arr of words
  * @returns {number} length of longest word
  */
-// export function reverseArrayInPlace(arr: number[]): number[]{
-// }
+export function reverseArray(arr) {
+    let newArray = [];
+    for (let i = arr.length; i > 0; i++) {
+        newArray.push(i);
+    }
+    return newArray;
+}
+// console.log("The reverse is " + reverseArray(["A", "B", "C", "D"]));
+export function reverseArrayInPlace(arr) {
+    //     const origArray = arr;
+    //    let newArray = origArray;
+    //     // loop from the last index
+    //    for (let i = arr.length; i > 0; i--) {
+    //     // add the last index to the new array
+    //     newArray.push(i);
+    //    }
+    const length = arr.length;
+    const middle = Math.floor(length / 2);
+    for (let i = 0; i < middle; i++) {
+        const temp = arr[i];
+        arr[i] = arr[length - 1 - i];
+        arr[length - 1 - i] = temp;
+    }
+    return arr;
+}
+// console.log(reverseArrayInPlace([1, 2, 3, 4, 5]));
 /* 6. Write a function that takes two integers as inputs and returns a 2-dimensional array containing sequential numbers across each row as follows:
 describe("generate array", function () {
     const expected33 = [
@@ -114,3 +138,21 @@ export function calcDownpayment(houseCost) {
     }
     return downPayment;
 }
+export function scoreExams(studentAnswer, correctAns) {
+    let studentScores = [];
+    for (let student of studentAnswer) {
+        // Get the score for each student
+        let score = 0;
+        for (let i = 0; i < student.length; i++) {
+            if (student[i] === correctAns[i]) {
+                score += 1;
+            }
+        }
+        // Push the score to the student score
+        studentScores.push(score);
+    }
+    return studentScores;
+}
+const studentAnswers = [[1, 1, 2, 4], [2, 1, 2, 2], [3, 1, 3, 4]];
+const correctAnswers = [3, 1, 2, 4];
+console.log(scoreExams(studentAnswers, correctAnswers));
