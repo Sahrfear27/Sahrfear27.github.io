@@ -72,27 +72,17 @@ export function findLongestWord(arr: string[]): number {
  * @param {*} arr of words 
  * @returns {number} length of longest word
  */
-export function reverseArray(arr: number[] | string[]): number[] | string[] {
+export function reverseArray(arr: number[] | string[]){
     let newArray = [];
     for (let i = arr.length-1; i >= 0; i--) {
-        newArray.push(i)
-
+        newArray.push(arr[i]);
     }
     return newArray;
 }
 
-
+console.log("The reverse is " + reverseArray(["A", "B", "C"]));
 // console.log("The reverse is " + reverseArray(["A", "B", "C", "D"]));
 export function reverseArrayInPlace(arr: number[] | string[]): number[] | string[] {
-    //     const origArray = arr;
-    //    let newArray = origArray;
-
-    //     // loop from the last index
-    //    for (let i = arr.length; i > 0; i--) {
-    //     // add the last index to the new array
-    //     newArray.push(i);
-
-    //    }
     const length = arr.length;
     const middle = Math.floor(length / 2);
 
