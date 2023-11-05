@@ -65,7 +65,7 @@ export function findLongestWord(arr) {
  */
 export function reverseArray(arr) {
     let newArray = [];
-    for (let i = arr.length; i > 0; i++) {
+    for (let i = arr.length - 1; i >= 0; i--) {
         newArray.push(i);
     }
     return newArray;
@@ -123,7 +123,7 @@ export function generateArray(rows, cols) {
 // Added my function
 export function calcDownpayment(houseCost) {
     let downPayment = 0;
-    // Using the switch statement
+    // Using the if statement
     if ((houseCost >= 0) && (houseCost < 50000)) {
         downPayment = (5 / 100) * houseCost;
     }
@@ -148,7 +148,6 @@ export function scoreExams(studentAnswer, correctAns) {
                 score += 1;
             }
         }
-        // Push the score to the student score
         studentScores.push(score);
     }
     return studentScores;
