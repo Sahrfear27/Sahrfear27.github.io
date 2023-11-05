@@ -179,3 +179,16 @@ const correctAnswers = [3, 1, 2, 4];
 console.log(scoreExams (studentAnswers,correctAnswers ));
 
 
+
+
+// Function Homework
+/* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
+export  function double(num :number){
+    let result = 0;
+    for (let i = 0; i < 2; i++) {
+       result += num;
+        
+    }
+    return result;
+}
+console.log(double(10));

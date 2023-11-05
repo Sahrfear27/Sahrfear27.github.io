@@ -2,9 +2,9 @@
 import { assert } from "chai"
 
 //import {maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray} from "./arrays.js";
-import {maxOfThree, sum, multiply, findLongestWord, generateArray,calcDownpayment, reverseArray,reverseArrayInPlace,scoreExams } 
-from "../src/app.js";
-     
+import { maxOfThree, sum, multiply, findLongestWord, generateArray, calcDownpayment, reverseArray, reverseArrayInPlace, scoreExams, double }
+    from "../src/app.js";
+
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
 arguments and returns the largest of them.  */
 describe("maxOfThree", function () {
@@ -92,8 +92,8 @@ describe("reverseArray", function () {
     });
     it("tests reverse even number elements", function () {
         assert.deepEqual(reverseArrayInPlace(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
-      });
-      
+    });
+
     it("tests reverse in place even number elements", function () {
         assert.deepEqual(reverseArray(["A", "B", "C", "D"]), ["D", "C", "B", "A"]);
     });
@@ -120,29 +120,29 @@ describe("reverseArray", function () {
 // */
 
 describe("score exam", function () {
-    const studentAnswers = [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];
-    const correctAnswers = [3, 1, 2,4];
+    const studentAnswers = [[1, 1, 2, 4], [2, 1, 2, 2], [3, 1, 3, 4]];
+    const correctAnswers = [3, 1, 2, 4];
     it("exam with 3 students", function () {
-        assert.deepEqual(scoreExams(studentAnswers, correctAnswers), [3,2,3]);
+        assert.deepEqual(scoreExams(studentAnswers, correctAnswers), [3, 2, 3]);
     });
     it("exam with 3 students: one student has all incorrect answers", function () {
-        assert.deepEqual(scoreExams( [[1, 1, 2,4], [2, 1, 2,2], [1,2, 3,1]], correctAnswers), [3,2,0]);
+        assert.deepEqual(scoreExams([[1, 1, 2, 4], [2, 1, 2, 2], [1, 2, 3, 1]], correctAnswers), [3, 2, 0]);
     });
     it("exam with 3 students: one student has all correct answers", function () {
-        assert.deepEqual(scoreExams( [[1, 1, 2,4], [2, 1, 2,2],[3, 1, 2,4]], correctAnswers), [3,2,4]);
+        assert.deepEqual(scoreExams([[1, 1, 2, 4], [2, 1, 2, 2], [3, 1, 2, 4]], correctAnswers), [3, 2, 4]);
     });
 });
 
 /* 6. Write a function that takes two integers as inputs and returns a 2-dimensional array containing sequential numbers across each row as follows: */
 describe("generate array", function () {
-    const expected33 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9]];
-    const expected23 = [ [1, 2, 3], [4, 5, 6]];
-    const expected21 = [ [1], [2]];
+    const expected33 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    const expected23 = [[1, 2, 3], [4, 5, 6]];
+    const expected21 = [[1], [2]];
     it("expected33", function () {
-        assert.deepEqual(generateArray(3,3), expected33);
+        assert.deepEqual(generateArray(3, 3), expected33);
     });
     it("expected23", function () {
-        assert.deepEqual(generateArray(2,3), expected23);
+        assert.deepEqual(generateArray(2, 3), expected23);
     });
     it("expected21", function () {
         assert.deepEqual(generateArray(2, 1), expected21);
@@ -170,3 +170,26 @@ describe("Test calcDownpayment", function () {
         assert.strictEqual(+exact.toFixed(2), 25000);
     })
 })
+
+// Funtions assignments
+// /* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
+
+describe("Return Number", function () {
+    it("It should return 2 times the number", function(){
+        const doubleNumber = double(10);
+        const expectedOutPut = 20;
+        assert.equal(doubleNumber, expectedOutPut);
+    });
+    it("should return 2 times the number", function () {
+        const doubleNumber = double(0);
+        const expectedOutPut = 0;
+        assert.equal(doubleNumber, expectedOutPut);
+    });
+    it("should return 2 times the number", function () {
+        const doubleNumber = double(-10);
+        const expectedOutPut = -20;
+        assert.equal(doubleNumber, expectedOutPut);
+    });
+   
+})
+
