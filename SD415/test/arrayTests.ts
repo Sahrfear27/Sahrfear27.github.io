@@ -2,7 +2,7 @@
 import { assert } from "chai"
 
 //import {maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray} from "./arrays.js";
-import { maxOfThree, sum, multiply, findLongestWord, generateArray, calcDownpayment, reverseArray, reverseArrayInPlace, scoreExams, double }
+import { maxOfThree, sum, multiply, findLongestWord, generateArray, calcDownpayment, reverseArray, reverseArrayInPlace, scoreExams, double, times100 }
     from "../src/app.js";
 
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
@@ -193,3 +193,21 @@ describe("Return Number", function () {
    
 })
 
+// 2
+describe ("Return 100 times the number", function(){
+    it("It should return 100 time the number", function(){
+        const num = times100(10);
+        const expectedResult = 1000;
+        assert.equal(num, expectedResult);
+    })
+    it("It should return 100 time the number", function(){
+        const num = times100(0);
+        const expectedResult = 0;
+        assert.equal(num, expectedResult);
+    })
+    it("It should return 100 time the number", function(){
+        const num = times100(-10);
+        const expectedResult = -1000;
+        assert.equal(num, expectedResult);
+    })
+})

@@ -149,3 +149,18 @@ export function scoreExams(studentAnswer, correctAns) {
 const studentAnswers = [[1, 1, 2, 4], [2, 1, 2, 2], [3, 1, 3, 4]];
 const correctAnswers = [3, 1, 2, 4];
 console.log(scoreExams(studentAnswers, correctAnswers));
+// Function Homework
+/* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
+export function double(num) {
+    let result = 0;
+    for (let i = 0; i < 2; i++) {
+        result += num;
+    }
+    return result;
+}
+console.log(double(10));
+// Write a function times100 that takes a number and returns 100 times the number.
+export function times100(num) {
+    let result = 100 * num;
+    return result;
+}

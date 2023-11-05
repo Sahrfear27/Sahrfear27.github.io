@@ -192,3 +192,10 @@ export  function double(num :number){
     return result;
 }
 console.log(double(10));
+
+// Write a function times100 that takes a number and returns 100 times the number.
+
+export function times100(num: number){
+    let result = 100 * num;
+    return result;
+}

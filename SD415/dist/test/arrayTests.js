@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 // import { assert } from "chai";
 //import {maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray} from "./arrays.js";
-import { maxOfThree, sum, multiply, findLongestWord, generateArray, calcDownpayment, reverseArray, reverseArrayInPlace, scoreExams } from "../src/app.js";
+import { maxOfThree, sum, multiply, findLongestWord, generateArray, calcDownpayment, reverseArray, reverseArrayInPlace, scoreExams, double, times100 } from "../src/app.js";
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as
 arguments and returns the largest of them.  */
 describe("maxOfThree", function () {
@@ -152,5 +152,42 @@ describe("Test calcDownpayment", function () {
     it("tests 250000 as initial down payment", function () {
         const exact = calcDownpayment(250000);
         assert.strictEqual(+exact.toFixed(2), 25000);
+    });
+});
+// Funtions assignments
+// /* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
+describe("Return Number", function () {
+    it("It should return 2 times the number", function () {
+        const doubleNumber = double(10);
+        const expectedOutPut = 20;
+        assert.equal(doubleNumber, expectedOutPut);
+    });
+    it("should return 2 times the number", function () {
+        const doubleNumber = double(0);
+        const expectedOutPut = 0;
+        assert.equal(doubleNumber, expectedOutPut);
+    });
+    it("should return 2 times the number", function () {
+        const doubleNumber = double(-10);
+        const expectedOutPut = -20;
+        assert.equal(doubleNumber, expectedOutPut);
+    });
+});
+// 2
+describe("Return 100 times the number", function () {
+    it("It should return 100 time the number", function () {
+        const num = times100(10);
+        const expectedResult = 1000;
+        assert.equal(num, expectedResult);
+    });
+    it("It should return 100 time the number", function () {
+        const num = times100(0);
+        const expectedResult = 0;
+        assert.equal(num, expectedResult);
+    });
+    it("It should return 100 time the number", function () {
+        const num = times100(-10);
+        const expectedResult = -1000;
+        assert.equal(num, expectedResult);
     });
 });
