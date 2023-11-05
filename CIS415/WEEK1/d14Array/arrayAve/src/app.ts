@@ -167,11 +167,6 @@ function computeCharges(charges: number[][]){
 
     // Loop throgh the array
     for(let charge of charges){
-        // if(charge.length === 0){
-        //     result.push([0, 0, 0])
-        // }
-        // else{
-            // Get the min, max and average
             const minCharge = Math.min(...charge);
             const maxCharge = Math.max(...charge);
             let sum = 0;
@@ -180,14 +175,13 @@ function computeCharges(charges: number[][]){
             }
             const average = sum / charge.length;
             result.push([minCharge,maxCharge,average]);
-        // }
     }
     return result;   
 }
 console.log(" ");
 const charges = [[1, 2, 3, 4, 5], [10, 20, 30, 60], [300, 200, 100]];
 console.log(computeCharges(charges));
-//  will output [[1, 5, 3], [10, 60, 30], [100, 300, 200]]
+
 
 
 
