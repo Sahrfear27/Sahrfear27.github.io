@@ -228,3 +228,18 @@ describe ("Return 100 times the number", function(){
             assert.deepStrictEqual(myMap(testArray, times100), [-1000, 0, 1000, 2000]);
         });
     });
+
+
+     /* 4.	Demonstrate your myMap function with an anonymous function that triples the input value.  Write this as an anonymous function expression.  
+//     Then write it using an arrow expression. */
+
+
+    describe("myMap", function () {
+        const testArray = [-10, 0, 10, 20];
+        it("tests myMap on triples anonymous function", function () {
+            assert.deepStrictEqual(myMap(testArray,  function (num: number) {return num * 3 }), [-30, 0, 30, 60]);
+        });
+        it("tests myMap on triples arrow function", function () {
+            assert.deepStrictEqual(myMap(testArray, (num) => (num * 3)), [-30, 0, 30, 60]);
+        });
+    });
