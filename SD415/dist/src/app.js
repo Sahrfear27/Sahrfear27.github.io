@@ -152,15 +152,19 @@ console.log(scoreExams(studentAnswers, correctAnswers));
 // Function Homework
 /* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
 export function double(num) {
-    let result = 0;
-    for (let i = 0; i < 2; i++) {
-        result += num;
-    }
-    return result;
+    return num * 2;
 }
 console.log(double(10));
 // Write a function times100 that takes a number and returns 100 times the number.
 export function times100(num) {
     let result = 100 * num;
+    return result;
+}
+export function myMap(numArray, times100 = (num) => { return 100 * num; }) {
+    let result = [];
+    for (let num of numArray) {
+        // Call the function and pass the number as parameters
+        result.push(times100(num));
+    }
     return result;
 }

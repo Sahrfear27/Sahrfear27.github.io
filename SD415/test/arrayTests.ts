@@ -2,7 +2,12 @@
 import { assert } from "chai"
 
 //import {maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray} from "./arrays.js";
-import { maxOfThree, sum, multiply, findLongestWord, generateArray, calcDownpayment, reverseArray, reverseArrayInPlace, scoreExams, double, times100 }
+import { 
+    maxOfThree, sum, multiply, 
+    findLongestWord, generateArray,
+     calcDownpayment, reverseArray,
+      reverseArrayInPlace, scoreExams,
+       double, times100, myMap}
     from "../src/app.js";
 
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
@@ -211,3 +216,15 @@ describe ("Return 100 times the number", function(){
         assert.equal(num, expectedResult);
     })
 })
+
+
+//Write a function, myMap, that takes an array and a function and returns a new array that has the function applied to each element of the input array. 
+    describe("myMap", function () {
+        const testArray = [-10, 0, 10, 20];
+        it("tests myMap on double", function () {
+            assert.deepStrictEqual(myMap(testArray, double), [-20, 0, 20, 40]);
+        });
+        it("tests myMap on times100", function () {
+            assert.deepStrictEqual(myMap(testArray, times100), [-1000, 0, 1000, 2000]);
+        });
+    });
