@@ -234,7 +234,7 @@ describe ("Return 100 times the number", function(){
 //     Then write it using an arrow expression. */
 
 
-    describe("myMap2", function () {
+    describe("myMap function with an anonymous function", function () {
         const testArray = [-10, 0, 10, 20];
         it("tests myMap on triples anonymous function", function () {
             assert.deepStrictEqual(myMap(testArray,  function (num: number) {return num * 3 }), [-30, 0, 30, 60]);
