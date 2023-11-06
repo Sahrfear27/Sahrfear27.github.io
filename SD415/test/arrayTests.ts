@@ -242,4 +242,5 @@ describe ("Return 100 times the number", function(){
         it("tests myMap on triples arrow function", function () {
             assert.deepStrictEqual(myMap(testArray, (num) => (num * 3)), [-30, 0, 30, 60]);
         });
+        
     });
