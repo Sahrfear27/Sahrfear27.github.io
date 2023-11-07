@@ -83,7 +83,26 @@ export function findIDs(): number[] {
 which will be represented as a global array named libraryBooks.  createBook should return the newly created book.
  */
 export function createBook(title: string, author: string, libraryID: number): Book {
-    //implement this
+    //Create the title for the html document
+    let bookTitle = document.createElement('p');
+    bookTitle.innerHTML =  "Book Title" ;
+    title = bookTitle.innerHTML;
+
+    // Create the first input element
+    let input1 = document.createElement('input');
+
+    
+    //Create a paragraph for author
+    let bookAuthor = document.createElement('p');
+    bookAuthor.innerHTML = "Author";
+    author = bookAuthor.innerHTML;
+
+
+    let libraryC = document.createElement('p');
+    libraryC.innerHTML = "Author";
+    libraryID = bookAuthor.innerHTML;
+
+
 
 }
 
