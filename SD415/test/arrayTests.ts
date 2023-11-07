@@ -2,12 +2,14 @@
 import { assert } from "chai"
 
 //import {maxOfThree, sum, multiply, findLongestWord, reverseArray, reverseArrayInPlace, scoreExams, generateArray} from "./arrays.js";
-import { 
-    maxOfThree, sum, multiply, 
+import {
+    maxOfThree, sum, multiply,
     findLongestWord, generateArray,
-     calcDownpayment, reverseArray,
-      reverseArrayInPlace, scoreExams,
-       double, times100, myMap}
+    calcDownpayment, reverseArray,
+    reverseArrayInPlace, scoreExams,
+    double, times100, myMap,
+    StudentQuiz, gradeStudent, gradeQuiz, gradeQuizLabeled,
+}
     from "../src/app.js";
 
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
@@ -180,7 +182,7 @@ describe("Test calcDownpayment", function () {
 // /* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
 
 describe("Return Number", function () {
-    it("It should return 2 times the number", function(){
+    it("It should return 2 times the number", function () {
         const doubleNumber = double(10);
         const expectedOutPut = 20;
         assert.equal(doubleNumber, expectedOutPut);
@@ -195,22 +197,22 @@ describe("Return Number", function () {
         const expectedOutPut = -20;
         assert.equal(doubleNumber, expectedOutPut);
     });
-   
+
 })
 
 // 2
-describe ("Return 100 times the number", function(){
-    it("It should return 100 time the number", function(){
+describe("Return 100 times the number", function () {
+    it("It should return 100 time the number", function () {
         const num = times100(10);
         const expectedResult = 1000;
         assert.equal(num, expectedResult);
     })
-    it("It should return 100 time the number", function(){
+    it("It should return 100 time the number", function () {
         const num = times100(0);
         const expectedResult = 0;
         assert.equal(num, expectedResult);
     })
-    it("It should return 100 time the number", function(){
+    it("It should return 100 time the number", function () {
         const num = times100(-10);
         const expectedResult = -1000;
         assert.equal(num, expectedResult);
@@ -219,28 +221,41 @@ describe ("Return 100 times the number", function(){
 
 
 //Write a function, myMap, that takes an array and a function and returns a new array that has the function applied to each element of the input array. 
-    describe("myMap", function () {
-        const testArray = [-10, 0, 10, 20];
-        it("tests myMap on double", function () {
-            assert.deepStrictEqual(myMap(testArray, double), [-20, 0, 20, 40]);
-        });
-        it("tests myMap on times100", function () {
-            assert.deepStrictEqual(myMap(testArray, times100), [-1000, 0, 1000, 2000]);
-        });
+describe("myMap", function () {
+    const testArray = [-10, 0, 10, 20];
+    it("tests myMap on double", function () {
+        assert.deepStrictEqual(myMap(testArray, double), [-20, 0, 20, 40]);
     });
+    it("tests myMap on times100", function () {
+        assert.deepStrictEqual(myMap(testArray, times100), [-1000, 0, 1000, 2000]);
+    });
+});
 
 
-     /* 4.	Demonstrate your myMap function with an anonymous function that triples the input value.  Write this as an anonymous function expression.  
+/* 4.	Demonstrate your myMap function with an anonymous function that triples the input value.  Write this as an anonymous function expression.  
 //     Then write it using an arrow expression. */
 
 
-    describe("myMap function with an anonymous function", function () {
-        const testArray = [-10, 0, 10, 20];
-        it("tests myMap on triples anonymous function", function () {
-            assert.deepStrictEqual(myMap(testArray,  function (num: number) {return num * 3 }), [-30, 0, 30, 60]);
-        });
-        it("tests myMap on triples arrow function", function () {
-            assert.deepStrictEqual(myMap(testArray, (num) => (num * 3)), [-30, 0, 30, 60]);
-        });
-        
+describe("myMap function with an anonymous function", function () {
+    const testArray = [-10, 0, 10, 20];
+    it("tests myMap on triples anonymous function", function () {
+        assert.deepStrictEqual(myMap(testArray, function (num: number): number { return num * 3 }), [-30, 0, 30, 60]);
     });
+    it("tests myMap on triples arrow function", function () {
+        assert.deepStrictEqual(myMap(testArray, (num: number): number => (num * 3)), [-30, 0, 30, 60]);
+    });
+
+});
+
+
+
+
+
+
+// d21Array
+/* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
+// import { assert } from "chai"
+
+//import { StudentQuiz, gradeStudent, gradeQuiz, gradeQuizLabeled } from "../src/quiz.js";  //import all of the app.js functions used in the Mocha tests
+
+

@@ -183,24 +183,45 @@ console.log(scoreExams (studentAnswers,correctAnswers ));
 
 // Function Homework
 /* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
-export  function double(num :number){
+export  function double(num :number) : number{
     return num * 2;
 }
 console.log(double(10));
 
 // Write a function times100 that takes a number and returns 100 times the number.
 
-export function times100(num: number){
+export function times100(num: number):number{
     let result = 100 * num;
     return result;
 }
 
 
-export function myMap(numArray : number[], times100 = (num: number)=>{ return 100 * num} ) {
+export function myMap(numArray : number[], times100 = (num: number)=>{ return 100 * num} ): number[] {
     let result = []
     for(let num of numArray){
         // Call the function and pass the number as parameters
         result.push(times100(num));
     }
     return result;
+}
+
+
+// d21Arrays
+// Write code according to the Mocha tests in quizTests.ts in today’s assignment code from the
+// course repository. First, review the following setup that is in the Mocha test code. Find three objects,
+// student1, student2, student3 with the following properties: 
+
+
+export function StudentQuiz(){
+    
+}
+export  function gradeQuizLabeled(){
+    
+}
+
+export function gradeStudent(){
+
+}
+export function gradeQuiz(){
+
 }
