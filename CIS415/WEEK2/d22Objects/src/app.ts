@@ -64,3 +64,40 @@ console.log(user);
 // The following will log true to the console.
 
 console.log("hELLO");
+
+
+// Create 3 objects, student1, student2, student3
+// ➢ property studentId : 101, 102, 103 respectively
+// ➢ property quizAnswers: [1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4] respectively
+// ➢ push the students into an array, quizAnswers
+// ➢ write a function, gradeQuiz, that takes the quiz array and an array of correct answers, e.g.,
+// [3,1,2,4] and returns an array that has scores for each student. Their score is the number of
+// correct answers.
+// ➢ expect [ 3, 2, 3 ]
+// ➢ use a helper function to compute the score for a given student
+
+
+// Interlinked Object with function
+// Function that create and return 2 objects
+
+type man ={
+    name: string,
+    wife: string
+}
+
+type woman ={
+    name: string,
+    husband: string
+}
+function marry(man: man, woman:woman){
+  man.wife = woman.name;
+  woman.husband = man.name;
+
+   return {
+    father : man,
+    mtoher: woman
+   }
+}
+
+let family = marry({ name: "John", wife :""},{name : "Ann", husband :""} )
+console.log(family);
