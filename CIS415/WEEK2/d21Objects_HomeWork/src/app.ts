@@ -7,16 +7,16 @@
 // student1, student2, student3 with the following properties: 
 
 
-export function StudentQuiz(quizAnswers: number[], correctAnswers : number[]){
+// export function StudentQuiz(quizAnswers: number[], correctAnswers : number[]){
     
-}
-export  function gradeQuizLabeled(){
+// }
+// export  function gradeQuizLabeled(){
     
-}
+// }
 
-export function gradeStudent(){
+// export function gradeStudent(){
 
-}
-export function gradeQuiz(){
+// }
+// export function gradeQuiz(){
 
-}
+// }
