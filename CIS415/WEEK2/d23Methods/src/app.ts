@@ -1,38 +1,3 @@
-// Methods in Javascript
-
-let user = {
-    name: "John",
-    age: 22,
-    sayHi: function () { } //a function that is a property of an object is called a method
-}
-
-user.sayHi = (): void => { console.log("Hello!") };
-user.sayHi();
-console.log(user);
-
-
-
-// Using the "this" in methods
-let user2 = {
-    name: "John",
-    age: 30,
-    sayHi: function () {
-        console.log("My name is " + this.name + " and my age is " + this.age);
-    }
-}
-user2.sayHi();
-
-
-let x = 5;
-let y = { x };
-console.log(y);
-
-
-function sum(arr: number[]): number { let tot = 0; for (let num of arr) { tot += num } return tot; }
-const foo = { sum };
-console.log(sum([1, 2, 3]));
-
-
 
 
 type Person = {
@@ -55,7 +20,7 @@ const intern: Person = {
 };
 
 function sayHowdy(this: Person) {
-    console.log("Hello, my name is "+ this.name + ".I am " + this.age + ". My Job is a software Engineer");
+    console.log("Hello, my name is " + this.name + ".I am " + this.age + ". My Job is a software Engineer");
 }
 
 
@@ -65,13 +30,31 @@ intern.sayHi(); // Hello, my name is Ben. I am 21. My job is Software Engineer I
 
 
 
-
 let a = 5;
-let b = {a};
+let b = { a };
 console.log(b); // {x : 5}
-function su(arr: number[]): number { let tot = 0; for(let num of arr){tot += num} return tot; }
-const fo = {su, a };
+function su(arr: number[]): number { let tot = 0; for (let num of arr) { tot += num } return tot; }
+const fo = { su, a };
 
-console.log(foo.sum )
-console.log(foo.sum([1,2,3]));
+console.log(fo.su)
+console.log(fo.su([1, 2, 3]));
 console.log("Foo is " + fo);
+
+
+//write a for loop to print out the values of the properties according to the property names in the
+// propertyOrder array. You must use the properties array to access the values. You cannot directly
+// write console.log(numbers.one)
+
+const numbers : {[key:string]: number}={
+    one: 1,
+    two: 22,
+    three: 333,
+    four: 444
+}
+const propertyOrder = ["one", "four", "three", "two",];
+
+for(let property of propertyOrder){
+    console.log(numbers[property])
+}
+
+
