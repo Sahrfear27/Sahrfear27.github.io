@@ -18,22 +18,14 @@ const student3 = {
     studentId: 103,
     quizAnswers: [3, 1, 3, 4]
 }
-student1;
-student2;
-student3;
+
 // const CORRECT_ANSWERS = [3, 1, 2, 4];
 
-
-
 export function gradeStudent(student: StudentQuiz, correctAns: number[]): number {
-    //IMPLEMENT THIS
-
     // Access the student  quizes using  the key
     const answers = student.quizAnswers;
 
-
     // Loop through the parallel array and count the matches and return
-
     let correct = 0;
 
     for (let i = 0; i < answers.length; i++) {
@@ -45,11 +37,7 @@ export function gradeStudent(student: StudentQuiz, correctAns: number[]): number
     return correct;
 }
 
-
-
 export function gradeQuiz(studentsArray: number[][], correctAns: number[]): number[] {
- 
-
     let result = [];
     // Loop throught the 2d array to access the  correct answers
     for (let arr = 0; arr < studentsArray.length; arr++) {
@@ -65,29 +53,39 @@ export function gradeQuiz(studentsArray: number[][], correctAns: number[]): numb
         result.push(ans)
 
     }
-
     return result;
 }
-// (studentQuizzes, CORRECT_ANSWERS), [3, 2, 3])
 
+student1;
+student2;
+student3;
 
-// const studentQuizzes = [student1, student2, student3];
-export function gradeQuizLabeled(quizArray :StudentQuiz[], quizKey: number[] ): number[] {
-    // This function should return an array of object
+type LabeledScore = {
+    id: number,
+    score: number,
 
-    const quizScore: number[] = [];
-    for(let student of quizArray){
-        let studentScore = gradeStudent(student, quizKey);
-        quizScore.push(studentScore);
-    }
-    return quizScore;
 }
+export function gradeQuizLabeled(quizArray: StudentQuiz[], correctAnswer: number[]): LabeledScore[] {
+
+   
+    let result: LabeledScore[] = [];
+    for(const students of quizArray){
+        // Get the student id of all the student
+        const studentId = students.studentId;
+
+        // Get each studnet answer
+        const studentAnswers = students.quizAnswers;
 
 
-// (gradeQuizLabeled(studentQuizzes, CORRECT_ANSWERS), [
-//     { id: 101, score: 3 },
-//     { id: 102, score: 2 },
-//     { id: 103, score: 3 }])
-
-
+        let studentScore = 0;
+        // Loop through the student answer and compare with the correctAnswer
+        for (let i = 0; i < studentAnswers.length; i++) {
+           if(studentAnswers[i] === correctAnswer[i]){
+            studentScore +=1;
+           }
+        }
+        result.push({id: studentId, score:studentScore});
+    }
+    return result;
+}
 

@@ -31,7 +31,6 @@ describe("quiz tests", function () {
 
 
 
-
     // How do i read from the obj type to add the quizes result to the
     const studentQuizzes: StudentQuiz[] = [student1, student2, student3];
 
@@ -40,7 +39,7 @@ describe("quiz tests", function () {
     });
 
     it("gradeStudent -- grade for 2 student", function () {
-        assert.deepEqual(gradeStudent(student2, CORRECT_ANSWERS), 3);
+        assert.deepEqual(gradeStudent(student2, CORRECT_ANSWERS), 2);
     });
 
     it("gradeStudent -- grade for 3 student", function () {
@@ -52,7 +51,7 @@ describe("quiz tests", function () {
     });
 
     it("gradeQuizLabeled -- labeled objects grades for all students", function () {
-        assert.deepEqual(gradeQuizLabeled(studentQuizzes, CORRECT_ANSWERS), [{ id: 101, score: 3 }, { id: 102, score: 2 },{ id: 103, score: 3 }]);
+        assert.deepEqual(gradeQuizLabeled(studentQuizzes, CORRECT_ANSWERS), [{id: 101, score: 3 }, { id: 102, score: 2 },{ id: 103, score: 3 }]);
     });
 
 });
