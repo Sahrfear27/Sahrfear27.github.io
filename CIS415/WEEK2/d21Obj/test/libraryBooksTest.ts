@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai"
 
-import {Book, library, findTitles, findAuthors , findIDs, createBook} from "../src/book.js";  //import all of the app.js functions used in the Mocha tests
+import {Book, findTitles, findAuthors , findIDs, createBook} from "../src/book.js";  //import all of the app.js functions used in the Mocha tests
 
 
 /*

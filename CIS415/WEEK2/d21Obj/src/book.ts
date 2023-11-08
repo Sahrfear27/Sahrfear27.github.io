@@ -27,7 +27,6 @@ export function showTitles(): void {
     /* put all titles into an array, then sort, then join with newline and insert in textarea innerHTML */
 
     const titles = findTitles();
-
     /*need to sort and then join the titles still (e.g., someArray.join("\n")  */
     titles.sort();
     const titleString = titles.join("\n");
@@ -41,16 +40,13 @@ export function showTitles(): void {
  * @return {object} array holding all titles as elements.findTitles, which will find all the book titles in libraryBooks and return them in an
 alphabetically ordered array
  */
-
-
 export function findTitles(): string[] {
-
-
+    // Create an empty array to hold the titles
     const title: string[] = [];
     for(let book of library){
+        // Loop through the book and push the ttles to title array
         title.push(book.title);
     }
-    
     return title.sort();
 }
 
@@ -60,7 +56,18 @@ export function findTitles(): string[] {
  */
 export function addBook(): void {
 
-    console.log("finish the implementation -- get the author, create a book object, and add to the library array!!");
+    // console.log("finish the implementation -- get the author, create a book object, and add to the library array!!");
+
+
+     // Create a book and add to the library array
+    let newBook = {
+        title : "Beginning Javascript",
+        author: "Paul Wilton",
+        libraryID: 2321
+    }
+   
+    library.push(newBook);
+
 }
 
 /**
@@ -104,7 +111,7 @@ which will be represented as a global array named libraryBooks.  createBook shou
  */
 
 // Create a global array
-const libraryBooks: Book[] = [];
+// const libraryBooks: Book[] = [];
 export function createBook(title: string, author: string, libraryID: number): Book {
 
     const newBook: Book = {
@@ -113,7 +120,7 @@ export function createBook(title: string, author: string, libraryID: number): Bo
         libraryID: libraryID,
     }
     //Add the books to the global array
-    libraryBooks.push(newBook);
+    library.push(newBook);
     return newBook;
 }
 
