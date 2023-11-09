@@ -21,8 +21,6 @@ describe("test calculator with values 2, 3", function () {
     it("when 2 and 3 are entered, the product is 6", function () {
         assert.strictEqual(calculator.mul(), 6);
     });
-
-
 });
 
 

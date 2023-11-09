@@ -19,23 +19,31 @@
         <br />
         <input type="text" id="author" size="80" />
     </p>
+    <p>
+        libraryID
+        <br />
+        <input type="text" id="libraryId" size="80" />
+    </p>
 
     <button type="button"  id="addBtn">Add book to library</button>
     <button type="button"  id="titlesBtn">Show titles</button>
+    <button type="button"  id="authorsBtn">find Authors</button>
+    <button type="button"  id="idBtn">Ids</button>
     <button type="button"  id="scrambleBtn" >Scramble</button>
 
     <script type="module">
-      import {addBook, showTitles, scramble} from "./dist/src/book.js"     
+      import {addBook, showTitles, scramble,findAuthors, findIDs} from "./dist/src/book.js"     
       document.querySelector('#addBtn').addEventListener('click', addBook)
       document.querySelector('#titlesBtn').addEventListener('click', showTitles)
       document.querySelector('#scrambleBtn').addEventListener('click', scramble)
+      document.querySelector('#authorsBtn').addEventListener('click', findAuthors)
+      document.querySelector('#idBtn').addEventListener('click', findAuthors)
     </script>
-
+    
     <p>
         <textarea id="displayArea" rows="10" cols="80"></textarea>
     </p>
 
 </body>
-
 
 </html>

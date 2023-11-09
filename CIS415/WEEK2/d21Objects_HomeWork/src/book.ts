@@ -58,23 +58,26 @@ export function addBook(): void {
 
     // console.log("finish the implementation -- get the author, create a book object, and add to the library array!!");
 
+    let title: HTMLInputElement = document.getElementById('title') as HTMLInputElement;
+    let author: HTMLInputElement = document.getElementById('author') as HTMLInputElement;
+    let library: HTMLInputElement = document.getElementById('author') as HTMLInputElement;
 
-     // Create a book and add to the library array
-    let newBook = {
-        title : "Beginning Javascript",
-        author: "Paul Wilton",
-        libraryID: 2321
-    }
+
+    let titleValue = title.value;
+    let authorValue = author.value;
+    let libraryID = +library.value;
+
+    const createdBook: Book = createBook(titleValue, authorValue, libraryID);
    
-    library.push(newBook);
 
+    console.log(createdBook);
+    // Add the titleValue, authorValues and libraryId to the createdBook
 }
-
+addBook();
 /**
  * 
  * @returns {string[]} find all  authors in libraryBooks and return them in alphabetically ordered array.
  */
-
 
 export function findAuthors(): string[] {
     // Loop throught the library books to access the authors
@@ -83,7 +86,7 @@ export function findAuthors(): string[] {
         // Push the author of the book to the library
         authors.push(book.author);
     }
-    return authors;
+    return authors.sort();
 }
 
 /**
@@ -102,7 +105,6 @@ export function findIDs(): number[] {
    const bookIds = ids.sort();
    return bookIds;
 }
-
 
 /**
  * @returns {book} new book object
@@ -131,5 +133,4 @@ export function createBook(title: string, author: string, libraryID: number): Bo
  */
 export function scramble(): void {
     console.log("implement scramble if you have time ...");
-
 }
