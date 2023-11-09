@@ -13,7 +13,7 @@ describe("bank tests", function () {
       });
 
     it("checks initial balance", function () {
-        assert.strictEqual(bank.bankBalance(), 85);
+        assert.strictEqual(bank.getBankBalance(), 85);
     });
 
     it("checks initial balance of customer 1", function () {
@@ -33,10 +33,10 @@ describe("bank tests", function () {
 
     /* the credit and debit are made in the bank.js file */
     it("balance after credit of 20 and debit of 1000 for customer 1", function () {
-        assert.strictEqual(bank.bankBalance(), 85);
+        assert.strictEqual(bank.getBankBalance(), 85);
         bank.credit(1, 20);
         bank.debit(1, 1000);
-        assert.strictEqual(bank.bankBalance(), 105);
+        assert.strictEqual(bank.getBankBalance(), 105);
     });
 
 });
