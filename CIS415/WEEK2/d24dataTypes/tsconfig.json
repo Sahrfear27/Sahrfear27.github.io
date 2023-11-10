@@ -5,9 +5,6 @@
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "strict": true,
-        // Added below 2 options: Delete if it causes any errors
-        // "esModuleInterop": true,
-        // "allowSyntheticDefaultImports": true,
     },
     "include": [
         "*.ts",

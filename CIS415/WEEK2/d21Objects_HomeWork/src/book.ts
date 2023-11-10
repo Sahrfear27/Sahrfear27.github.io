@@ -86,6 +86,10 @@ export function findAuthors(): string[] {
         // Push the author of the book to the library
         authors.push(book.author);
     }
+    // let contentBox = document.getElementById('displayArea')?.ariaValueMax;
+    // let authorName = document.getElementById('authorsBtn')?.ariaValueMax;
+    
+    // contentBox = authorName;
     return authors.sort();
 }
 
@@ -103,6 +107,12 @@ export function findIDs(): number[] {
         ids.push(book.libraryID);
     }
    const bookIds = ids.sort();
+
+//    let contentBox = document.getElementById('displayArea')?.ariaValueMax;
+//    let authorId = document.getElementById('idBtn')?.ariaValueMax;
+   
+//    contentBox = authorId;
+
    return bookIds;
 }
 
@@ -125,6 +135,17 @@ export function createBook(title: string, author: string, libraryID: number): Bo
     library.push(newBook);
     return newBook;
 }
+export function scrabble(title: string, author: string, libraryID: number): Book {
+
+    const newBook: Book = {
+        title: title,
+        author: author,
+        libraryID: libraryID,
+    }
+    //Add the books to the global array
+    library.push(newBook);
+    return newBook;
+}
 
 
 /**
@@ -132,5 +153,6 @@ export function createBook(title: string, author: string, libraryID: number): Bo
  * @returns {undefined} 
  */
 export function scramble(): void {
+    
     console.log("implement scramble if you have time ...");
 }

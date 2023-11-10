@@ -27,7 +27,7 @@
 
     <button type="button"  id="addBtn">Add book to library</button>
     <button type="button"  id="titlesBtn">Show titles</button>
-    <button type="button"  id="authorsBtn">find Authors</button>
+    <button type="button"  id="authorsBtn" onclick="findAuthor()">find Authors</button>
     <button type="button"  id="idBtn">Ids</button>
     <button type="button"  id="scrambleBtn" >Scramble</button>
 
@@ -38,6 +38,16 @@
       document.querySelector('#scrambleBtn').addEventListener('click', scramble)
       document.querySelector('#authorsBtn').addEventListener('click', findAuthors)
       document.querySelector('#idBtn').addEventListener('click', findAuthors)
+
+      function findAuthor(){
+        let content = document.getElementById('displayArea').value;
+        let author = document.getElementById('author');
+        if(author){
+            content = author;
+        }
+      }
+      
+    
     </script>
     
     <p>
