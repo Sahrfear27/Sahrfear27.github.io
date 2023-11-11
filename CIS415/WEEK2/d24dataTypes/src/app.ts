@@ -212,6 +212,13 @@ function addEvenNum(firstNum: number[], secondNum: number[]): number {
 }
 console.log(addEvenNum([1, 2], [3, 4]))
 
+// Flat Method: Convert 2D array into 1d
+let twoD = [[1, 2], [3, 4]];
+console.log(twoD);
+let flatMethodArray = twoD.flat();
+console.log(flatMethodArray);
+console.log(`The result for the ${twoD} is now ${flatMethodArray}`);
+
 // For each loop: Execute and provide function once for each array element
 let array2 = ['a', 'b', 'c', 'd'];
 
@@ -219,22 +226,22 @@ array2.forEach((char: string): void => console.log(char));
 
 // use forEach to log all the even elements of an array to the console
 let mixNumbers = [1, 5, 16, 3, 108, 102];
-mixNumbers.forEach((num:number) => (num%2 === 0)? console.log(num):undefined);
+mixNumbers.forEach((num: number) => (num % 2 === 0) ? console.log(num) : undefined);
 
 
 
 // Filter: Create a shallow copy of an element and filter down just the element that passes
 let words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
-let wordOutput = words.filter((ele :string)=> words.length < 5);
-console.log(wordOutput);
+let wordOutput = words.filter((ele: string) => ele.length < 8);
+console.log("The ans is " + wordOutput);
 
 let userObject = [
-    {id:1, name:"John"},
-    {id:2, name:"Kelvin"},
-    {id:4, name:"Joseph"},
+    { id: 1, name: "John" },
+    { id: 2, name: "Kelvin" },
+    { id: 4, name: "Joseph" },
 ];
 // Check if the property with id 6 exist and print it value
-let idValue = userObject.filter((objects)=> (objects.id === 1)?objects.name: undefined);
+let idValue = userObject.filter((objects) => (objects.id === 1) ? objects.name : undefined);
 console.log(idValue);
 
 
@@ -242,5 +249,44 @@ console.log(idValue);
 // The find expression : Find the first expression that satisfies a specific conditions
 
 // Use the find method to get the name with id 2
-let personName = userObject.find((objects)=>(objects.id ===2));
+let personName = userObject.find((objects) => (objects.id === 2));
 console.log(personName?.name);
+
+
+function sayHi(): void {
+    console.log("Hello");
+}
+const myHi = sayHi;
+console.log(sayHi);
+function higherOrder(): () => void { return sayHi; }
+const hiFunction = higherOrder();
+hiFunction()
+hiFunction()
+hiFunction()
+//higherOrder(); //Will not print any thing because the function is returning sayHi
+
+// The reduce Method: Pass the return value from the calculation to the proceeding elements
+const array3 = [1, 2, 3, 4];
+
+// Set initial value
+let initialValue = 0;
+
+const sumWithInitialValue = array3.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+console.log(sumWithInitialValue);
+
+
+const getMax = (a: number, b: number): number => Math.max(a, b);
+console.log(getMax(17, 3));
+
+
+
+// The map method
+let results = arr.map(function (item, index, array) {
+    // returns the new value instead of item
+});
+let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+
+// let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(name, index):string => item.length);
+console.log(lengths); // 5,7,6
+//modify so that it logs array with index: item.length instead of just item.length
+// console.log("expect 0: 5, 1: 7, 2: 6", lengths); 

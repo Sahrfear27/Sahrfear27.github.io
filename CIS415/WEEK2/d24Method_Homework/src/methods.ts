@@ -1,3 +1,4 @@
+import { count } from "console";
 
 /* 
 Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.
@@ -5,15 +6,31 @@ The function should not modify the array. It should return the new array.
 */
 export function filterRange(arr: number[], a: number, b: number): number[] {
 
-    return [];
-}
+    let resultArray: number[] = [];
+    let countA = 0;
+    let countB = 0;
 
+    for(let num of arr){
+        if((num > a)){
+            countA += 1;
+        }
+        else if(num < b){
+            countB += 1;
+        }
+    }
+    resultArray = [countA,countB]
+    let ressut = resultArray.flat();
+    // let newArray = arr.filter((ele)=> (ele > a)?)
+
+    // const myFilter = arr.filter((ele)=> ((ele > a) && (ele < b)? 1: undefined ));
+    return ressut;
+}
 /*
 Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
 The function should only modify the array. It should not return anything.
 */
 export function filterRangeInPlace(arr: number[], a: number, b: number): void {
-
+     arr.filter((ele)=>((ele > a) && (ele < b)));
 }
 
 interface Calculator {

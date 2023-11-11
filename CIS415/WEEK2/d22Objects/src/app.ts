@@ -1,4 +1,4 @@
-// Generic Functions
+// Generic Functions : 
 function creatPair<S, T> (word: S, num:T): [S, T]{
     return [word, num];
 
@@ -39,7 +39,7 @@ employee.isActive = false;
 console.log(employee);
 
 // Add  properties from the objects
-//Error : Property 'isAdmin' does not exist on type '{ name: string; age: number; }'.ts(2339)==> ypeScript is treating the object user as having a specific type, 
+//Error : Property 'isAdmin' does not exist on type '{ name: string; age: number; }'.ts(2339)==> typeScript is treating the object user as having a specific type, 
 //and it doesn't recognize the "isAdmin" property because it's not present in the type definition.
 //Use  type assertion in the type defination (?) which means optional
 type User = {
@@ -76,7 +76,38 @@ console.log("hELLO");
 // ➢ expect [ 3, 2, 3 ]
 // ➢ use a helper function to compute the score for a given student
 
+const student1 ={
+    studentId : 101,
+    quizAnswers: [1, 1, 2,4]
+}
+const student2 ={
+    studentId : 102,
+    quizAnswers:[2, 1, 2,2],
+}
+const student3 ={
+    studentId : 103,
+    quizAnswers:[3, 1, 3,4]
+}
 
+type student ={
+    studentId:number,
+    quizAnswers: number[];
+}
+const studentArray = [student1, student2, student3];
+
+function computeStudentScore(student:student, correctScore:number[]){
+    let sum  = 0;
+    const studentAnswers = student.quizAnswers;
+    // let s = studentAnswers.filter((ele))
+    for(let i = 0; i < studentAnswers.length; i++){
+        if(studentAnswers[i] === correctScore[i]){
+            sum += 1;
+        }
+    }
+  return sum;
+}
+
+console.log("The ans is " + computeStudentScore(student1, [3, 1, 2, 4]));
 // Interlinked Object with function
 // Function that create and return 2 objects
 
