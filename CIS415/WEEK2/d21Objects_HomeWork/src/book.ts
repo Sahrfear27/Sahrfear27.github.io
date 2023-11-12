@@ -30,6 +30,7 @@ export function showTitles(): void {
     /*need to sort and then join the titles still (e.g., someArray.join("\n")  */
     titles.sort();
     const titleString = titles.join("\n");
+    console.log(titleString);
 
     let textArea: HTMLInputElement | null = document.getElementById("displayArea") as HTMLInputElement | null;
     if (textArea) { textArea.innerHTML = titleString; }
@@ -60,12 +61,12 @@ export function addBook(): void {
 
     let title: HTMLInputElement = document.getElementById('title') as HTMLInputElement;
     let author: HTMLInputElement = document.getElementById('author') as HTMLInputElement;
-    let library: HTMLInputElement = document.getElementById('author') as HTMLInputElement;
+    let libraryId: HTMLInputElement = document.getElementById('libraryId') as HTMLInputElement;
 
 
     let titleValue = title.value;
     let authorValue = author.value;
-    let libraryID = +library.value;
+    let libraryID = +libraryId.value;
 
     const createdBook: Book = createBook(titleValue, authorValue, libraryID);
    
@@ -135,8 +136,9 @@ export function createBook(title: string, author: string, libraryID: number): Bo
     library.push(newBook);
     return newBook;
 }
-export function scrabble(title: string, author: string, libraryID: number): Book {
+export function scrabble(): void {
 
+    // Find the title 
     const newBook: Book = {
         title: title,
         author: author,
@@ -144,9 +146,33 @@ export function scrabble(title: string, author: string, libraryID: number): Book
     }
     //Add the books to the global array
     library.push(newBook);
-    return newBook;
+  
+}
+export function showAuthors(): void{
+      /* this function is complete, no need to modify.  Inspect it as an example for the other functions. */
+    /* put all titles into an array, then sort, then join with newline and insert in textarea innerHTML */
+
+    const authors = findAuthors();
+    /*need to sort and then join the titles still (e.g., someArray.join("\n")  */
+    authors.sort();
+    const authorString = authors.join("\n");
+
+    let textArea: HTMLInputElement | null = document.getElementById("displayArea") as HTMLInputElement | null;
+    if (textArea) { textArea.innerHTML = authorString; }
 }
 
+export function showIDs(): void{
+      /* this function is complete, no need to modify.  Inspect it as an example for the other functions. */
+    /* put all titles into an array, then sort, then join with newline and insert in textarea innerHTML */
+
+    const ids = findIDs();
+    /*need to sort and then join the titles still (e.g., someArray.join("\n")  */
+    ids.sort();
+    const idString = ids.join("\n");
+
+    let textArea: HTMLInputElement | null = document.getElementById("displayArea") as HTMLInputElement | null;
+    if (textArea) { textArea.innerHTML = idString; }
+}
 
 /**
  * 

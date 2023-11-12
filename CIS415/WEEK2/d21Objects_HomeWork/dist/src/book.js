@@ -21,6 +21,7 @@ export function showTitles() {
     /*need to sort and then join the titles still (e.g., someArray.join("\n")  */
     titles.sort();
     const titleString = titles.join("\n");
+    console.log(titleString);
     let textArea = document.getElementById("displayArea");
     if (textArea) {
         textArea.innerHTML = titleString;
@@ -48,10 +49,10 @@ export function addBook() {
     // console.log("finish the implementation -- get the author, create a book object, and add to the library array!!");
     let title = document.getElementById('title');
     let author = document.getElementById('author');
-    let library = document.getElementById('author');
+    let libraryId = document.getElementById('libraryId');
     let titleValue = title.value;
     let authorValue = author.value;
-    let libraryID = +library.value;
+    let libraryID = +libraryId.value;
     const createdBook = createBook(titleValue, authorValue, libraryID);
     console.log(createdBook);
     // Add the titleValue, authorValues and libraryId to the createdBook
@@ -68,7 +69,10 @@ export function findAuthors() {
         // Push the author of the book to the library
         authors.push(book.author);
     }
-    return authors;
+    // let contentBox = document.getElementById('displayArea')?.ariaValueMax;
+    // let authorName = document.getElementById('authorsBtn')?.ariaValueMax;
+    // contentBox = authorName;
+    return authors.sort();
 }
 /**
  *
@@ -82,6 +86,9 @@ export function findIDs() {
         ids.push(book.libraryID);
     }
     const bookIds = ids.sort();
+    //    let contentBox = document.getElementById('displayArea')?.ariaValueMax;
+    //    let authorId = document.getElementById('idBtn')?.ariaValueMax;
+    //    contentBox = authorId;
     return bookIds;
 }
 /**
@@ -100,6 +107,40 @@ export function createBook(title, author, libraryID) {
     //Add the books to the global array
     library.push(newBook);
     return newBook;
+}
+export function scrabble(title, author, libraryID) {
+    const newBook = {
+        title: title,
+        author: author,
+        libraryID: libraryID,
+    };
+    //Add the books to the global array
+    library.push(newBook);
+    return newBook;
+}
+export function showAuthors() {
+    /* this function is complete, no need to modify.  Inspect it as an example for the other functions. */
+    /* put all titles into an array, then sort, then join with newline and insert in textarea innerHTML */
+    const authors = findAuthors();
+    /*need to sort and then join the titles still (e.g., someArray.join("\n")  */
+    authors.sort();
+    const authorString = authors.join("\n");
+    let textArea = document.getElementById("displayArea");
+    if (textArea) {
+        textArea.innerHTML = authorString;
+    }
+}
+export function showIDs() {
+    /* this function is complete, no need to modify.  Inspect it as an example for the other functions. */
+    /* put all titles into an array, then sort, then join with newline and insert in textarea innerHTML */
+    const ids = findIDs();
+    /*need to sort and then join the titles still (e.g., someArray.join("\n")  */
+    ids.sort();
+    const idString = ids.join("\n");
+    let textArea = document.getElementById("displayArea");
+    if (textArea) {
+        textArea.innerHTML = idString;
+    }
 }
 /**
  *

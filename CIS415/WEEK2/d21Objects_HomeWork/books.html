@@ -27,26 +27,19 @@
 
     <button type="button"  id="addBtn">Add book to library</button>
     <button type="button"  id="titlesBtn">Show titles</button>
-    <button type="button"  id="authorsBtn" onclick="findAuthor()">find Authors</button>
-    <button type="button"  id="idBtn">Ids</button>
+    <button type="button"  id="authorsBtn">Show Authors</button>
+    <button type="button"  id="idBtn">Show Ids</button>
     <button type="button"  id="scrambleBtn" >Scramble</button>
 
     <script type="module">
-      import {addBook, showTitles, scramble,findAuthors, findIDs} from "./dist/src/book.js"     
+      import {addBook, showTitles, scramble,showAuthors, showIDs} from "./dist/src/book.js"     
       document.querySelector('#addBtn').addEventListener('click', addBook)
       document.querySelector('#titlesBtn').addEventListener('click', showTitles)
       document.querySelector('#scrambleBtn').addEventListener('click', scramble)
-      document.querySelector('#authorsBtn').addEventListener('click', findAuthors)
-      document.querySelector('#idBtn').addEventListener('click', findAuthors)
+      document.querySelector('#authorsBtn').addEventListener('click', showAuthors)
+      document.querySelector('#idBtn').addEventListener('click', showIDs)
 
-      function findAuthor(){
-        let content = document.getElementById('displayArea').value;
-        let author = document.getElementById('author');
-        if(author){
-            content = author;
-        }
-      }
-      
+ 
     
     </script>
     
