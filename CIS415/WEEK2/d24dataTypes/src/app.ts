@@ -1,3 +1,5 @@
+import { it } from "node:test";
+
 // To convert from number to string
 const foo = 45;
 const bar = "" + foo;
@@ -290,3 +292,44 @@ let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
 console.log(lengths); // 5,7,6
 //modify so that it logs array with index: item.length instead of just item.length
 // console.log("expect 0: 5, 1: 7, 2: 6", lengths); 
+
+
+
+let len = ["Bilbo", "Gandalf", "Nazgul"].map(item => item);
+console.log(len); // 5,7,6
+
+let resul = len.map(function (item, index) {
+    return `${index}: ${item.length}`;
+});
+console.log(resul);
+
+
+let users = [
+    { id: 1, name: "John" },
+    { id: 2, name: "Pete" },
+    { id: 0, name: "Mary" }
+];
+
+// let resultS = users.find((items)=> items.name);
+// console.log(resultS);
+
+// The Find: Return a specific elements that specifies a specific conditions
+let result3 = users.find((elements) => (elements.id === 3) ? elements.name : null);
+console.log(result3);
+
+
+// Filter: Return a shallow copy of all matching array elemnts
+// Return all the users with id less than 3
+
+console.log(users.filter((elements) => elements.id < 3));
+
+
+// Use map to return all the element that has id less than 3
+console.log(users.map((elemets) => elemets.id < 2));
+
+
+
+let ar = ["Bilbo", "Gandalf", "Nazgul"];
+console.log(ar.map((eltments)=> eltments.length));
+
+// ar.map((items)=> items.length)
