@@ -1,4 +1,4 @@
-//Distubance: Allows us to unpack arrays and object into a set of variables
+//Distructering: Allows us to unpack arrays and object into a set of variables
 
 let arr = ["Ilya", "Kantor"]
 // sets firstName = arr[0] and surname = arr[1]
@@ -32,11 +32,36 @@ console.log(balance);
 
 
 const team = ["Bob", "Fred", "Jim"];
-const [fName, sName, lName] =team;
-[fName, sName, lName].forEach((ele)=> console.log(`The ${ele} is now: ${ele.toLowerCase()}`))
-// console.log(`${fName} is now : ${fName.toLowerCase()}`);
+const [fName, sName, lName] = team;
+ [fName, sName, lName].forEach((elem)=>  console.log(`Expect ${elem}: ${elem.toLowerCase()}`))
 
 let arr2 = [ 1, 2, 15 ];
 // the method reorders the content of arr
 arr.sort();
 console.log( arr2 ); // [1, 2, 15]
+
+
+let users = {}as User;
+[users.name, users.surname] = "Kelvin Doe".split(' ');
+console.log(users);
+console.log(users.name);
+
+
+// Useing the Rest operator in function
+
+// function sumElement(...num:number[]):number{
+//     return num.reduce((sum, currentNum)=> sum + currentNum,0);
+// }
+// console.log(sumElement([1,2,3,4,5,6,7,8,9,10]))
+
+function sumElement(...num:number[]): number{
+    return num.reduce((sum, currentNum)=> sum + currentNum,0);
+}
+let a = [1,2,3,4,5,6,7,8,9,10];
+console.log(sumElement(...a));
+
+// default values
+let [name3 = "Guest", surname3 = "Anonymous"] = ["Julius"];
+console.log(name3); // Julius (from array)
+console.log(surname3); // Anonymous (default used)const team = [ "Bob", "Fred", "Jim“]
+
