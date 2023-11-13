@@ -282,7 +282,7 @@ console.log(getMax(17, 3));
 
 
 
-// The map method
+// The map method: Call the function for each element of the array and return the array of result
 let results = arr.map(function (item, index, array) {
     // returns the new value instead of item
 });
@@ -301,13 +301,13 @@ console.log(len); // 5,7,6
 let resul = len.map(function (item, index) {
     return `${index}: ${item.length}`;
 });
-console.log(resul);
+console.log(`Result: ${resul}`);
 
 
 let users = [
     { id: 1, name: "John" },
     { id: 2, name: "Pete" },
-    { id: 0, name: "Mary" }
+    { id: 3, name: "Mary" }
 ];
 
 // let resultS = users.find((items)=> items.name);
@@ -330,6 +330,29 @@ console.log(users.map((elemets) => elemets.id < 2));
 
 
 let ar = ["Bilbo", "Gandalf", "Nazgul"];
-console.log(ar.map((eltments)=> eltments.length));
+console.log(ar.map((eltments) => eltments.length));
 
-// ar.map((items)=> items.length)
+
+// Sort Method: Sort array in place and then return the result
+let sortArray = [1, 2, 15, 3, 4, 11,11];
+console.log(sortArray.sort()); //Output will not be as expected because all elements are converted to string before comparism
+
+
+// Create a compare function
+function compare(num1: number, num2: number){
+    return (num1 > num2)?1 : (num1 === num2)?0: -1;
+}
+console.log(sortArray.sort(compare));
+
+
+type Person = {
+    name: string,
+    age: number
+}
+
+function findEvenAge(arr:Person[]): Person|undefined{
+
+    return arr.find((person)=>person.age %2 === 0);
+}
+const peopleArray = [{ name: "Sam", age: 15 }, { name: "William", age: 6 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 80 }];
+console.log(findEvenAge(peopleArray));
