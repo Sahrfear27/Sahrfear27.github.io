@@ -93,13 +93,41 @@ export function collectLabeledRoomCaps() {
 }
 export function countStudentsInClassroom(classRoom:Classroom[], classRoomNumber: number):  number{
   let count = 0;
+  // Check the rooms 
   for(let room of classRoom){
-    if(room.roomNumber === classRoomNumber){
+    if(room.roomNumber === classRoomNumber){ //check if room number matches
+      // Return the number of student of that room
       count += room.students.length
     }
   }
   return count;
 } 
+
+export function findClassroomsWithCapacity(classRoom:Classroom[], minCapacity: number): {roomNumber: number, capacity: number} []{
+
+
+// Use filter to search for all the classes with capacity >= minCapacity
+ return classRoom.filter((classes)=>classes.capacity >= minCapacity)
+
+//  Use map to transform the new array to an array of object
+ .map((classRoom)=> ({roomNumber:classRoom.roomNumber, capacity:classRoom.capacity}));
+
+
+//  Using For off loop
+ //  let classWithMinCapacity: Classroom[] = [];
+   // Check for class in classRooms
+  // for(let classes of classRoom){
+  //   //Check if class capacity is larger than min capacity
+  //   if(classes.capacity >= minCapacity){
+  //     classWithMinCapacity.push(classes)
+  //   }
+  // }
+  // return classWithMinCapacity;
+} 
+
+
+
+
 /* 
 1.	Write a function collectRoomNumbers that will return an array of all the room nmbers.
 2.	Write a function collectRoomsAndCapacities to return an array with room numbers and capacities in this 

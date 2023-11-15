@@ -9,15 +9,15 @@ type Day = {
 }
 
 
-// const session1 = { userId: 1, duration: 60 };
-// const session2 = { userId: 2, duration: 45 };
-// const session3 = { userId: 2, duration: 30 };
-// const session4 = { userId: 3, duration: 15 };
-// const session5 = { userId: 3, duration: 75 };
-// const day1 = { sessions: [session1, session2], date: "01/10/2022" };
-// const day2 = { sessions: [session3, session4, session5], date: "01/11/2022" };
-// const dailyRecord: Day[] = [day1, day2];
-
+const session1 = { userId: 1, duration: 60 };
+const session2 = { userId: 2, duration: 45 };
+const session3 = { userId: 2, duration: 30 };
+const session4 = { userId: 3, duration: 15 };
+const session5 = { userId: 3, duration: 75 };
+const day1 = { sessions: [session1, session2], date: "01/10/2022" };
+const day2 = { sessions: [session3, session4, session5], date: "01/11/2022" };
+const dailyRecord: Day[] = [day1, day2];
+dailyRecord;
 // function dailTota(dailyRecords: Day[]): number {
 //     return dailyRecords.reduce((totalDuration, days) => {
 //         return totalDuration + days.sessions.reduce((totalDay, session)=>{
@@ -84,7 +84,7 @@ export function getAllSessionsForUser(dailyRecord: Day[], id: number): Session[]
 }
 
 export function getAllDurations(dailyRecord: Day[]): number[] {
-    // Using filter to get all the sessions from a given id in th getAllSession Function
+    // Using map to get all the durations from a given id in th getAllSession Function
     return getAllSessions(dailyRecord).map((session) => session.duration);
 
 }

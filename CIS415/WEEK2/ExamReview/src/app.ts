@@ -155,10 +155,10 @@ console.log(firstName(pNames));
 
 
 const arrSlic = [1, 2, 3, 4, 5];
-function replaceEnds(arr: number[],num1:number, num2:number ): number[]{
-    let result  = arr.slice();
-    result.splice(0,1, num1); //at 0, delete1 item and replace with num1;
-    result.splice(result.length-1, 1, num2);
+function replaceEnds(arr: number[], num1: number, num2: number): number[] {
+    let result = arr.slice();
+    result.splice(0, 1, num1); //at 0, delete1 item and replace with num1;
+    result.splice(result.length - 1, 1, num2);
     return result;
 }
 console.log(replaceEnds(arrSlic, 0, 100));
@@ -176,17 +176,30 @@ console.log(replaceEnds(arrSlic, 0, 100));
 //     });
 // });
 
-function square(num: number): number{
+
+
+function square(num: number): number {
     return num * num;
 }
-
-function cube(num: number): number{
+function cube(num: number): number {
     return num * num * num;
 }
-
-function foo(choice: (num:number)=>number, num: number): number{
- 
-  return choice(num);
+function foo(choice: (num: number)=> number, num : number): number{
+    return choice(num);
 }
+console.log(foo(cube,4));
+console.log(foo(square,6));
 
-console.log(foo(cube,5))
+let personNames = ["Fred Smith", "Carl Lindstrom"]
+
+function yourName(fullName: string[]):{firstName: string, lastName: string}[]{
+    return fullName.map((names)=>{
+        // Split the names of the list and destructure them into first and last name
+        const [firstName, lastName] = names.split(" ");
+        return {
+            firstName,
+            lastName
+        }
+    })
+}
+console.log(yourName(personNames));

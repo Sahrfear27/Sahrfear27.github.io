@@ -2,7 +2,7 @@
 import { assert } from "chai";
 
 import { topSalary } from "../src/destructure.js";
-import { collectRoomNumbers, collectRoomsAndCapacities,collectLabeledRoomCaps,countStudentsInClassroom
+import { collectRoomNumbers, collectRoomsAndCapacities,collectLabeledRoomCaps,countStudentsInClassroom,findClassroomsWithCapacity
  
   //   countStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge
   } from '../src/classrooms.js';
@@ -99,11 +99,11 @@ describe("classroom embedded objects", function() {
     assert.equal( countStudentsInClassroom(classrooms, 102), 2);
   });
 
-  // it("findClassroomsWithCapacity", function() {
-  //   const capacity30 = findClassroomsWithCapacity(classrooms, 30);
-  //   assert.strictEqual( capacity30.length, 2 );
-  //   assert.strictEqual( capacity30[0].roomNumber, 101 );
-  // });
+  it("findClassroomsWithCapacity", function() {
+    const capacity30 = findClassroomsWithCapacity(classrooms, 30);
+    assert.strictEqual( capacity30.length, 2 );
+    assert.strictEqual( capacity30[0].roomNumber, 101 );
+  });
   // it("findStudentsOlderThan", function() {
   //   const olderThan18 = findStudentsOlderThan(classrooms, 18);
   //   assert.strictEqual( olderThan18.length, 4 );

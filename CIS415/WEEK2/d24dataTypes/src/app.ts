@@ -367,15 +367,6 @@ console.log(findEvenAge(peopleArray));
 // Write the function camelize(str) that changes dash-separated
 //  words like “my-short-string” into camel-cased “myShortString”.
 
-
-// function camelize(str: string){
-//     // Remove all the dashes and put the word into a list
-//     let result = str.split("-");
-
-//     // Change the first letter of the word that comes after with upper case
-//     result.map((word, index)=> index == 0? word: word[0].toLocaleUpperCase()+ word.slice(1)).join("");
-//     return result;
-// }
 function camelize(str:string) {
     return str
       .split('-') // splits 'my-long-word' into array ['my', 'long', 'word']
@@ -389,4 +380,7 @@ function camelize(str:string) {
 console.log(camelize("background-color"));
 
 
-console.log()
+// Extendable calculatro functions
+// function calculator(){
+    
+// }
