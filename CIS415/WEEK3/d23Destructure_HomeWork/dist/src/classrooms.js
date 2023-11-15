@@ -1,4 +1,10 @@
-export { collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCapscountStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge }; //implement these
+// export {
+//   collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCapscountStudentsInClassroom,
+//   findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge
+// };  //implement these
+// type Student = {
+//   students: Classroom[];
+// }
 export const classrooms = [
     {
         roomNumber: 101,
@@ -27,6 +33,32 @@ export const classrooms = [
         ],
     },
 ];
+// Return all the room numbers
+export function collectRoomNumbers() {
+    const rooms = [
+        { roomNumber: 101, capacity: 30, students: [] },
+        { roomNumber: 102, capacity: 25, students: [] },
+        { roomNumber: 103, capacity: 35, students: [] },
+    ];
+    // Loop through the rooms
+    const totalRoom = rooms.map((room) => room.roomNumber);
+    return totalRoom;
+}
+export function collectRoomsAndCapacities() {
+    const rooms = [
+        { roomNumber: 101, capacity: 30, students: [] },
+        { roomNumber: 102, capacity: 25, students: [] },
+        { roomNumber: 103, capacity: 35, students: [] },
+    ];
+    let roomCapacities = [];
+    for (let room of rooms) {
+        let roomNum = room.roomNumber + "";
+        let roomCap = room.capacity + "";
+        let capacities = roomNum + "::" + roomCap;
+        roomCapacities.push(capacities);
+    }
+    return roomCapacities;
+}
 /*
 1.	Write a function collectRoomNumbers that will return an array of all the room nmbers.
 2.	Write a function collectRoomsAndCapacities to return an array with room numbers and capacities in this
