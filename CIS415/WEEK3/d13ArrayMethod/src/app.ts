@@ -41,13 +41,13 @@ let users = [
     { id: 3, name: "Mary" }
 ];
 
-function sorts(a: string, b: string) { //need to modify this function
+function mySorted(a: string, b: string) { //need to modify this function
     if (a > b) return 1;
     if (a == b) return 0;
     if (a < b) return -1;
     return 0;
 }
-let sortedUser = users.sort((ids, names)=> sorts(ids.name, names.name));
+let sortedUser = users.sort((ids, names)=> mySorted(ids.name, names.name));
 console.log(sortedUser);
 
 

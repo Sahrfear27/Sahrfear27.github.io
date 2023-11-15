@@ -1,3 +1,6 @@
+import { assert } from "node:console";
+import { describe } from "node:test";
+
 const donation1 = { funderId: 1, amount: 100 };
 const donation2 = { funderId: 2, amount: 10 };
 const donation3 = { funderId: 3, amount: 1 };
@@ -119,12 +122,71 @@ numbers.forEach((ele) => (ele % 2 === 0) ? console.log(ele) : null);
 const arr = [1, 2, 3, 4, 5];
 function replaceInterior(arr: number[], num: number): number[] {
     let result = arr.slice();
-    result.splice(1,arr.length-2, num)
+    result.splice(1, arr.length - 2, num)
     return result;
 }
 console.log(replaceInterior(arr, 999));
 
-function printThis(input:string){
+function printThis(input: string) {
     console.log(input);
 }
-printThis();
+// printThis();
+
+
+let words = "One two";
+console.log(words.split(" "));
+let nameArr = []
+const pNames = ["Fred Smith", "Carl Lindstrom"];
+const [fName, lName] = pNames;
+// console.log(fName.split(" "))
+// console.log(lName.split(" "))
+
+function firstName(names: string[]): { firstName: string, lastName: string }[] {
+    return names.map((fullName) => {
+        // Unpack the element of the arr and assign it to variables firstName and lastName is splited form
+        const [firstName, lastName] = fullName.split(" ");
+        return {
+            firstName,
+            lastName,
+        }
+    })
+}
+console.log(firstName(pNames));
+
+
+const arrSlic = [1, 2, 3, 4, 5];
+function replaceEnds(arr: number[],num1:number, num2:number ): number[]{
+    let result  = arr.slice();
+    result.splice(0,1, num1); //at 0, delete1 item and replace with num1;
+    result.splice(result.length-1, 1, num2);
+    return result;
+}
+console.log(replaceEnds(arrSlic, 0, 100));
+
+
+// Implement functions foos, square, and cube
+
+// describe ("higher order", function(){
+//     it("Test Square ", function(){
+//         assert.strictEqual(foo(square,5), 25);
+//     });
+
+//     it("Test cube ", function(){
+//         assert.strictEqual(foo(cube,10), 1000);
+//     });
+// });
+
+function square(num: number): number{
+    return num * num;
+}
+
+function cube(num: number): number{
+    return num * num * num;
+}
+
+function foo(choice: (num:number)=>number, num: number): number{
+ 
+  return choice(num);
+}
+
+console.log(foo(cube,5))

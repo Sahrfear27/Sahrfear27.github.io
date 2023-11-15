@@ -334,13 +334,19 @@ console.log(ar.map((eltments) => eltments.length));
 
 
 // Sort Method: Sort array in place and then return the result
-let sortArray = [1, 2, 15, 3, 4, 11,11];
+let sortArray = [1, 2, 15, 3, 4, 11, 11];
 console.log(sortArray.sort()); //Output will not be as expected because all elements are converted to string before comparism
+
+// Note: To sort a string, use the localecompare
+let countries = ['Österreich', 'Andorra', 'Vietnam'];
+console.log(countries.sort((a, b) => a > b ? 1 : -1));// Andorra, Vietnam, Österreich
+console.log(countries.sort((a,b)=> a.localeCompare(b))); //Andorra, Österreich,Vietnam
+
 
 
 // Create a compare function
-function compare(num1: number, num2: number){
-    return (num1 > num2)?1 : (num1 === num2)?0: -1;
+function compare(num1: number, num2: number) {
+    return (num1 > num2) ? 1 : (num1 === num2) ? 0 : -1;
 }
 console.log(sortArray.sort(compare));
 
@@ -350,9 +356,37 @@ type Person = {
     age: number
 }
 
-function findEvenAge(arr:Person[]): Person|undefined{
+function findEvenAge(arr: Person[]): Person | undefined {
 
-    return arr.find((person)=>person.age %2 === 0);
+    return arr.find((person) => person.age % 2 === 0);
 }
 const peopleArray = [{ name: "Sam", age: 15 }, { name: "William", age: 6 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 80 }];
 console.log(findEvenAge(peopleArray));
+
+
+// Write the function camelize(str) that changes dash-separated
+//  words like “my-short-string” into camel-cased “myShortString”.
+
+
+// function camelize(str: string){
+//     // Remove all the dashes and put the word into a list
+//     let result = str.split("-");
+
+//     // Change the first letter of the word that comes after with upper case
+//     result.map((word, index)=> index == 0? word: word[0].toLocaleUpperCase()+ word.slice(1)).join("");
+//     return result;
+// }
+function camelize(str:string) {
+    return str
+      .split('-') // splits 'my-long-word' into array ['my', 'long', 'word']
+      .map(
+        // capitalizes first letters of all array items except the first one
+        // converts ['my', 'long', 'word'] into ['my', 'Long', 'Word']
+        (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+      )
+      .join(''); // joins ['my', 'Long', 'Word'] into 'myLongWord'
+  }
+console.log(camelize("background-color"));
+
+
+console.log()

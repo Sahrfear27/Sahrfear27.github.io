@@ -25,6 +25,7 @@ export function filterEven(arr:number[]){
 export function filterOver10(arr:Person[]): Person[] {
    return arr.filter((person)=> person.age > 10);
 }
+// numArray = [5, 0, 7, 77, -20, 300, 51, 2];
 
 export function findEvenNum(arr: number[]){
     return arr.find((num)=> num % 2 ===0)
