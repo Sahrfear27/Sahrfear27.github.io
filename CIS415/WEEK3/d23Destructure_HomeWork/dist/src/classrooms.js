@@ -59,6 +59,27 @@ export function collectRoomsAndCapacities() {
     }
     return roomCapacities;
 }
+export function collectLabeledRoomCaps() {
+    const rooms = [
+        { roomNumber: 101, capacity: 30, students: [] },
+        { roomNumber: 102, capacity: 25, students: [] },
+        { roomNumber: 103, capacity: 35, students: [] },
+    ];
+    let label = rooms.map((rooms) => ({
+        roomNumber: rooms.roomNumber,
+        capacity: rooms.capacity,
+    }));
+    return label;
+}
+export function countStudentsInClassroom(classRoom, classRoomNumber) {
+    let count = 0;
+    for (let room of classRoom) {
+        if (room.roomNumber === classRoomNumber) {
+            count += room.students.length;
+        }
+    }
+    return count;
+}
 /*
 1.	Write a function collectRoomNumbers that will return an array of all the room nmbers.
 2.	Write a function collectRoomsAndCapacities to return an array with room numbers and capacities in this
