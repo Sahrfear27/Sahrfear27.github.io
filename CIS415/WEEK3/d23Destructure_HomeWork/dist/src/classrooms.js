@@ -102,6 +102,20 @@ export function findStudentsOlderThan(classRoom, minAge) {
     }
     return olderStudent;
 }
+export function averageStudentAge(classRoom) {
+    let sum = 0;
+    let count = 0;
+    for (let classes of classRoom) {
+        for (let student of classes.students) {
+            // Add the age of each student and increment count
+            sum += student.age;
+            count += 1;
+        }
+    }
+    // Get the average of the studet age
+    const average = sum / count;
+    return average;
+}
 // let oldest = classRoom.reduce((count:[], currentStudent)=> {
 //   for(let students of currentStudent.students){
 //     if(students.age > minAge){

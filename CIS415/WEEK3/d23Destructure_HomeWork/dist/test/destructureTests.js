@@ -1,9 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 // import { assert } from "chai";
 import { topSalary } from "../src/destructure.js";
-import { collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCaps, countStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan
-//   countStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge
- } from '../src/classrooms.js';
+import { collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCaps, countStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge } from '../src/classrooms.js';
 // type Student = {
 //   students: Classroom[];
 // }
@@ -90,7 +88,7 @@ describe("classroom embedded objects", function () {
         assert.strictEqual(olderThan18.length, 4);
         assert.strictEqual(olderThan18[0].name, "Bob");
     });
-    // it("averageStudentAge", function() {
-    //   assert.equal( averageStudentAge(classrooms), 18.5);
-    // });
+    it("averageStudentAge", function () {
+        assert.equal(averageStudentAge(classrooms), 18.5);
+    });
 });
