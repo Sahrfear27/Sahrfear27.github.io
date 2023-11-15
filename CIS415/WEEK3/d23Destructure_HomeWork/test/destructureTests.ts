@@ -2,10 +2,8 @@
 import { assert } from "chai";
 
 import { topSalary } from "../src/destructure.js";
-import { collectRoomNumbers, collectRoomsAndCapacities,collectLabeledRoomCaps,countStudentsInClassroom,findClassroomsWithCapacity
- 
-  //   countStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge
-  } from '../src/classrooms.js';
+import { collectRoomNumbers, collectRoomsAndCapacities,collectLabeledRoomCaps,countStudentsInClassroom,findClassroomsWithCapacity, 
+  findStudentsOlderThan,averageStudentAge} from '../src/classrooms.js';
 
   type Classroom = {
     roomNumber: number,
@@ -104,13 +102,13 @@ describe("classroom embedded objects", function() {
     assert.strictEqual( capacity30.length, 2 );
     assert.strictEqual( capacity30[0].roomNumber, 101 );
   });
-  // it("findStudentsOlderThan", function() {
-  //   const olderThan18 = findStudentsOlderThan(classrooms, 18);
-  //   assert.strictEqual( olderThan18.length, 4 );
-  //   assert.strictEqual( olderThan18[0].name, "Bob" );
-  // });
-  // it("averageStudentAge", function() {
-  //   assert.equal( averageStudentAge(classrooms), 18.5);
-  // });
+  it("findStudentsOlderThan", function() {
+    const olderThan18 = findStudentsOlderThan(classrooms, 18);
+    assert.strictEqual( olderThan18.length, 4 );
+    assert.strictEqual( olderThan18[0].name, "Bob" );
+  });
+  it("averageStudentAge", function() {
+    assert.equal( averageStudentAge(classrooms), 18.5);
+  });
 
 });

@@ -2,9 +2,6 @@
 //   collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCapscountStudentsInClassroom,
 //   findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge
 // };  //implement these
-// type Student = {
-//   students: Classroom[];
-// }
 export const classrooms = [
     {
         roomNumber: 101,
@@ -87,17 +84,34 @@ export function findClassroomsWithCapacity(classRoom, minCapacity) {
     return classRoom.filter((classes) => classes.capacity >= minCapacity)
         //  Use map to transform the new array to an array of object
         .map((classRoom) => ({ roomNumber: classRoom.roomNumber, capacity: classRoom.capacity }));
-    //  Using For off loop
-    //  let classWithMinCapacity: Classroom[] = [];
-    // Check for class in classRooms
-    // for(let classes of classRoom){
-    //   //Check if class capacity is larger than min capacity
-    //   if(classes.capacity >= minCapacity){
-    //     classWithMinCapacity.push(classes)
-    //   }
-    // }
-    // return classWithMinCapacity;
 }
+export function findStudentsOlderThan(classRoom, minAge) {
+    // Use filter to find the student min age and transform it to an array of object
+    const olderStudent = [];
+    // Use the for of loop
+    for (let classes of classRoom) {
+        for (let student of classes.students) {
+            if (student.age > minAge) {
+                const obj = {
+                    name: student.name,
+                    age: student.age,
+                };
+                olderStudent.push(obj);
+            }
+        }
+    }
+    return olderStudent;
+}
+// let oldest = classRoom.reduce((count:[], currentStudent)=> {
+//   for(let students of currentStudent.students){
+//     if(students.age > minAge){
+//       count.concat(students)
+//     }
+//   }
+// }, [])
+// return oldest;
+// return classRoom.filter((classes)=> classes.students.filter((student)=> student.age > minAge))
+// .map((classes)=> classes.students.map((details)=> ({name:details.name, age:details.age})) );
 /*
 1.	Write a function collectRoomNumbers that will return an array of all the room nmbers.
 2.	Write a function collectRoomsAndCapacities to return an array with room numbers and capacities in this

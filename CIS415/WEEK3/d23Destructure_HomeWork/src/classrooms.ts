@@ -9,9 +9,10 @@ type Classroom = {
   students: { name: string, age: number }[];
 }
 
-// type Student = {
-//   students: Classroom[];
-// }
+type Student = {
+  name: string;
+  age: number;
+}
 
 
 export const classrooms: Classroom[] = [
@@ -66,11 +67,11 @@ export function collectRoomsAndCapacities(): string[] {
 
   ]
   let roomCapacities = []
-  for(let room of rooms){
+  for (let room of rooms) {
     let roomNum = room.roomNumber + "";
     let roomCap = room.capacity + "";
     let capacities = roomNum + "::" + roomCap
-    
+
     roomCapacities.push(capacities);
   }
   return roomCapacities;
@@ -85,45 +86,78 @@ export function collectLabeledRoomCaps() {
 
   ]
 
-  let label = rooms.map((rooms)=> ({
+  let label = rooms.map((rooms) => ({
     roomNumber: rooms.roomNumber,
     capacity: rooms.capacity,
   }))
   return label;
 }
-export function countStudentsInClassroom(classRoom:Classroom[], classRoomNumber: number):  number{
+export function countStudentsInClassroom(classRoom: Classroom[], classRoomNumber: number): number {
   let count = 0;
   // Check the rooms 
-  for(let room of classRoom){
-    if(room.roomNumber === classRoomNumber){ //check if room number matches
+  for (let room of classRoom) {
+    if (room.roomNumber === classRoomNumber) { //check if room number matches
       // Return the number of student of that room
       count += room.students.length
     }
   }
   return count;
-} 
+}
 
-export function findClassroomsWithCapacity(classRoom:Classroom[], minCapacity: number): {roomNumber: number, capacity: number} []{
+export function findClassroomsWithCapacity(classRoom: Classroom[], minCapacity: number): { roomNumber: number, capacity: number }[] {
+  // Use filter to search for all the classes with capacity >= minCapacity
+  return classRoom.filter((classes) => classes.capacity >= minCapacity)
+
+    //  Use map to transform the new array to an array of object
+    .map((classRoom) => ({ roomNumber: classRoom.roomNumber, capacity: classRoom.capacity }));
+
+}
 
 
-// Use filter to search for all the classes with capacity >= minCapacity
- return classRoom.filter((classes)=>classes.capacity >= minCapacity)
+export function findStudentsOlderThan(classRoom: Classroom[], minAge: number): Student[] {
+  // Use filter to find the student min age and transform it to an array of object
+  const olderStudent: Student[] = [];
+  // Use the for of loop
+  for (let classes of classRoom) {
+    for (let student of classes.students) {
+      if (student.age > minAge) {
+        const obj = {
+          name: student.name,
+          age: student.age,
+        }
+        olderStudent.push(obj);
+      }
+    }
+  }
+  return olderStudent;
+}
 
-//  Use map to transform the new array to an array of object
- .map((classRoom)=> ({roomNumber:classRoom.roomNumber, capacity:classRoom.capacity}));
+export function averageStudentAge(classRoom:Classroom[]):number{
+  let sum = 0;
+  let count = 0;
+  for(let classes of classRoom){
+    for(let student of classes.students){
+      // Add the age of each student and increment count
+      sum += student.age;
+      count += 1;
+    }
+  }
 
-
-//  Using For off loop
- //  let classWithMinCapacity: Classroom[] = [];
-   // Check for class in classRooms
-  // for(let classes of classRoom){
-  //   //Check if class capacity is larger than min capacity
-  //   if(classes.capacity >= minCapacity){
-  //     classWithMinCapacity.push(classes)
+  // Get the average of the studet age
+  const average = sum / count;
+  return average;
+}
+  // let oldest = classRoom.reduce((count:[], currentStudent)=> {
+  //   for(let students of currentStudent.students){
+  //     if(students.age > minAge){
+  //       count.concat(students)
+  //     }
   //   }
-  // }
-  // return classWithMinCapacity;
-} 
+  // }, [])
+  // return oldest;
+
+  // return classRoom.filter((classes)=> classes.students.filter((student)=> student.age > minAge))
+  // .map((classes)=> classes.students.map((details)=> ({name:details.name, age:details.age})) );
 
 
 
