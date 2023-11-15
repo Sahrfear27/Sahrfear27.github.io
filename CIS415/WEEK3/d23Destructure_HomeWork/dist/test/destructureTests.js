@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 // import { assert } from "chai";
 import { topSalary } from "../src/destructure.js";
-import { collectRoomNumbers, collectRoomsAndCapacities,
+import { collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCaps,
 //classrooms, collectRoomsAndCapacities , collectLabeledRoomCaps ,
 //   countStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge
  } from '../src/classrooms.js';
@@ -43,9 +43,9 @@ describe("classroom embedded objects", function () {
     it("collectRoomsAndCapacities", function () {
         assert.deepEqual(collectRoomsAndCapacities(), ["101::30", "102::25", "103::35"]);
     });
-    // it("collectLabeledRoomCaps", function() {
-    //   assert.deepEqual( collectLabeledRoomCaps(), [{roomNumber: 101, capacity: 30}, {roomNumber: 102, capacity: 25}, {roomNumber: 103, capacity: 35}]);
-    // });
+    it("collectLabeledRoomCaps", function() {
+      assert.deepEqual( collectLabeledRoomCaps(), [{roomNumber: 101, capacity: 30}, {roomNumber: 102, capacity: 25}, {roomNumber: 103, capacity: 35}]);
+    });
     // it("countStudentsInClassroom", function() {
     //   assert.equal( countStudentsInClassroom(classrooms, 103), 3);
     //   assert.equal( countStudentsInClassroom(classrooms, 102), 2);

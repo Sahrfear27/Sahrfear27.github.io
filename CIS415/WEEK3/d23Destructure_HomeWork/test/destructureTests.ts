@@ -2,12 +2,52 @@
 import { assert } from "chai";
 
 import { topSalary } from "../src/destructure.js";
-import { collectRoomNumbers, collectRoomsAndCapacities,
-  //classrooms, collectRoomsAndCapacities , collectLabeledRoomCaps ,
+import { collectRoomNumbers, collectRoomsAndCapacities,collectLabeledRoomCaps,countStudentsInClassroom
+ 
   //   countStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge
   } from '../src/classrooms.js';
 
- 
+  type Classroom = {
+    roomNumber: number,
+    capacity: number,
+    students: { name: string, age: number }[];
+  }
+  
+  // type Student = {
+  //   students: Classroom[];
+  // }
+  
+  
+  export const classrooms: Classroom[] = [
+    {
+      roomNumber: 101,
+      capacity: 30,
+      students: [
+        { name: "Alice", age: 18 },
+        { name: "Bob", age: 19 },
+        { name: "Charlie", age: 17 },
+      ],
+    },
+  
+    {
+      roomNumber: 102,
+      capacity: 25,
+      students: [
+        { name: "David", age: 20 },
+        { name: "Eve", age: 18 },
+      ],
+    },
+  
+    {
+      roomNumber: 103,
+      capacity: 35,
+      students: [
+        { name: "Frank", age: 19 },
+        { name: "Grace", age: 20 },
+        { name: "Helen", age: 17 },
+      ],
+    },
+  ];
     
 /* 
 Create the function topSalary(salaries) that returns the name of the top-paid person.
@@ -51,13 +91,13 @@ describe("classroom embedded objects", function() {
   it("collectRoomsAndCapacities", function() {
     assert.deepEqual( collectRoomsAndCapacities(), ["101::30", "102::25", "103::35"]);
   });
-  // it("collectLabeledRoomCaps", function() {
-  //   assert.deepEqual( collectLabeledRoomCaps(), [{roomNumber: 101, capacity: 30}, {roomNumber: 102, capacity: 25}, {roomNumber: 103, capacity: 35}]);
-  // });
-  // it("countStudentsInClassroom", function() {
-  //   assert.equal( countStudentsInClassroom(classrooms, 103), 3);
-  //   assert.equal( countStudentsInClassroom(classrooms, 102), 2);
-  // });
+  it("collectLabeledRoomCaps", function() {
+    assert.deepEqual( collectLabeledRoomCaps(), [{roomNumber: 101, capacity: 30}, {roomNumber: 102, capacity: 25}, {roomNumber: 103, capacity: 35}]);
+  });
+  it("countStudentsInClassroom", function() {
+    assert.equal( countStudentsInClassroom(classrooms, 103), 3);
+    assert.equal( countStudentsInClassroom(classrooms, 102), 2);
+  });
 
   // it("findClassroomsWithCapacity", function() {
   //   const capacity30 = findClassroomsWithCapacity(classrooms, 30);
