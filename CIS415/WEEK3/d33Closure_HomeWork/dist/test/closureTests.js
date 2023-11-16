@@ -1,6 +1,6 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
-import { assert } from "chai";
-import { inArray, inBetween, makeArmy } from "../src/closures.js";
+// import { assert } from "chai";
+import { inBetween, inArray, makeArmy } from "../src/closures.js";
 import { createShoppingCart } from "../src/shoppingCart.js";
 describe("inArray", function () {
     const arr = [1, 2, 3, 4, 5, 6, 7];

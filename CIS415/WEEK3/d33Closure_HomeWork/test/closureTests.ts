@@ -1,10 +1,8 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai";
 
-import { inBetween,inArray, makeArmy
-  //inArray, , makeArmy
-} from "../src/closures.js";
-// import { createShoppingCart } from "../src/shoppingCart.js";
+import { inBetween,inArray, makeArmy } from "../src/closures.js";
+import { createShoppingCart } from "../src/shoppingCart.js";
 
 
 
@@ -61,20 +59,20 @@ describe("army", function () {
 
 });
 
-// describe("Shopping Cart", function () {
+describe("Shopping Cart", function () {
 
-//   const myCart = createShoppingCart();
-//   myCart.addItem('Shirt', 20);
-//   myCart.addItem('Jeans', 50);
+  const myCart = createShoppingCart();
+  myCart.addItem('Shirt', 20);
+  myCart.addItem('Jeans', 50);
 
-//   it("getTotal", function () {
-//     assert.strictEqual(myCart.getTotal(), 70);
-//   });
+  it("getTotal", function () {
+    assert.strictEqual(myCart.getTotal(), 70);
+  });
 
 
-//   it("remove items", function () {
-//     myCart.removeItem('Shirt');
-//     myCart.removeItem('Shoes');
-//     assert.strictEqual(myCart.getTotal(), 50);
-//   });
-// });
+  it("remove items", function () {
+    myCart.removeItem('Shirt');
+    myCart.removeItem('Shoes');
+    assert.strictEqual(myCart.getTotal(), 50);
+  });
+});

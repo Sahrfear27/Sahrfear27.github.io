@@ -4,7 +4,6 @@
  * @returns {Function} returns a function that tests whether its argument is in the arr
  *
  */
-export {};
 /**
  *
  * @param {number} low is bottom of range
@@ -15,5 +14,29 @@ export {};
 /**
  * @returns {Function} closure that returns it's number
  */
+// Filter inbetween
+export function inBetween(num1, num2) {
+    return function (num) {
+        return num >= num1 && num <= num2;
+    };
+}
+// In array
+export function inArray(arr) {
+    // Return the function and check if x in included
+    return function (num) {
+        return arr.includes(num);
+    };
+}
 //army[0](); // the shooter number 0 shows 10
 //army[5](); // and number 5 also outputs 10...
+export function makeArmy() {
+    let shooters = [];
+    for (let i = 0; i < 10; i++) {
+        let shooter = function () {
+            console.log("I am shooter", i);
+            return i;
+        };
+        shooters.push(shooter);
+    }
+    return shooters;
+}
