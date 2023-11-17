@@ -26,32 +26,32 @@ dailyRecord;
 //     }, 0)
 // }
 
-// export function calculateDailyTotalDuration(dailyRecords: Day[]): number{
+export function calculateDailyTotalDuration(dailyRecords: Day[]): number{
 
-//     let totalDuration  = 0;
-//     // Loop through the daily record
-//     for(let day of dailyRecords){ //return day1 and day2
+    let totalDuration  = 0;
+    // Loop through the daily record
+    for(let day of dailyRecords){ //return day1 and day2
 
-//         // Loop through the session of each day
-//         for(let session of day.sessions){ //return all the session
+        // Loop through the session of each day
+        for(let session of day.sessions){ //return all the session
 
-//             // Get the duration
-//             totalDuration += session.duration
-//         }
-//     }
+            // Get the duration
+            totalDuration += session.duration
+        }
+    }
 
-//     return totalDuration;
-// }
-
-// Using the reduce Method
-export function calculateDailyTotalDuration(dailyRecords: Day[]): number {
-
-    return dailyRecords.reduce((totalDuration, day) => {
-        return totalDuration + day.sessions.reduce((dayTotal, session) => {
-            return dayTotal + session.duration;
-        }, 0);
-    }, 0);
+    return totalDuration;
 }
+// Using the reduce Method
+
+// export function calculateDailyTotalDuration(dailyRecord: Day[]): number{
+//     return dailyRecord.reduce((totalDuration, day)=> {
+//         // Reduce the first totalDuration and the day
+//         return totalDuration + day.sessions.reduce((totalDay,session)=> {
+//             return totalDay + session.duration;
+//         },0)
+//     },0)
+// }
 
 
 export function calculateTotalDuration(dailyRecord: Day[]): number {
@@ -69,22 +69,28 @@ export function calculateTotalDuration(dailyRecord: Day[]): number {
 //Write a function getAllSessions that will use the concat method to return an array with all  the sessions in the dailyRecord.
 export function getAllSessions(dailyRecord: Day[]): Session[] {
     let allSessions: Session[] = [];
-    for (let day of dailyRecord) { //Return days
-        for (let session of day.sessions) {
-            allSessions = allSessions.concat(session);
+    // for (let day of dailyRecord) { //Return days
+    //     for (let session of day.sessions) {
+    //         allSessions = allSessions.concat(session);
+    //     }
+    // }
+    // return allSessions;
+
+    // Using the filter
+    dailyRecord.filter((day)=>{
+        if(day.sessions){
+            allSessions = allSessions.concat(day.sessions);
         }
-    }
+    })
     return allSessions;
 }
 
 export function getAllSessionsForUser(dailyRecord: Day[], id: number): Session[] {
     // Using filter to get all the sessions from a given id in th getAllSession Function
     return getAllSessions(dailyRecord).filter((session) => session.userId === id);
-
 }
 
 export function getAllDurations(dailyRecord: Day[]): number[] {
     // Using map to get all the durations from a given id in th getAllSession Function
     return getAllSessions(dailyRecord).map((session) => session.duration);
-
 }

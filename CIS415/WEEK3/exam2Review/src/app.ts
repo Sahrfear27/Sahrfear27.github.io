@@ -53,3 +53,71 @@
 // }
 
 //    }
+
+
+
+// let names = ["Fred Smith", "Carl Lindstrom", "Sahrfear Macarthy"];
+// type person = {
+//     firstName: string,
+//     lastName: string
+// }
+// function fullName(names: string[]): person[] {
+//     let arr: person[] = []
+//     // for(let name of names){
+//     //     let [firstName, lastName] = name.split(" ");
+//     //     let obj= {
+//     //         firstName,
+//     //         lastName,
+//     //     }
+//     //     arr.push(obj)
+//     // }
+//     // return arr;
+//     names.map((extractNames) => {
+//         const [firstName, lastName] = extractNames.split(" ");
+//         const objectName = {
+//             firstName,
+//             lastName,
+//         }
+//         arr.push(objectName);
+//     })
+//     return arr;
+// }
+// console.log(fullName(names));
+
+
+// const arrSlic = [1, 2, 3, 4, 5];
+// function replaceEnds(arr:number[], num1: number, num2: number): number[]{
+//     let result = arr.slice();
+//     result.splice(0, 1, num1);
+//     result.splice(result.length - 1, 1, num2);
+//     return result;
+// }
+// console.log(replaceEnds(arrSlic, 0, 100));
+
+
+// function findHighScores(teamStats) {
+//     let highScore = [];
+//      teamStats.map((player)=> {
+
+//         const highestScore = player.stats.reduce((maxPoints, game) => Math.max(maxPoints, game.points), 0);
+
+//         return {
+//              jersey: player.jersey, 
+//              high: highestScore };
+//     });
+// }
+
+
+// function square(num: number){
+//     return num * num;
+// }
+// function cube(num: number){
+//     return num **3;
+// }
+
+// function foo(fxn: (para:number)=> number, num: number){
+//     return fxn(num);
+// }
+// console.log(foo(square, 4)); 
+
+

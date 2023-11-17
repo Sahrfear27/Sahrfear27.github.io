@@ -190,16 +190,38 @@ function foo(choice: (num: number)=> number, num : number): number{
 console.log(foo(cube,4));
 console.log(foo(square,6));
 
-let personNames = ["Fred Smith", "Carl Lindstrom"]
+let personNames = ["Fred Smith", "Carl Lindstrom", "Sahrfear Macarthy", "Kai Macarthy"]
 
-function yourName(fullName: string[]):{firstName: string, lastName: string}[]{
-    return fullName.map((names)=>{
-        // Split the names of the list and destructure them into first and last name
-        const [firstName, lastName] = names.split(" ");
-        return {
-            firstName,
-            lastName
-        }
-    })
+type person = {
+    firstName: string,
+    lastName: string,
+}
+function yourName(fullName: string[]):person[]{
+
+  let personName:person[] = [];
+    // Call a function for all the elements inside the name array 
+  fullName.map((names)=> {
+    // split the name and destructure them into first and last name
+    const [fName, lName] = names.split(" ");
+
+    // Create an object with the property firstName and last name 
+    const personObject = {
+        firstName:fName,
+        lastName: lName,
+    }
+
+    // Push the object into the array and return the result
+    personName.push(personObject);
+  })
+  return personName;
 }
 console.log(yourName(personNames));
+
+
+
+let name = "John";
+function sayHi(): void {
+console.log("Hi, " + name);
+}
+name = "Pete";
+sayHi(); // what will it show: "John" or "Pete"?
