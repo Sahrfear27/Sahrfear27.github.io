@@ -165,3 +165,20 @@ console.log([...a2, ...c2])
 
 
 
+
+
+
+// let john = { name: "John", surname: "Smith", age: 10 };
+// let pete = { name: "Pete", surname: "Hunt", age: 20 };
+// let people = [john, pete];
+
+// function mapPeople(people) {
+//     return people.map((person) => {
+//         return {
+//             fullName: person.name + " " + person.surname,
+//             age: person.age,
+//         };
+//     });
+// }
+
+// console.log(mapPeople(people));

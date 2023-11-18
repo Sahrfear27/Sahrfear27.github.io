@@ -58,7 +58,6 @@ export function findTotalScores(teamStats: Player[]): JerseyPoints[] {
 
         // Get the totalPoint by calling findTotalPointsByJersey and passing in the jerseys number
         let totalPoint = findTotalPointsByJersey(jerseys);
-
         // Create an object
         let playerDetails = {
             jersey: jerseys,
