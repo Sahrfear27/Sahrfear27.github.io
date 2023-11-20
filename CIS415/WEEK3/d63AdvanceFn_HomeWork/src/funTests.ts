@@ -30,12 +30,12 @@ export function myFilter<T>(arr: T[] | string[], filterFunc: (elem: T, index: nu
     }
     return filterElement;
 }
- export function myReduce<T>(arr:T[], reduceFunc:(arr:T, current:T)=> T, initialValue:T):T{
+ export function myReduce<T>(inputArr:T[], reduceFunc:(arr:T, current:T)=> T, initialValue:T):T{
     let accumulator = initialValue;
 
     // Loop through the array and apply reduce function
-    for (let i = 0; i < arr.length; i++) {
-        accumulator = reduceFunc(accumulator, arr[i]);
+    for (let i = 0; i < inputArr.length; i++) {
+        accumulator = reduceFunc(accumulator, inputArr[i]);
     }
     return accumulator;
  }
