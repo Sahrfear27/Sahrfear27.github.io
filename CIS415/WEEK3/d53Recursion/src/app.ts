@@ -46,18 +46,18 @@ console.log(factorial(5));
 // • Reductive recursive call? 
 
 
-// function countLettersOfString(word: string, letter:string): number{
-//     if(word === " "){
-//         return 0;
-//     }
-//     else if(word[0] === letter){
-//         return 1 + countLettersOfString(word.substr(1), letter);
-//     }
-//     else{
-//         return countLettersOfString(word.substr(1), letter)
-//     }
-// }
-// console.log(countLettersOfString("a", "apple"));
+function countLettersOfString(word: string, letter:string): number{
+    if(word.length === 0){
+        return 0;
+    }
+    else if(word[0] === letter){
+        return 1 + countLettersOfString(word.slice(1), letter);
+    }
+    else{
+        return countLettersOfString(word.slice(1), letter)
+    }
+}
+console.log(countLettersOfString("apple", "a"));
 
 
 let person = {

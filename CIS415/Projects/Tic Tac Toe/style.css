@@ -1,0 +1,84 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image:url(/Images/flower.jpg);
+    background-size: cover;
+}
+
+.game td {
+    width: 100px;
+    height: 80px;
+    border: solid 2px rgb(131, 127, 127);
+    text-align: center;
+    font-size: 15pt;
+    border-radius: 15px;
+    box-sizing: border-box;
+    background-color: #DEE2E7;
+    
+
+}
+
+.game td:hover {
+    background-color: #fff;
+    cursor: pointer;
+    background-color:#475157;
+}
+
+.game {
+    background: #efefef;
+    margin: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    /* background-image: url('/Images/flower.jpg'); */
+    background-size: cover;
+    -webkit-box-shadow: 5px 8px 39px 1px rgba(158, 156, 158, 1);
+    -moz-box-shadow: 5px 8px 39px 1px rgba(158, 156, 158, 1);
+    box-shadow: 5px 8px 39px 1px rgba(158, 156, 158, 1);
+
+}
+
+.game .game-title {
+    color: rgb(36, 35, 35);
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 5px;
+}
+
+.game .player {
+    float: left;
+    text-align: center;
+    width: 25%;
+}
+
+.game .player .selected {
+    color: rgb(88, 86, 86);
+    text-shadow: 2px 2px 3px rgb(140, 135, 135);
+}
+
+.tictactoe-board {
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 20px;
+}
+
+.tictactoe-board table {
+    float: left;
+    width: 50%;
+}
+
+.tictactoe-board-score1 {
+    float: left;
+    width: 20%;
+}
+
+.tictactoe-board-score2 {
+    float: left;
+    width: 20%;
+}
+
+.clear {
+    clear: both;
+}

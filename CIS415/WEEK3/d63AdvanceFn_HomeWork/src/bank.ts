@@ -55,5 +55,5 @@ export function makeBank(): Bank {
             return total;
         },
     }
-
+    
 }

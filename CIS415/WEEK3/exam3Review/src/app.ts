@@ -155,7 +155,7 @@ console.log(typeof (user));
 
 //create and log to the console a JSON string from john. Then create a new instance of john, johnClone, using
 // JSON.parse on the JSON string you created. Is john === johnClone? //False: Both reference to different location in the memory
-const john = {
+const johns = {
     name: "John",
     surname: "Smith",
     isAdmin: false,
@@ -163,13 +163,13 @@ const john = {
     friends: [0, 1, 2, 3]
 }
 
-let newJohn = JSON.stringify(john);
+let newJohn = JSON.stringify(johns);
 console.log(newJohn)
 
 // Clonning John using the parse
 let johnClone = JSON.parse(newJohn);
 console.log(johnClone);
-console.log(john === johnClone);
+console.log(johns === johnClone);
 
 
 
@@ -233,4 +233,97 @@ function countInstances(phrase:string, char: string):number{
     }
 
 }
-console.log(countInstances("All that is great and good.", "t"))
+console.log(countInstances("All that is great and good.", "t"));
+
+
+//Map People:
+type People = {
+    name: string,
+    surname: string,
+    age: number
+}
+let john = { name: "John", surname: "Smith", age: 10 };
+let pete = { name: "Pete", surname: "Hunt", age: 20 };
+let people = [ john, pete];
+
+// Use the map function to map the people array to the following:
+// [{ fullName: "John Smith", age: 10 },
+// { fullName: "Pete Hunt", age: 20 },]
+
+function mapPeople(peopleArray: People[]){
+    return peopleArray.map((ele)=> {
+        return{
+            fullName : ele.name + " " + ele.surname,
+            age: ele.age
+        }
+    })
+}
+
+// console.log(mapPeople(people));
+
+// Alternative Solution
+let userMap = people.map((person)=> ({fullName: `${person.name} ${person.surname}`, age:`${person.age}`}));
+console.log(userMap);
+
+
+// Use the spread operator to clone arr1:
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];
+console.log(arr2)
+console.log(arr1 == arr2);
+
+function evenRecuv(num:number){
+    // Base Case: When number become -1,  it becomes trival to the function
+    if(num < 0){
+        return;
+    }
+    else if(((num % 2 === 0)) || (num === 0)){
+        console.log(num);
+       
+    }
+    return evenRecuv(num -1)
+}
+evenRecuv(7);
+
+//write a function, averagePoints, to get an array containing the average points across for each player . Then modify the function to return objects,
+// Try with a regular for..of loop and then using map and reduce.
+type Player = {
+    name: string,
+    points: number[],
+}
+const player1 = {name: "Bob", points: [1, 2, 1]};
+const player2 = {name: "Andre", points: [2, 0, 1]};
+const player3 = {name: "Max", points: [1, 1, 1]};
+const players = [player1, player2, player3];
+// console.log("expect [1.33, 1, 1 ]: ", averagePoints (players));
+//console.log("expect [{Bob:1.33, Andre:1, Max:1} ]: ", averagePointsLabeled (players));
+
+// Using for loop
+function averagePoints(players:Player[]){
+    // Get details of each player
+    let playerDetails = []
+    for(let player1 of Object.values(players)){
+        let sum = 0;
+        for(let point of player1.points){
+            sum += point;
+        }
+        let average = sum /player1.points.length;
+        playerDetails.push(average);
+    }
+    return playerDetails;
+}
+console.log(averagePoints(players));
+
+
+// Using map and reduce
+function averagePoints2 (players:Player[]){
+    // Use map to return an average of all the element of the callback function 
+    //and inside map use reduce to calculate the sum and average of all element
+    return players.map((arrElement)=>{
+        // Use reduce to add all the elements
+        let sum  = arrElement.points.reduce((accumulator, currentValue)=> accumulator + currentValue,0);
+        let average  = sum / arrElement.points.length;
+        return average;
+    })
+}
+console.log(averagePoints2(players));
