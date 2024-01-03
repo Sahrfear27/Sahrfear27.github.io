@@ -99,14 +99,14 @@ function loadAnswers() {
     winners.push([13, 14, 15, 16]);
 
     // Vertical
-    winners.push([1,5,9,13]);
-    winners.push([2,6,10,14]);
-    winners.push([3,7,11,15]);
-    winners.push([4,8,12,16]);
+    winners.push([1, 5, 9, 13]);
+    winners.push([2, 6, 10, 14]);
+    winners.push([3, 7, 11, 15]);
+    winners.push([4, 8, 12, 16]);
 
     // Diagornal
-    winners.push([1,6,11,16]);
-    winners.push([4,7,10,13]);
+    winners.push([1, 6, 11, 16]);
+    winners.push([4, 7, 10, 13]);
 
 }
 
@@ -148,7 +148,6 @@ function checkWinner() {
                     break;
                 }
             }
-
             if (setFound == true) {
                 win = true;
                 break;
