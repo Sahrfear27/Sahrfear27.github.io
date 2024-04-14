@@ -1,11 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bb9b027793.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>My Professional  Portfolio</title>
+    <style>
+        body.light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        body.dark-theme {
+            background-color: black;
+            color: white;
+        }
+
+        .moon-dark {
+            color: white;
+        }
+
+        #moon {
+            text-decoration: none;
+            font-size: x-large;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-    <h2>Hello world</h2>
+    <!-- Header Section -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+                </ul>
+                <div class="social-icons">
+                    <!-- Add link to Website here -->
+                    <div class="sub-icon">
+                        <a href="#facebook"><i class="fa fa-facebook" style="font-size:20px"></i></a>
+                        <a href="#Instagram"><i class="fa fa-instagram" style="font-size:20px"></i></a>
+                        <a href="#github"><i class="fa fa-github" style="font-size:20px"></i></a>
+                        <a href="#Twitter"><i class="fa fa-twitter" style="font-size:20px"></i></a>
+                        <a href="#Twitter"><i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- The Body Content -->
+    <div class="container vh-100 vw-100 intro " id="about">
+        <!-- Display Grid of Profile and Welcome -->
+        <div class="container mt-5 mainIntro">
+            <div class=" container p-4 hello-card">
+                <h5 class="hello-card">Hello! I'm</h5>
+                <div class="typed-out">Sahrfear Macarthy</div>
+
+                <div class="fs-3 fw text-capitalize pt-4 fw-bold"><span class="text-primary">A FullStack</span>
+                    Developer
+                </div>
+            </div>
+            <div class="p-4 resume border border-secondary ">
+                <a href="#" id="download">
+                    Get Resume
+                    <a class="fas fa-download"></a>
+                </a>
+            </div>
+        </div>
+        <div class=" container myPicture mt-5">
+            <img src="Images/img4.png" alt="sahrfear Macarthy" class="profile-pic">
+        </div>
+    </div>
+
+    <br>
+    <!-- About Content -->
+    <div class="container-fluid text-center vh-100 vw-100 about-card ">
+        <div class="container">
+            <div>
+                <h5>A<span>BOUT</span></h5>
+            </div>
+
+            <div>
+                <p>
+                    My journey in the world of development started with a fascination for problem-solving and a love
+                    for coding. Over the years, I've honed my skills in both front-end and back-end technologies,
+                    embracing the challenges that come with crafting seamless solutions.I
+                    thrive in creating robust and scalable web applications that deliver exceptional user
+                    experiences
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- What i do Content -->
+    <div class="container vh-100 vw-100 mt-5 p-5 content-card text-wrap" id="myWork">
+        <!-- Main -->
+        <div class="row justify-content-cente">
+            <div class="col text-center">
+                <div class="mb-4 display-1">What I Do</div>
+                <div class="h4">All about my Job</div>
+            </div>
+        </div>
+
+        <!-- Sub -->
+        <div class="container job-card">
+            <div class="container row">
+
+                <div class="container col-md  frontEnd-card">
+                    <p class="fas fa-display border-secondary FrontEndFasFa"></p>
+                    <h3>Front-End Development</h3>
+                    <div>Creating the visual and interactive components of a website or web application that users
+                        directly interact with. It encompasses writing code in HTML, CSS, and JavaScript to build the
+                        user interface (UI) and ensure a smooth user experience (UX)</div>
+                </div>
+
+                <div class="container col-md  backEnd-card">
+                    <p class="fas fa-gears border-secondary BackEndFasFa"></p>
+                    <h3>Back-End Development</h3>
+                    <div>Designing and implementing server-side architecture, developing databases, writing API
+                        endpoints for communication between the front end and back end, ensuring data security, and
+                        optimizing performance</div>
+                </div>
+                <div class="container col-md  dataBase-card">
+                    <p class="fas fa-database border-secondary DataBaseFasFa"></p>
+                    <h3>DataBase Management</h3>
+                    <div>Integrating MongoDB with the application's back-end logic, handling data migrations,
+                        backups,and scaling the database as needed</div>
+                </div>
+                <div class="container col-md  git-card">
+                    <p class="fa fa-github border-secondary gitHubFasFa"></p>
+                    <h3>Version Control System</h3>
+                    <div>Competent in version control systems like Git for effective collaboration and code
+                        management within development teams.I Comfortable with concepts such as branching,
+                        merging, and resolving conflicts.</div>
+                </div>
+                <div class="container col-md  creative-card">
+                    <p><img class="creativeFont" src="Images/creativity (1).png" alt="creative-thinking"></p>
+                    <h3>Problem Solving Skills</h3>
+                    <div>In my journey as a full-stack developer, I've encountered challenges that have allowed me to
+                        refine my problem-solving skills, even with limited experience.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Content -->
+    <div class=" container vh-100 vw-100" id="project">
+        <h2 class="text-center pt-5">Projects</h2>
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#petfinder">Pet Finder Application</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#amazon">Amazon Web Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tac">Tic Ta Toe</a>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="petfinder" class="container tab-pane active"><br>
+                <h3>Pet Finder Application</h3>
+                <p>An application to browse the Petfinder API which include the detail decriptions of each
+                    pet. User
+                    will be prompted to choose the pet category and a request will be sent to the pet finder
+                    API
+                    which
+                    will return a detail description of each pet.</p>
+            </div>
+            <div id="amazon" class="container tab-pane fade"><br>
+                <h3>Amazon</h3>
+                <p>In this project a colne of amazon web page was made</p>
+            </div>
+            <div id="tac" class="container tab-pane fade"><br>
+                <h3>Tac Toe</h3>
+                <p>Creating a interactive Tic Tac toe </p>
+            </div>
+        </div>
+    </div>
+    <!-- Education , Experience, Recommendations -->
+    <div class="container">
+        <div class="container">
+            <div>Education</div>
+            <div>Experience</div>
+        </div>
+        <div class="container">
+            <div>Recommendations</div>
+        </div>
+    </div>
+    <!-- Contact Content -->
+    <div class="container-fluid vh-100 vw-100" id="Contact">
+        <div class="container location-card">
+
+            <div class="container mt-3 form-container footer">
+                <h2 class="text-center">Contact Me</h2>
+                <form class="form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="text" id="email" name="email" required="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea">Leave Message</label>
+                        <textarea name="textarea" id="textarea" rows="10" cols="50" required=""></textarea>
+                    </div>
+                    <button class="form-submit-btn" type="submit">Submit</button>
+                </form>
+            </div>
+            <div>
+                <div class="class border-secondary subLocate">
+                    <a href="#Location" class="fas fa-location-dot"></a>
+                    <div>San Jose CA</div>
+                    <a href="6697997164" class="fas fa-phone"></a>
+                    <div>6697997164</div>
+                    <a href="mailto:macarthysahralves@gmail.com" class="fas fa-envelope"></a>
+                    <div>Send Email</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container form-check form-switch text-center">
+        <div>
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onchange="switchTheme1()">
+
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
+
 </html>
