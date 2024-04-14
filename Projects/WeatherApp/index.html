@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bb9b027793.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .main-card {
+            padding: 10px;
+            border-radius: 15px;
+            background-image: url(./Images/sunny.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        #search {
+            font-size: x-large;
+            border: 1px solid;
+            border-radius: 50%;
+            padding: 2px;
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        .weather-temp {
+            border: 1px solid;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #86A8CF;
+            border-radius: 15px;
+
+        }
+
+        .card1,
+        .card2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5px;
+            /* border: 1px solid black; */
+            border-radius: 20px;
+            margin: 10px;
+            background-color: #6DA5C0;
+            -webkit-box-shadow: 10px 10px 189px 7px rgba(41, 77, 97, 1);
+            -moz-box-shadow: 10px 10px 189px 7px rgba(41, 77, 97, 1);
+            box-shadow: 10px 10px 189px 7px rgba(41, 77, 97, 1);
+        }
+
+        .detail {
+            /* border: 1px solid; */
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container border text-center mt-5 main-card vh-50 ">
+        <div class="container search">
+            <input type="search" placeholder="Enter City Name" spellcheck="false"
+                style="border-radius: 10px; text-align: center;">
+            <i class="fas fa-search" id="search"></i>
+        </div>
+        <div class="container ">
+            <div class="container mt-4 city">California</div>
+            <div class="container mt-2 weather-temp">
+                <div>
+                    <div class="temp">70</div>
+                </div>
+                <div class="weather-cards">
+                    <img src="Images/clear.png" alt="clouds">
+                    <div class="description"></div>
+                </div>
+            </div>
+            <!-- Second Details -->
+            <div class="container mt-5 detail ">
+                <!-- Huimidity -->
+                <div class=" card1">
+                    <div>
+                        <img src="Images/humidity.png" alt="Humidity">
+                    </div>
+                    <div>
+                        <div class="humidity">50%</div>
+                        <div>Humidity</div>
+                    </div>
+                </div>
+                <!-- Wind -->
+                <div class="card2">
+                    <div>
+                        <img src="Images/wind.png" alt="">
+                    </div>
+                    <div>
+                        <div class="wind">15km/h</div>
+                        <div>Wind Speed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
