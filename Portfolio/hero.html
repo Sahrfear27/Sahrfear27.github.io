@@ -1,56 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="hero.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bb9b027793.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <linkrel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Include Bootstrap Icons CSS file -->
+    <link
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="hero.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Portfolio</title>
-</head>
-<body>
-     <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header
+      id="header"
+      class="fixed-top"
+      style="background-color: #032030; padding: 2px"
+    >
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- This will contain log -->
+        <h1 class="logo">
+          <a href="index.html" style="text-decoration: none; color: white"
+            >Logo</a
+          >
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
 
-      <!-- <h1 class="logo"><a href="index.html">Sahrfear</a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li><a class="nav-link scrollto" href="#project">Projects</a></li>
+            <!-- <li><a class="nav-link scrollto " href="#tools">Tools</a></li> -->
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#work">Tools</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
-    <div class="overlay-itro"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="hero-title mb-4">I am Sahrfear Macarthy</h1>
-          <p class="hero-subtitle"><span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+    <!-- ====Background Image of Hero ====-->
+    <div
+      id="hero"
+      class="hero bg-image"
+      style="background-image: url('./Images/electronic-bg.jpg')"
+    >
+      <div class="overlay-itro"></div>
+      <div class="hero-content display-table">
+        <div class="table-cell">
+          <div class="container">
+            <h1 class="hero-title mb-4">I am Sahrfear Macarthy</h1>
+            <p class="hero-subtitle">
+              <span
+                class="typed"
+                data-typed-items="Designer, Developer, Freelancer, Photographer"
+              ></span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div><!-- End Hero Section -->
-  <main id="main">
-       <!-- ======= About Section ======= -->
-       <section id="about" class="about-mf sect-pt4 route">
+    <!-- End Hero Section -->
+    <main id="main">
+      <!-- ======= About Section ======= -->
+      <section id="about" class="about-mf mt-5">
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
@@ -60,50 +100,106 @@
                     <div class="row">
                       <div class="col-sm-6 col-md-5">
                         <div class="about-img">
-                          <img src="" class="img-fluid rounded b-shadow-a" alt="">
+                          <img
+                            src=""
+                            class="img-fluid rounded b-shadow-a"
+                            alt=""
+                          />
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-7">
-                        <div class="about-info">
-                          <p><span class="title-s">Name: </span> <span>Sahrfear Macarthy</span></p>
-                          <p><span class="title-s">Profile: </span> <span>Full stack developer</span></p>
-                          <p><span class="title-s">Email: </span> <span>macarthysahralves@gmail.com</span></p>
-                          <p><span class="title-s">Phone: </span> <span>(669)7997164</span></p>
+                        <div class="class border-secondary subLocate">
+                          <a href="#Location" class="fas fa-location-dot"></a>
+                          <div>San Jose CA</div>
+                          <a href="6697997164" class="fas fa-phone"></a>
+                          <div>6697997164</div>
+                          <a
+                            href="mailto:macarthysahralves@gmail.com"
+                            class="fas fa-envelope"
+                          ></a>
+                          <div>Send Email</div>
                         </div>
                       </div>
                     </div>
                     <div class="skill-mf">
                       <p class="title-s">Skills</p>
                       <span>HTML</span> <span class="pull-right">80%</span>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Warning example"
+                        aria-valuenow="85"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div
+                          class="progress-bar bg-warning"
+                          style="width: 85%"
+                        ></div>
                       </div>
-                      <span>CSS3</span> <span class="pull-right">75%</span>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                      <span>CSS</span> <span class="pull-right">75%</span>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Info example"
+                        aria-valuenow="75"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div
+                          class="progress-bar bg-info"
+                          style="width: 75%"
+                        ></div>
                       </div>
-                      <span>JAVASCRIPT</span> <span class="pull-right">90%</span>
+                      <span>Javascript</span>
+                      <span class="pull-right">90%</span>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Danger example"
+                        aria-valuenow="90"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <div
+                          class="progress-bar bg-danger"
+                          style="width: 90%"
+                        ></div>
+                      </div>
+                      <span>TypeScript</span>
+                      <span class="pull-right">85%</span>
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 85%"
+                          aria-valuenow="85"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="about-me pt-4 pt-md-0">
                       <div class="title-box-2">
-                        <h5 class="title-left">
-                          About me
-                        </h5>
+                        <h5 class="title-left">About me</h5>
                       </div>
                       <p class="lead">
-                        My journey in the world of development started with a fascination for problem-solving and a love
-                    for coding. Over the years, I've honed my skills in both front-end and back-end technologies,
-                    embracing the challenges that come with crafting seamless solutions.I
-                    thrive in creating robust and scalable web applications that deliver exceptional user
-                    experiences
+                        My journey in the world of development started with a
+                        fascination for problem-solving and a love for coding.
+                        Over the years, I've honed my skills in both front-end
+                        and back-end technologies, embracing the challenges that
+                        come with crafting seamless solutions.I thrive in
+                        creating robust and scalable web applications that
+                        deliver exceptional user experiences
                       </p>
-                 
-                  
+                      <div class="p-4 resume">
+                        <a href="#" id="download">
+                          Get Resume
+                          <a class="fas fa-download"></a>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -111,110 +207,116 @@
             </div>
           </div>
         </div>
-      </section><!-- End About Section -->
-        <!-- ======= Services Section: What i do ======= -->
-    <section id="services" class="services-mf pt-5 route">
+      </section>
+      <!-- End About Section -->
+      <!-- ======= Services Section: What i do ======= -->
+      <section id="services" class="services-mf pt-5">
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
               <div class="title-box text-center">
-                <h3 class="title-a">
-                  What I Do
-                </h3>
-                <p class="subtitle-a">
-                  All About My Job
-                </p>
+                <h3 class="title-a">What I Do</h3>
+                <p class="subtitle-a">All About My Job</p>
                 <div class="line-mf"></div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right">
               <div class="service-box">
                 <div class="service-ico">
-                  <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
+                  <span class="ico-circle"><i class="bi bi-display"></i></span>
+                  <!-- <span class="ico-circle"><i class="fas fa-display border-secondary FrontEndFasFa"></i></span> -->
                 </div>
                 <div class="service-content">
-                  <h2 class="s-title">Web Design</h2>
+                  <h2 class="s-title">Front-End Development</h2>
                   <p class="s-description text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                    provident vitae! Magni
-                    tempora perferendis eum non provident.
+                    Creating the visual and interactive components of a website
+                    or web application that users directly interact with. It
+                    encompasses writing code in HTML, CSS, and JavaScript and
+                    React to build the user interface (UI) and ensure a smooth
+                    user experience.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="flip-up">
               <div class="service-box">
                 <div class="service-ico">
-                  <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
+                  <span class="ico-circle"><i class="bi bi-globe"></i></span>
                 </div>
                 <div class="service-content">
                   <h2 class="s-title">Web Development</h2>
                   <p class="s-description text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                    provident vitae! Magni
-                    tempora perferendis eum non provident.
+                    I excel in designing dynamic, user-friendly websites that
+                    seamlessly integrate creativity and functionality. With a
+                    deep understanding of HTML, CSS, JavaScript, and diverse web
+                    frameworks, I ensure the delivery of top-tier, scalable, and
+                    efficient web solutions that surpass client expectations.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-left">
               <div class="service-box">
                 <div class="service-ico">
-                  <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
+                  <span class="ico-circle"><i class="bi bi-server"></i></span>
                 </div>
                 <div class="service-content">
-                  <h2 class="s-title">Photography</h2>
+                  <h2 class="s-title">Back-End Development</h2>
                   <p class="s-description text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                    provident vitae! Magni
-                    tempora perferendis eum non provident.
+                    Designing and implementing server-side architecture,
+                    developing databases, writing API endpoints for
+                    communication between the front end and back end, ensuring
+                    data security, and optimizing performance
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right">
               <div class="service-box">
                 <div class="service-ico">
-                  <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
+                  <span class="ico-circle"><i class="bi bi-database"></i></span>
                 </div>
                 <div class="service-content">
-                  <h2 class="s-title">Responsive Design</h2>
+                  <h2 class="s-title">DataBase Management</h2>
                   <p class="s-description text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                    provident vitae! Magni
-                    tempora perferendis eum non provident.
+                    Integrating MongoDB with the application's back-end logic,
+                    handling data migrations, backups,and scaling the database
+                    as needed
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="flip-up">
               <div class="service-box">
                 <div class="service-ico">
-                  <span class="ico-circle"><i class="bi bi-brightness-high"></i></span>
+                  <span class="ico-circle"><i class="bi bi-github"></i></span>
                 </div>
                 <div class="service-content">
-                  <h2 class="s-title">Graphic Design</h2>
+                  <h2 class="s-title">Version Control System</h2>
                   <p class="s-description text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                    provident vitae! Magni
-                    tempora perferendis eum non provident.
+                    Competent in version control systems like Git for effective
+                    collaboration and code management within development teams.I
+                    Comfortable with concepts such as branching, merging, and
+                    resolving conflicts.
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-left">
               <div class="service-box">
                 <div class="service-ico">
-                  <span class="ico-circle"><i class="bi bi-calendar4-week"></i></span>
+                  <span class="ico-circle"
+                    ><i class="bi bi-lightbulb-fill"></i
+                  ></span>
                 </div>
                 <div class="service-content">
-                  <h2 class="s-title">Marketing Services</h2>
+                  <h2 class="s-title">Problem Solving Skills</h2>
                   <p class="s-description text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
-                    provident vitae! Magni
-                    tempora perferendis eum non provident.
+                    In my journey as a full-stack developer, I've encountered
+                    challenges that have allowed me to refine my problem-solving
+                    skills, even with limited experience.
                   </p>
                 </div>
               </div>
@@ -223,359 +325,327 @@
         </div>
       </section>
       <!-- End Services Section -->
-        <!-- ======= Counter Section: Projects Session ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg) border">
-        <div class="overlay-mf"></div>
-        <div class="container position-relative">
-          <div class="row">
-            <div class="col-sm-3 col-lg-3">
-              <div class="counter-box counter-box pt-4 pt-md-0">
-                <div class="counter-ico">
-                  <span class="ico-circle"><i class="bi bi-check"></i></span>
-                </div>
-                <div class="counter-num">
-                  <p data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1" class="counter purecounter"></p>
-                  <span class="counter-text">WORKS COMPLETED</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 col-lg-3">
-              <div class="counter-box pt-4 pt-md-0">
-                <div class="counter-ico">
-                  <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
-                </div>
-                <div class="counter-num">
-                  <p data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="counter purecounter"></p>
-                  <span class="counter-text">YEARS OF EXPERIENCE</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 col-lg-3">
-              <div class="counter-box pt-4 pt-md-0">
-                <div class="counter-ico">
-                  <span class="ico-circle"><i class="bi bi-people"></i></span>
-                </div>
-                <div class="counter-num">
-                  <p data-purecounter-start="0" data-purecounter-end="550" data-purecounter-duration="1" class="counter purecounter"></p>
-                  <span class="counter-text">TOTAL CLIENTS</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 col-lg-3">
-              <div class="counter-box pt-4 pt-md-0">
-                <div class="counter-ico">
-                  <span class="ico-circle"><i class="bi bi-award"></i></span>
-                </div>
-                <div class="counter-num">
-                  <p data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1" class="counter purecounter"></p>
-                  <span class="counter-text">AWARD WON</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- End Counter Section -->
-   <!-- ======= Portfolio Section : This will be my project session======= -->
-   <section id="work" class="portfolio-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              Projects
-            </h3>
-            <p class="subtitle-a">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </p>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="assets/img/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-              <div class="work-img">
-                <img src="assets/img/work-1.jpg" alt="" class="img-fluid">
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-8">
-                  <h2 class="w-title">Lorem impsum dolor</h2>
-                  <div class="w-more">
-                    <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="w-like">
-                    <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-              <div class="work-img">
-                <img src="assets/img/work-2.jpg" alt="" class="img-fluid">
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-8">
-                  <h2 class="w-title">Loreda Cuno Nere</h2>
-                  <div class="w-more">
-                    <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="w-like">
-                    <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="assets/img/work-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-              <div class="work-img">
-                <img src="assets/img/work-3.jpg" alt="" class="img-fluid">
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-8">
-                  <h2 class="w-title">Mavrito Lana Dere</h2>
-                  <div class="w-more">
-                    <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="w-like">
-                    <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="assets/img/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-              <div class="work-img">
-                <img src="assets/img/work-4.jpg" alt="" class="img-fluid">
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-8">
-                  <h2 class="w-title">Bindo Laro Cado</h2>
-                  <div class="w-more">
-                    <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="w-like">
-                    <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="assets/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-              <div class="work-img">
-                <img src="assets/img/work-5.jpg" alt="" class="img-fluid">
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-8">
-                  <h2 class="w-title">Studio Lena Mado</h2>
-                  <div class="w-more">
-                    <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="w-like">
-                    <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="assets/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-              <div class="work-img">
-                <img src="assets/img/work-6.jpg" alt="" class="img-fluid">
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-8">
-                  <h2 class="w-title">Studio Big Bang</h2>
-                  <div class="w-more">
-                    <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2017</span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="w-like">
-                    <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
-  </section><!-- End Portfolio Section -->
-      <!-- ======= Testimonials Section ======= -->
-      <div class="testimonials paralax-mf bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
-        <div class="overlay-mf"></div>
+      <!-- ======= Portfolio Section : This will be my project session======= -->
+      <section id="project" class="portfolio-mf portfolio-sec">
+        <div class="container vh-100 vw-100" id="project" data-aos="zoom-in">
+          <h2 class="text-center pt-5">Projects</h2>
+          <br />
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active project-card1"
+                data-bs-toggle="tab"
+                href="#petfinder"
+                >Pet Finder Application</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link project-card2"
+                data-bs-toggle="tab"
+                href="#amazon"
+                >Amazon Web Page</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link project-card3" data-bs-toggle="tab" href="#tac"
+                >Tic Ta Toe</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link project-card4"
+                data-bs-toggle="tab"
+                href="#quotes"
+                >Random Quotes Generator</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link project-card5"
+                data-bs-toggle="tab"
+                href="#weather"
+                >Weather App</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link project-card6"
+                data-bs-toggle="tab"
+                href="#rest"
+                >REST API for an Educational platform</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link project-card7"
+                data-bs-toggle="tab"
+                href="#music"
+                >Music Application</a
+              >
+            </li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content project-card">
+            <div id="petfinder" class="container tab-pane active">
+              <br />
+              <div class="Card">
+                <div class="image-container">
+                  <img src="Images/mac1.jpg" alt="" />
+                </div>
+                <div class="text-container">
+                  <h3>Pet Finder Application</h3>
+                  <p>
+                    An application to browse the Petfinder API which include the
+                    detail decriptions of each pet. User will be prompted to
+                    choose the pet category and a request will be sent to the
+                    pet finder API which will return a detail description of
+                    each pet.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div id="amazon" class="container tab-pane fade">
+              <br />
+              <div class="Card">
+                <div class="image-container">
+                  <img src="Images/amazon.jpeg" alt="" />
+                </div>
+                <div class="text-container">
+                  <h3>Amazon</h3>
+                  <p>In this project a colne of amazon web page was made</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="tac" class="container tab-pane fade">
+              <br />
+              <div class="Card">
+                <div class="image-container">
+                  <img src="Images/mac1.jpg" alt="" />
+                </div>
+                <div class="text-container">
+                  <h3>Tac Toe</h3>
+                  <p>Creating a interactive Tic Tac toe</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="quotes" class="container tab-pane fade">
+              <br />
+              <div class="Card">
+                <div class="image-container">
+                  <img src="Images/mac1.jpg" alt="" />
+                </div>
+                <div class="text-container">
+                  <h3>Quotes Generator</h3>
+                  <p>
+                    Using the idea of Async, Fetch API to getnerate random
+                    Quotes
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="weather" class="container tab-pane fade">
+              <br />
+              <div class="Card">
+                <div class="image-container">
+                  <img src="Images/mac1.jpg" alt="" />
+                </div>
+                <div class="text-container">
+                  <h3>Weather App</h3>
+                  <p>
+                    Fetching Weather Data and give the weather condition based
+                    on the data
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div id="rest" class="container tab-pane fade">
+              <br />
+              <div class="Card">
+                <div class="image-container">
+                  <img src="Images/mac1.jpg" alt="" />
+                </div>
+                <div class="text-container">
+                  <h3>REST API</h3>
+                  <p>
+                    An Express application with the following specifications:
+                    Allow CORS requests * Add security headers to the response
+                    object *
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div id="music" class="container tab-pane fade">
+              <br />
+              <div class="Card">
+                <div class="image-container">
+                  <img src="Images/mac1.jpg" alt="" />
+                </div>
+                <div class="text-container">
+                  <h3>Music Website</h3>
+                  <p>
+                    Building a Music Website using the knowledge React features
+                    which include but are not limited to : Component Driven
+                    Development, Communication Between Component using props,
+                    contexAPI, PubSub, useEffect, Axios
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End Portfolio Section -->
+
+      <!-- ======= Testimonials Section:Learn About Swiper ======= -->
+
+      <div
+        class="testimonials bg-image"
+        style="background-image: url(./Images/test-bg.jpg)"
+      >
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-  
-              <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+              <div class="testimonials-slider swiper">
                 <div class="swiper-wrapper">
-  
                   <div class="swiper-slide">
                     <div class="testimonial-box">
                       <div class="author-test">
-                        <img src="assets/img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
+                        <img src="" alt="" class="rounded-circle b-shadow-a" />
                         <span class="author">Asaad</span>
                       </div>
                       <div class="content-test">
-                        <p class="description lead">
-                          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                          consectetur adipiscing elit.
-                        </p>
+                        <p class="description lead">Description From ASAAD</p>
                       </div>
                     </div>
-                  </div><!-- End testimonial item -->
-  
+                  </div>
+
                   <div class="swiper-slide">
                     <div class="testimonial-box">
                       <div class="author-test">
-                        <img src="assets/img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a">
-                        <span class="author">Marta Socrate</span>
+                        <img
+                          src="assets/img/testimonial-4.jpg"
+                          alt=""
+                          class="rounded-circle b-shadow-a"
+                        />
+                        <span class="author">Alex Macarthy</span>
                       </div>
                       <div class="content-test">
                         <p class="description lead">
-                          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                          consectetur adipiscing elit.
+                          Description From Alex Macarthy
                         </p>
                       </div>
                     </div>
-                  </div><!-- End testimonial item -->
+                  </div>
                 </div>
-                <div class="swiper-pagination"></div>
+                <!-- <div class="swiper-pagination"></div> -->
               </div>
-  
-              <!-- <div id="testimonial-mf" class="owl-carousel owl-theme">
-            
-          </div> -->
             </div>
           </div>
         </div>
-      </div><!-- End Testimonials Section -->
-
-         <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
-        <div class="overlay-mf"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="contact-mf">
+      </div>
+      <!-- End Testimonials Section -->
+      <!-- ======= Contact Section ======= -->
+      <section
+        id="contact"
+        class="bg-image contact-sec"
+        style="background-image: url(assets/img/overlay-bg.jpg)"
+      >
+        <div class="container text-center" data-aos="zoom-in">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="contact-card">
                 <div id="contact" class="box-shadow-full">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="title-box-2">
-                        <h5 class="title-left">
-                          Send Message Us
-                        </h5>
-                      </div>
-                      <div>
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                          <div class="row">
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                              </div>
-                            </div>
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                              </div>
-                            </div>
-                            <div class="col-md-12 mb-3">
-                              <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                              </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                              </div>
-                            </div>
-                            <div class="col-md-12 text-center my-3">
-                              <div class="loading">Loading</div>
-                              <div class="error-message"></div>
-                              <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="col-md-12 text-center">
-                              <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
-                            </div>
+                  <div class="title-card">
+                    <h5 class="title-header">Contact Me</h5>
+                  </div>
+                  <div>
+                    <form
+                      action=""
+                      method="post"
+                      role="form"
+                      class="php-email-form"
+                    >
+                      <div class="row">
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              name="name"
+                              class="form-control"
+                              id="name"
+                              placeholder="Your Name"
+                              required
+                            />
                           </div>
-                        </form>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input
+                              type="email"
+                              class="form-control"
+                              name="email"
+                              id="email"
+                              placeholder="Your Email"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="subject"
+                              id="subject"
+                              placeholder="Subject"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <textarea
+                              class="form-control"
+                              name="message"
+                              rows="5"
+                              placeholder="Message"
+                              required
+                            ></textarea>
+                          </div>
+                        </div>
+
+                        <div class="col-md-12 text-center mt-3">
+                          <button type="button" class="btn btn-outline-success">
+                            Send Message
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="title-box-2 pt-4 pt-md-0">
-                        <h5 class="title-left">
-                          Get in Touch
-                        </h5>
-                      </div>
-                      <div class="more-info">
-                        <p class="lead">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
-                          expedita aperiam aliquid at.
-                          Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
-                          mollitia inventore?
-                        </p>
-                        <ul class="list-ico">
-                          <li><span class="bi bi-geo-alt"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                          <li><span class="bi bi-phone"></span> (617) 557-0089</li>
-                          <li><span class="bi bi-envelope"></span> contact@example.com</li>
-                        </ul>
-                      </div>
-                      <div class="socials">
-                        <ul>
-                          <li><a href=""><span class="ico-circle"><i class="bi bi-facebook"></i></span></a></li>
-                          <li><a href=""><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
-                          <li><a href=""><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
-                          <li><a href=""><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
-                        </ul>
-                      </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section><!-- End Contact Section -->
-  </main>
-</body>
+      </section>
+      <!-- End Contact Section -->
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 400,
+        duration: 1000,
+      });
+    </script>
+  </body>
 </html>
