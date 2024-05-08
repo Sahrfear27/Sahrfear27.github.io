@@ -283,7 +283,12 @@ body {
   border-radius: 15px;
 }
 
-
+.abt{
+color: #003654;
+background-color: #00fffc;
+text-align: center;
+font-size: 10px;
+}
 
 
 
@@ -309,19 +314,34 @@ box-shadow: 9px 17px 68px 9px rgba(0,0,0,0.39);
   }
 }
 /* Progress Bar */
-.skill-mf .progress {
+.skill-Card .progress {
   background-color: #cde1f8;
   margin: 0.5rem 0 1.2rem 0;
   border-radius: 0;
   height: 0.7rem;
 }
 
-.skill-mf .progress .progress-bar {
+.skill-Card .progress .progress-bar {
   height: 0.7rem;
   background-color: #0078ff;
 }
 
+.about-me {
+  padding: 4rem; 
+}
 
+.About-Card {
+  font-size: 2rem; 
+  font-weight: lighter;
+  color: #172932;
+text-shadow: 1px 1px 3px #000000;
+}
+.title-s{
+  font-size: 2rem; 
+  color: #172932;
+  font-weight: lighter;
+text-shadow: 1px 1px 3px #000000;
+}
 /* <===Service Section:What i do ====> */
 .title-box {
   margin-bottom: 8rem;
@@ -393,13 +413,32 @@ box-shadow: 9px 17px 68px 9px rgba(0,0,0,0.39);
   text-decoration: none;
   color: #003654;
   font-size: medium;
+
  }
+ .project-card1:hover,
+ .project-card2:hover,
+ .project-card3:hover,
+ .project-card4:hover,
+ .project-card5:hover,
+ .project-card6:hover,
+ .project-card7:hover {
+   opacity: 0.8;
+   background-color: #003654;
+   color: whitesmoke;
+   transition: all 0.3s ease-in-out; 
+ }
+ 
+
 .project-card {
   margin: auto;
   overflow: auto;
   padding: 0 2rem;
 }
-
+.project-Main-Card{
+  color: #033043;
+  font-size: 2rem;
+  font-weight: bold;
+}
 .Card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -428,8 +467,69 @@ box-shadow: 9px 17px 68px 9px rgba(0,0,0,0.39);
   flex-direction: column;
 }
 
+/* 
+<==Education and Experience ==>
+ */
 
+ .timelines {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
+.timeline-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #000000;
+
+}
+
+.timeline-item {
+  margin-bottom: 2em;
+  color: #000000;
+}
+.timeline-item h3 {
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+}
+.timeline-item h3::before {
+  content: "";
+  position: absolute;
+  left: -2.35em;
+  background-color: #022B42;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  transform: translate(-0.5px, 0.2em);
+}
+
+.timeline-items {
+  margin: 2em;
+  padding: 0.01em 0 3em 2em;
+  border-left: 1px solid #006494;
+}
+
+.timeline-item {
+  margin-top: -0.3em;
+}
+.timeline-item time {
+  display: block;
+  float: left;
+  background-color: #006DA4;
+  padding: 0.2em 0.4em;
+}
+.timeline-item > * {
+  margin: 1em 0;
+}
+.timeline-item .location {
+  clear: both;
+  font-size: 0.85em;
+  font-style: italic;
+}
 /*
  <===== Detail for contact Information=======> 
  */
